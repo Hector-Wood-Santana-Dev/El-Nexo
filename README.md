@@ -1,6 +1,12 @@
 # El-Nexo
 Repositorio para el trabajo del El Nexo de la asignatura Producción de Software 
-Aquí subiremos el código del sitio web que haremos.
+Aquí subiremos el código del sitio web que haremos. 
+
+Disclaimer:
+ESTO ES UNA PRÁCTICA DE UNIVERSIDAD, NADA DE ESTO ESTÁ PENSADO PARA SER LLEVADO A PRODUCCIÓN.
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 
