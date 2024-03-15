@@ -13,5 +13,7 @@ import {FooterComponent} from "../../Componentes/footer/footer.component";
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-
+cargarPagina(  url:string){
+  window.location.href = url;
+}
 }
