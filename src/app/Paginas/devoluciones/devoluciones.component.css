@@ -1,0 +1,38 @@
+body{
+  background-color: rgba(175, 238, 238, 0.78);
+}
+.return_content {
+  position: relative;
+  padding: 20px;
+}
+
+
+.return_header h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.return_header p {
+  margin-bottom: 20px;
+
+}
+
+.return_images {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.return_image {
+  flex: 0 1 30%;
+}
+
+.return_image img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.return_image p {
+  text-align: center;
+}

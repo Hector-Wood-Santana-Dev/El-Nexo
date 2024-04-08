@@ -1,0 +1,36 @@
+body{background-color: rgba(175, 238, 238, 0.78);}
+.policy_header h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 2.4em;
+}
+
+.policy_header p {
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+.policy_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.policy_content {
+  flex: 0 0 50%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.policy_image {
+  flex: 0 0 45%;
+  margin:auto;
+}
+
+.policy_image img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  max-height:950px;
+  margin-bottom: 20px;
+}

@@ -18,10 +18,12 @@ body{
 
 }
 .cielo{
+  max-width: 100%;
   width: 1940px;
   height: 552px;
 }
 .container {
+
   position: relative;
   text-align: center;
 }
