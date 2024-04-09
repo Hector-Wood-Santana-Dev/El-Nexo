@@ -8,7 +8,8 @@ import {FaqComponent} from "./Paginas/faq/faq.component";
 
 
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
+  {path: '', redirectTo:'Home', pathMatch:'full'},
+  { path: 'Home', component: HomeComponent },
   { path: 'about-us', component: SobreNosotrosComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'devoluciones', component: DevolucionesComponent },

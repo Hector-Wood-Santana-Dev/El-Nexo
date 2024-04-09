@@ -9,6 +9,8 @@ footer {
   background-color: rgba(175,238,238);
 }
 
+
+
 footer hr {
   background-color: white;
   border: none;
@@ -35,6 +37,10 @@ footer a {
   text-decoration: none;
   font-size: 15px;
   position: relative;
+}
+footer a:hover{
+  cursor:pointer;
+  font-weight: bold;
 }
 
 a::before {
