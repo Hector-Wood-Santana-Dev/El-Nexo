@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
-import {Product} from "../../interface/product";
 import {TrolleyServiceService} from "../../service/trolley-service.service";
+import {Product} from "../../interface/product";
 
 @Component({
   selector: 'app-header',
