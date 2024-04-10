@@ -16,4 +16,14 @@ export class HomeComponent {
 cargarPagina(  url:string){
   window.location.href = url;
 }
+
+texto = 'Colaboradores';
+
+  cambiarTexto() {
+    this.texto = '¿Dónde encontrarlos?';
+  }
+
+  textoOriginal() {
+    this.texto = 'Colaboradores';
+  }
 }

@@ -19,11 +19,9 @@ body{
 }
 .cielo{
   max-width: 100%;
-  width: 1940px;
   height: 552px;
 }
 .container {
-
   position: relative;
   text-align: center;
 }
@@ -42,7 +40,7 @@ body{
 .ofrecemos{
   font-family: "Just Another Hand", cursive;
   font-size: 99px;
-  left: 42%;
+  text-align: center;
   position: relative;
 }
 .ofrecemosimg{
@@ -87,6 +85,10 @@ body{
 
 #colaborar {
   margin-top: 150px;
+  cursor: pointer;
+}
+#colaborar:hover{
+  filter: invert(100%);
 }
 /*-----------------------------------------*/
 @media screen and (max-width: 750px) {
@@ -97,7 +99,6 @@ body{
     font-size: 75px;
 }
   .cielo{
-    width: 750px;
     height: 452px;
   }
 }

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Router} from "@angular/router";
+import {TrolleyServiceService} from "../../service/trolley-service.service";
+import {Product} from "../../interface/product";
 
 @Component({
   selector: 'app-header',
@@ -9,9 +11,23 @@ import {Router} from "@angular/router";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
-  constructor(private router: Router){}
+  result:Product[];
+  constructor(private router: Router, private trolley:TrolleyServiceService){
+    this.result= this.trolley.getTrolley();
+  }
   cargarPagina(url: string) {
     this.router.navigate([url]);
+  }
+  cargarPaginaV(url:string) {
+    if (localStorage.getItem("miClave") !== null) {
+      this.router.navigate([url]);
+
+    } else {
+      // la clave "nombre" no existe en localStorage
+      // hacer algo, como redirigir a una página de registro
+      this.router.navigate(['login']);
+    }
+
   }
 
   abrir(){
@@ -28,4 +44,5 @@ export class HeaderComponent {
       nav.classList.remove("visible");
     })
   }
+
 }

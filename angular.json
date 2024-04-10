@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "El-Nexo": {
+    "el-nexo": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "El-Nexo:build:production"
+              "buildTarget": "el-nexo:build:production"
             },
             "development": {
-              "buildTarget": "El-Nexo:build:development"
+              "buildTarget": "el-nexo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "El-Nexo:build"
+            "buildTarget": "el-nexo:build"
           }
         },
         "test": {

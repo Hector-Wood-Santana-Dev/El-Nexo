@@ -5,11 +5,14 @@ import {PoliticaPrivacidadComponent} from "./Paginas/politica-privacidad/politic
 import {DevolucionesComponent} from "./Paginas/devoluciones/devoluciones.component";
 import {ContactoComponent} from "./Paginas/contacto/contacto.component";
 import {FaqComponent} from "./Paginas/faq/faq.component";
+import {CatalogComponent} from "./Paginas/catalog/catalog.component";
+
 
 
 export const routes: Routes = [
   {path: '', redirectTo:'Home', pathMatch:'full'},
   { path: 'Home', component: HomeComponent },
+  {path:'catalog', component:CatalogComponent},
   { path: 'about-us', component: SobreNosotrosComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'devoluciones', component: DevolucionesComponent },
@@ -17,3 +20,4 @@ export const routes: Routes = [
   { path: 'privacidad', component: PoliticaPrivacidadComponent },
   { path: '**', component: HomeComponent },
 ];
+

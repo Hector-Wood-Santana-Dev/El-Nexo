@@ -1,0 +1,49 @@
+.input {
+  font:inherit;
+}
+section {
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+}
+#form {
+  margin: auto;
+}
+#form > #div {
+  display: flex;
+  background:#fff;
+  padding: 9px 22px 9px 26px;
+  border-radius: 30px;
+  border: 2px solid #cad3dc;
+  box-shadow: rgba(255, 255, 255, 0.2) -8px -8px 15px,
+  rgba(0, 0, 0, 0.1) 10px 10px 10px,
+  rgba(255, 255, 255, 0.5) -8px -8px 15px inset,
+  rgba(0, 0, 0, 0.1) 10px 10px 10px inset;
+}
+#form #input {
+  border:none;
+  background: transparent;
+  font-weight: bold;
+  padding-left: 24px;
+  background-image: url(https://image.flaticon.com/icons/png/512/116/116836.png);
+  background-size: 16px;
+  background-repeat: no-repeat;
+  width: 400px;
+  transition: all 0.5s;
+  cursor: pointer;
+
+}
+#form #input:focus {
+  outline: none;
+  width: 800px;
+}
+
+/** Estilos de la barra de búsqueda en móviles y tablet **/
+@media screen and (max-width: 850px) {
+  #form #input {
+    width: 350px;
+  }
+  #form #input:focus {
+    width: 435px;
+  }
+}

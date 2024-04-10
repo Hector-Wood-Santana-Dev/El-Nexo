@@ -1,0 +1,202 @@
+
+.catalogo-fondo {
+  background-color:  rgba(175,238,238);
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.cerrar{
+  background-color: black;
+}
+/*cuerpo*/
+body{
+  background-color:  rgba(175,238,238);;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+
+.buscar{
+  margin-top: 20px;
+}
+
+/*catalogo*/
+.contenido{
+  max-width: 1200px;
+  width: 100%;
+  margin: 40px auto;
+  display: flex;
+}
+.mostrador{
+  width: 100%;
+  transition: .5s ease;
+}
+.mostrador .fila{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.mostrador .fila .item{
+  max-width: 210px;
+  padding: 30px;
+  height: 250px;
+  /*border: 2px solid red;*/
+  text-align: center;
+  margin: 0 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: .3s;
+}
+.mostrador .fila .item:hover{
+  background-color: white;
+}
+.mostrador .fila .item img{
+  width: 100%;
+  margin: 30px 0;
+}
+.mostrador .fila .item .descripcion{
+  color: whitesmoke;
+  font-weight: bold;
+}
+
+.mostrador .fila .item .precio{
+  color: #b3c4ca;
+  font-weight: bold;
+  font-size: 20px;
+}
+/*item seleccionado*/
+.seleccion{
+  transition: 0.5s ease;
+  /*opacity: 0;*/
+  /*width: 40%;*/
+  border: 1px solid #ccc;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 3%;
+  background-color:black ;
+}
+
+.cerrar{
+  position: absolute;
+  right: 0;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.5s ease-in-out;
+}
+
+.cerrar:hover {
+  transform: rotate(45deg);
+}
+.info{
+  padding: 20px;
+}
+.info img{
+  display: block;
+  margin: 30px auto;
+  width: 80%;
+
+}
+.info h2{
+  color: white;
+  margin-bottom: 10px;
+}
+
+.info .precio{
+  font-size: 30px;
+  font-weight: bold;
+  color: #b3c4ca;
+  margin-bottom: 10px;
+  display: block;
+}
+.info .fila{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.info .fila button{
+  font-weight: 700;
+  font-size: 15px;
+  color: #ffffff;
+  padding: 9px 25px;
+  border: 2px solid #ffffff;
+  background: #222228;
+  cursor: pointer;
+  border-radius: 30px 30px 30px 30px;
+
+
+}
+.info .fila button:hover{
+ background-color: #ffffff;
+  color: #222228;
+  transform: translatey(-2px);
+  border-radius: 30px 30px 30px 30px;
+}
+.info .nombrePrecio{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+/*Valoracion */
+.rating:not(:checked) > input {
+  position: absolute;
+  appearance: none;
+}
+
+.rating:not(:checked) > label {
+  float: right;
+  cursor: pointer;
+  font-size: 30px;
+  color: #666;
+}
+
+.rating:not(:checked) > label:before {
+  content: '★';
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked + label:hover ~ label,
+.rating > input:checked ~ label:hover,
+.rating > input:checked ~ label:hover ~ label,
+.rating > label:hover ~ input:checked ~ label {
+  color: #e58e09;
+}
+
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #ff9e0b;
+}
+
+.rating > input:checked ~ label {
+  color: #ffa723;
+}
+
+.arrows{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  gap: 50px;
+
+}
+
+
+
+@media screen and (max-width: 750px) {
+  .mostrador .fila .item .precio{
+    font-size: 16.5px;
+  }
+  .mostrador .fila .item .descripcion{
+    font-size: 16.5px;
+  }
+
+
+}

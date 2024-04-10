@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
+import {FooterComponent} from "./Componentes/footer/footer.component";
 import {HeaderComponent} from "./Componentes/header/header.component";
 import {HomeComponent} from "./Paginas/home/home.component";
-import {FooterComponent} from "./Componentes/footer/footer.component";
 import {NgIf} from "@angular/common";
 
 @Component({
@@ -30,6 +30,4 @@ export class AppComponent {
       }
     });
   }
-
 }
-
