@@ -10,8 +10,8 @@
 <div class="catalogo-fondo">
   <section class="contenido">
     <div class="mostrador" id="mostrador">
-      <div class="fila" *ngFor="let fila of filas; let i = index">
-        <div class="item"  *ngFor="let product of productos "
+      <div class="fila" *ngFor="let fila of  productos.slice(0, productos.length); let i = index">
+        <div class="item"  *ngFor="let product of productos.slice(i * 4, (i + 1) * 4) "
              (click)="seleccionarProducto(product)">
           <div class="contenedor-foto">
             <img src="{{product.imagen}}" alt="alfredo">
@@ -29,7 +29,7 @@
       <div class="info">
         <img src="{{productoSeleccionado.imagen}}"  alt="" id="img">
         <div class="nombrePrecio" >
-          <h2 id="modelo">{{productoSeleccionado.nombre}}</h2>
+          <h2 >{{productoSeleccionado.nombre}}</h2>
           <span class="precio" id="precio"> {{productoSeleccionado.precio}} €</span>
         </div>
         <div class="espacio"></div>
@@ -49,7 +49,7 @@
             </div>
           <button class="boton" (click)="trolley.addProductTrollet(productoSeleccionado)">AGREGAR AL CARRITO</button>
         </div>
-        <h2 id="modelo">{{productoSeleccionado.descripcion}}</h2>
+        <h2 >{{productoSeleccionado.descripcion}}</h2>
       </div>
     </div></section>
 
