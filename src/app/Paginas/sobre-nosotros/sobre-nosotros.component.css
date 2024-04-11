@@ -109,7 +109,7 @@ body{
 }
 .down_container_header h1{
   color: black;
-
+  font-size: xx-large;
 }
 
 .image-container img {
@@ -131,4 +131,5 @@ body{
 .text-container p{
   color:  black;
   width: 95%;
+  font-size: larger;
 }
