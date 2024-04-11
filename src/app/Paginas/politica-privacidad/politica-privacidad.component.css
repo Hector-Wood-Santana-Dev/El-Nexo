@@ -34,3 +34,6 @@ body{background-color: rgba(175, 238, 238, 0.78);}
   max-height:950px;
   margin-bottom: 20px;
 }
+span {
+  font-weight: bold;
+}
