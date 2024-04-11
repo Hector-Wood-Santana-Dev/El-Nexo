@@ -14,10 +14,10 @@
         <div class="item"  *ngFor="let product of productos "
              (click)="seleccionarProducto(product)">
           <div class="contenedor-foto">
-            <img src="./assets/image/solo-leveling.png" alt="alfredo">
+            <img src="{{product.imagen}}" alt="alfredo">
           </div>
-          <p class="descripcion">Prueba</p>
-          <span class="precio">€ 10k</span>
+          <p class="descripcion">{{product.nombre}}</p>
+          <span class="precio">{{product.precio}}€</span>
         </div>
       </div>
     </div>
@@ -49,12 +49,10 @@
             </div>
           <button class="boton" (click)="trolley.addProductTrollet(productoSeleccionado)">AGREGAR AL CARRITO</button>
         </div>
+        <h2 id="modelo">{{productoSeleccionado.descripcion}}</h2>
       </div>
     </div></section>
-  <div class="arrows">
-    <span class="material-symbols-outlined">arrow_left_alt</span>
-    <span class="material-symbols-outlined">arrow_right_alt</span>
-  </div>
+
   <div>
   </div>
 </div>

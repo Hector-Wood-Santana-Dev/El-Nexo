@@ -1,17 +1,22 @@
+body{
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
+
+}
 .catalogo-fondo {
   background-color:  rgba(175,238,238);
-  position: relative;
   padding-bottom: 100px;
 }
 
 .cerrar{
-  background-color: black;
+  background-color:  rgba(175,238,238);
 }
 /*cuerpo*/
 body{
-  background-color:  rgba(175,238,238);;
-  position: relative;
+  background-color:  rgba(175,238,238);
   padding-bottom: 100px;
 }
 
@@ -40,14 +45,14 @@ body{
 
 .mostrador .fila .item{
   max-width: 210px;
-  padding: 30px;
-  height: 250px;
+  padding: 40px;
+  height: 375px;
   /*border: 2px solid red;*/
   text-align: center;
   margin: 0 10px;
   cursor: pointer;
   border-radius: 5px;
-  transition: .3s;
+  transition: 0.3s;
 }
 .mostrador .fila .item:hover{
   background-color: white;
@@ -57,14 +62,15 @@ body{
   margin: 30px 0;
 }
 .mostrador .fila .item .descripcion{
-  color: whitesmoke;
+  color: black;
   font-weight: bold;
+  font-size: medium;
 }
 
 .mostrador .fila .item .precio{
-  color: #b3c4ca;
+  color: black;
   font-weight: bold;
-  font-size: 20px;
+  font-size: medium;
 }
 /*item seleccionado*/
 .seleccion{
@@ -78,7 +84,11 @@ body{
   justify-content: center;
   overflow: hidden;
   border-radius: 3%;
-  background-color:black ;
+  background-color:  rgba(175,238,238);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  width: 100%;
+  height: 100%;
+
 }
 
 .cerrar{
@@ -177,15 +187,6 @@ body{
 
 .rating > input:checked ~ label {
   color: #ffa723;
-}
-
-.arrows{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 50px;
-  gap: 50px;
-
 }
 
 
