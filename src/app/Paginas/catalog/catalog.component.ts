@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FooterComponent} from "../../Componentes/footer/footer.component";
 import {HeaderComponent} from "../../Componentes/header/header.component";
 import {NgForOf, NgIf} from "@angular/common";
@@ -6,6 +6,8 @@ import {Product} from "../../interface/product";
 import {SearchComponent} from "../../Componentes/search/search.component"
 import {TrolleyServiceService} from "../../service/trolley-service.service";
 import {BODCatalogService} from "../../service/bodcatalog.service";
+import {SearchServiceService} from "../../service/search-service.service";
+import {LoaderComponent} from "../../Componentes/loader/loader.component";
 @Component({
   selector: 'app-catalog',
   standalone: true,
@@ -14,25 +16,49 @@ import {BODCatalogService} from "../../service/bodcatalog.service";
     HeaderComponent,
     NgForOf,
     NgIf,
-    SearchComponent
+    SearchComponent,
+    LoaderComponent
   ],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.css'
 })
-export class CatalogComponent {
-  constructor(public trolley:TrolleyServiceService, private bodCataloc:BODCatalogService) {
-    this.bodCataloc.getCatalog().subscribe(products=>
-    this.productos=products);
+export class CatalogComponent implements OnInit{
+  loading = false;
+
+  constructor(public trolley:TrolleyServiceService,
+              private bodCataloc:BODCatalogService,
+              private searchService: SearchServiceService) {
+
     this.mostradors= document.getElementById("mostrador");
     this.selecions=document.getElementById("selecion");
   }
+  ngOnInit() {
+    this.loading=true;
+    this.bodCataloc.getCatalog().subscribe(products=>{
+      this.productos=products ;
+      this.originalItems = [...this.productos];
+      setTimeout(() => {
+        this.loading = false;
+      }, 4000);});
+    this.searchService.currentSearch.subscribe(search => this.filterItems(search));
+  }
+
   filas =[1,2,];
   productos: Product[] = [];
+
 
   productoSeleccionado: Product|null=null;
   mostradors: HTMLElement|null=null;
   selecions:HTMLElement|null=null;
 
+  originalItems = [...this.productos];
+  filterItems(search: string) {
+    if (search) {
+      this.productos = this.originalItems.filter(item => item.nombre.toLowerCase().includes(search.toLowerCase()));
+    } else {
+      this.productos = [...this.originalItems];
+    }
+  }
 
   seleccionarProducto(producto: Product) {
     this.productoSeleccionado = producto;
