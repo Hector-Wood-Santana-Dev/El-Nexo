@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {TrolleyServiceService} from "../../service/trolley-service.service";
 import {Product} from "../../interface/product";
@@ -10,11 +10,15 @@ import {Product} from "../../interface/product";
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent {
+export class HeaderComponent{
   result:Product[];
   constructor(private router: Router, private trolley:TrolleyServiceService){
-    this.result= this.trolley.getTrolley();
+    this.result=[];
+    this.trolley.getTrolley().subscribe(trolleys=>
+      this.result=trolleys);
   }
+
+
   cargarPagina(url: string) {
     this.router.navigate([url]);
   }

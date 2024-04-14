@@ -1,0 +1,14 @@
+<body>
+<div class="row" *ngFor="let product of trolley.splice(0,trolley.length)">
+  <div class="col-md-4  d-flex justify-content-center hola"><img src="{{product.imagen}}"></div>
+  <div class="col-md-4 bg-primary d-flex align-items-center">{{product.nombre}}<br>
+    {{product.descripcion}}<br>
+    estrella
+    <br>
+    {{product.precio}}€
+  </div>
+  <div class="col-md-2  d-flex justify-content-center align-items-center"> variar cantidad </div>
+  <div class="col-md-2 bg-danger d-flex justify-content-center align-items-center"> boton quitar </div>
+  <div class="col-12  bg-primary ">hola</div>
+</div>
+</body>

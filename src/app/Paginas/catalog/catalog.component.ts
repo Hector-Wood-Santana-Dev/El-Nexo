@@ -24,6 +24,10 @@ import {LoaderComponent} from "../../Componentes/loader/loader.component";
 })
 export class CatalogComponent implements OnInit{
   loading = false;
+  indiceActual = 0;
+  indiceActualAnterior=0;
+
+
 
   constructor(public trolley:TrolleyServiceService,
               private bodCataloc:BODCatalogService,
@@ -39,11 +43,10 @@ export class CatalogComponent implements OnInit{
       this.originalItems = [...this.productos];
       setTimeout(() => {
         this.loading = false;
-      }, 4000);});
+      }, 3000);});
     this.searchService.currentSearch.subscribe(search => this.filterItems(search));
   }
 
-  filas =[1,2,];
   productos: Product[] = [];
 
 
@@ -53,7 +56,7 @@ export class CatalogComponent implements OnInit{
 
   originalItems = [...this.productos];
   filterItems(search: string) {
-    if (search) {
+    if (search.trim()) {
       this.productos = this.originalItems.filter(item => item.nombre.toLowerCase().includes(search.toLowerCase()));
     } else {
       this.productos = [...this.originalItems];
@@ -69,8 +72,6 @@ export class CatalogComponent implements OnInit{
       this.mostradors.style.width = "0%";
       // @ts-ignore
       this.selecions.style.width = "100%";
-      // @ts-ignore
-      this.selecions.style.height="80%";
 
 
     }else {
@@ -78,8 +79,6 @@ export class CatalogComponent implements OnInit{
       this.mostradors.style.width = "20%";
       // @ts-ignore
       this.selecions.style.width = "80%";
-      // @ts-ignore
-      this.selecions.style.height = "80%";
 
     }
 
@@ -96,5 +95,20 @@ export class CatalogComponent implements OnInit{
     this.selecion.style.opacity = "0";
   }
 
+
+  protected readonly Math = Math;
+
+
+  mover(direccion: number) {
+    this.indiceActualAnterior= this.indiceActual
+    this.indiceActual += direccion;
+    console.log(this.productos.length)
+    if(direccion==1) console.log(1)
+    if (direccion==-1)console.log(-1)
+    if (this.indiceActual < 0) this.indiceActual = 0;
+    if (this.indiceActual >= this.productos.length) this.indiceActual= this.indiceActualAnterior;
+    console.log(this.indiceActual)
+
+  }
 }
 
