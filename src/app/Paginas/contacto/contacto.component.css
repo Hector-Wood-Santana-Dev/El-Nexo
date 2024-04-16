@@ -34,3 +34,8 @@ body{background-color: rgba(175, 238, 238, 0.78);}
   max-height:950px;
   margin-bottom: 20px;
 }
+
+.contact_content h3, .contact_content p {
+  margin-top: 0.625em;
+  margin-bottom: 0.625em;
+}
