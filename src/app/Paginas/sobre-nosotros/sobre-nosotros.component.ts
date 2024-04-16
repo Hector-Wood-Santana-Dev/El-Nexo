@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HeaderComponent} from "../../Componentes/header/header.component";
 import {FooterComponent} from "../../Componentes/footer/footer.component";
+
+import datos from "../../../assets/json/TextosPaginas.json"
+
 
 @Component({
   selector: 'app-sobre-nosotros',
@@ -14,4 +17,5 @@ import {FooterComponent} from "../../Componentes/footer/footer.component";
 })
 export class SobreNosotrosComponent {
 
+  datosJson = datos;
 }

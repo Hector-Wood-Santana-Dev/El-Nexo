@@ -73,23 +73,6 @@ body{
   text-align: center;
 }
 
-.end_content_up, .end_content_down {
-  display: flex;
-  justify-content: space-between;
-  translate: 50%;
-  width: 50%;
-  align-items: center;
-  margin-top: 20px;
-  font-size: 1.6em;
-}
-
-.up_content_left, .down_content_left,
-.up_content_right, .down_content_right,
-.up_content_center, .down_content_center {
-  flex: 1;
-  text-align: center;
-}
-
 .image-container {
   display:flex;
   margin-top: 20px;
