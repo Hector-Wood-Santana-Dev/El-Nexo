@@ -7,11 +7,11 @@
             "linea1" : "En El Nexo, somos mucho más que una tienda online, somos el destino definitivo para todos los aficionados y coleccionistas 'frikis'. Desde miniaturas hasta libros, cartas, videojuegos y posters, ofrecemos una amplia selección de productos que satisfacen todas tus pasiones.",
             "linea2" : "Nuestra visión va más allá de simplemente ofrecer productos. Nos esforzamos por crear un espacio donde los entusiastas puedan reunirse, compartir sus intereses y encontrar todo lo que necesitan para alimentar su pasión. Con el tiempo, planeamos expandir nuestros servicios para incluir la compra y venta de artículos de segunda mano, colaboraciones con tiendas físicas, un foro animado y mucho más.",
             "linea3" : "En El Nexo, entendemos las dificultades que enfrentan los aficionados al buscar productos específicos y servicios especializados. Por eso estamos aquí, para brindarte una experiencia de compra única y satisfactoria, respaldada por una comunidad vibrante y comprometida.",
-            "linea4" : "Descubre un mundo de posibilidades en El Nexo, donde tu pasión se convierte en nuestra prioridad. ¡Únete a nosotros y forma parte de esta emocionante aventura!" 
-        
+            "linea4" : "Descubre un mundo de posibilidades en El Nexo, donde tu pasión se convierte en nuestra prioridad. ¡Únete a nosotros y forma parte de esta emocionante aventura!"
+
         }
     },
-    
+
     "footers": {
         "politica_privacidad" : {
             "info_general": "Información General",
@@ -57,7 +57,15 @@
             "horario_atencion": "Horario de Atención al Cliente",
             "p_horario_atencion": "Nuestro equipo está disponible de lunes a viernes, de 9:00 a 18:00 horas.",
             "redes_sociales": "Redes Sociales",
-            "p_redes_sociales": "Síguenos en Facebook, Instagram y Twitter para estar al tanto de las últimas novedades y ofertas especiales"
+            "p_redes_sociales": "Síguenos en Facebook, Instagram y Twitter para estar al tanto de las últimas novedades y ofertas especiales",
+            "oficinas": "Oficinas",
+            "oficina1": "Geek central",
+            "oficina2": "Nerd nook",
+            "oficina3": "Pixel palace",
+            "ubicaciones_oficinas": "Ubicaciones de nuestras oficinas",
+            "ubicacion1": "Geek central: Seattle, Washington, Estados Unidos",
+            "ubicacion2": "Nerd nook: Silicon Valley, California, Estados Unidos",
+            "ubicacion3": "Pixel palace: Londres, Reino Unido"
         },
 
         "faq" : {
@@ -76,7 +84,7 @@
         }
 
     }
-    
+
 
 
 }
