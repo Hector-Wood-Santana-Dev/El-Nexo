@@ -6,6 +6,7 @@ import {DevolucionesComponent} from "./Paginas/devoluciones/devoluciones.compone
 import {ContactoComponent} from "./Paginas/contacto/contacto.component";
 import {FaqComponent} from "./Paginas/faq/faq.component";
 import {CatalogComponent} from "./Paginas/catalog/catalog.component";
+import {LoginComponent} from "./login/login.component";
 
 
 
@@ -18,6 +19,7 @@ export const routes: Routes = [
   { path: 'devoluciones', component: DevolucionesComponent },
   { path: 'contacto', component: ContactoComponent },
   { path: 'privacidad', component: PoliticaPrivacidadComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: HomeComponent },
 ];
 

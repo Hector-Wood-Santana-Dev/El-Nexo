@@ -1,0 +1,26 @@
+<head>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+<div class="container">
+  <div class="form-box">
+    <div class="button-box">
+      <div id="elegir"></div>
+      <button type="button" class="toggle-btn" (click)="login()">Iniciar Sesión</button>
+      <button type="button" class="toggle-btn" (click)="registrar()">Registrar</button>
+    </div>
+    <form id="login" class="input-group" [formGroup]="loginForm" (ngSubmit)="autenticar_usuario()">
+      <input type="text" class="input-field" formControlName="username" placeholder="Nombre de Usuario" required>
+      <input type="password" class="input-field" formControlName="password" placeholder="Contraseña" required>
+      <input type="checkbox" class="check-box"><span>Recordar Contraseña</span>
+      <button type="submit" class="submit-btn" id="login-form">Acceder</button>
+    </form>
+    <form id="register" class="input-group" [formGroup]="registerForm" (ngSubmit)="registrar_usuario()">
+      <input type="email" class="input-field" formControlName="regEmail" placeholder="Correo Electrónico" required>
+      <input type="password" class="input-field" formControlName="regPassword" placeholder="Contraseña" required>
+      <input type="checkbox" class="check-box"  (click)="terminos()" checked [(ngModel)]="aceptaTerminos"><span>Aceptar los términos y condiciones</span>
+      <button type="submit" class="submit-btn">Registrar</button>
+    </form>
+  </div>
+</div>
+</body>
