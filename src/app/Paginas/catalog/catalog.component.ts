@@ -29,7 +29,7 @@ export class CatalogComponent implements OnInit{
 
 
 
-  constructor(public trolley:TrolleyServiceService,
+  constructor(protected trolley:TrolleyServiceService,
               private bodCataloc:BODCatalogService,
               private searchService: SearchServiceService) {
 

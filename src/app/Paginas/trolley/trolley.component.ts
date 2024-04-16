@@ -14,10 +14,16 @@ import {NgForOf} from "@angular/common";
 })
 export class TrolleyComponent {
   trolley:Product[]
-  constructor(private trolleyService:TrolleyServiceService) {
+  total:number;
+  constructor(protected trolleyService:TrolleyServiceService) {
     this.trolley=[]
+    this.total=0
     this.trolleyService.getTrolley().subscribe(trolleys=>
       this.trolley=trolleys);
+    this.trolleyService.getTotal().subscribe(total=> this.total=total);
+
+
 
   }
+
 }

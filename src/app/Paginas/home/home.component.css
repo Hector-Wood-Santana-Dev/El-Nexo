@@ -18,11 +18,12 @@ body{
 
 }
 .cielo{
-  width: 100%;
+  width: 180%;
+
+  object-fit: cover;
   height: 552px;
 }
 .container {
-  position: relative;
   text-align: center;
 }
 
@@ -88,9 +89,7 @@ body{
   margin-top: 150px;
   cursor: pointer;
 }
-#colaborar:hover{
-  filter: invert(100%);
-}
+
 /*-----------------------------------------*/
 @media screen and (max-width: 750px) {
 

@@ -10,10 +10,13 @@ import {Product} from "../../interface/product";
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent{
+export class HeaderComponent implements OnInit{
   result:Product[];
   constructor(private router: Router, private trolley:TrolleyServiceService){
     this.result=[];
+
+  }
+  ngOnInit() {
     this.trolley.getTrolley().subscribe(trolleys=>
       this.result=trolleys);
   }

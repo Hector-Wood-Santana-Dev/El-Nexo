@@ -118,10 +118,11 @@ body{
 .info h2{
   color: white;
   margin-bottom: 10px;
+  font-size: larger;
 }
 
 .info .precio{
-  font-size: 30px;
+  font-size: larger;
   font-weight: bold;
   color: white;
   margin-bottom: 10px;
@@ -163,6 +164,7 @@ body{
 }
 .descripcion2{
   padding: 30px;
+  font-size: larger;
 }
 /*------------------------------------------------------*/
 /*Valoracion */
