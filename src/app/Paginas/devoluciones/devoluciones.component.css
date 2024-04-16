@@ -29,8 +29,9 @@ body{
 
 .return_image img {
   width: 100%;
-  height: auto;
+  height: 17.25em;
   margin-bottom: 10px;
+  object-fit: cover;
 }
 
 .return_image p {
