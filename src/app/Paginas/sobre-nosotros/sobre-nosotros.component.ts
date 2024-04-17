@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {HeaderComponent} from "../../Componentes/header/header.component";
 import {FooterComponent} from "../../Componentes/footer/footer.component";
 
-import datos from "../../../assets/json/textos-paginas.json"
+import datos_es from "../../../assets/json/textos-paginas.json"
 
 
 @Component({
@@ -17,5 +17,5 @@ import datos from "../../../assets/json/textos-paginas.json"
 })
 export class SobreNosotrosComponent {
 
-  datosJson = datos;
+  datosJson = datos_es;
 }
