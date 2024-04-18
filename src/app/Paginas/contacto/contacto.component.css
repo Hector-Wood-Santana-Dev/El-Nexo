@@ -39,3 +39,6 @@ body{background-color: rgba(175, 238, 238, 0.78);}
   margin-top: 0.625em;
   margin-bottom: 0.625em;
 }
+.info_contact_list {
+  margin-left: 1.875em;
+}
