@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import {FooterComponent} from "../../Componentes/footer/footer.component";
 import {HeaderComponent} from "../../Componentes/header/header.component";
 
+import datos_es from "../../../assets/json/textos-paginas.json"
+
+
 @Component({
   selector: 'app-faq',
   standalone: true,
@@ -32,4 +35,5 @@ Alert(){
   }
 
 }
+datosJson = datos_es;
 }

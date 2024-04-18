@@ -51,7 +51,7 @@
             "contacto": "Contacto",
             "p_contacto": "¡Hola! En El Nexo, estamos encantados de atenderte. Si tienes alguna pregunta, comentario o simplemente quieres saludar, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte.",
             "informacion_contacto": "Información de Contacto",
-            "direccion": "Direccion: Escuela de Ingeniería Informática, ULPGC, Las Palmas de Gran Canaria",
+            "direccion": "- Direccion: Escuela de Ingeniería Informática, ULPGC, Las Palmas de Gran Canaria",
             "telefono": "+34 XXX XX XX XX",
             "correo_electronico": "contacto@elnexo.com",
             "horario_atencion": "Horario de Atención al Cliente",
@@ -69,6 +69,7 @@
         },
 
         "faq" : {
+            "titulofaq": "Preguntas Frecuentes",
             "pregunta1": "Cómo puedo realizar una compra en la tienda?",
             "respuesta1": "Para realizar una compra, navega por nuestra tienda y selecciona los productos que deseas comprar. Agrega los productos al carrito de compras. Ve al carrito y verifica los artículos seleccionados. Procede al pago, completa la información requerida... ¡Y listo! Tu pedido estará en camino.",
             "pregunta2": "¿Cuáles son las opciones de pago disponibles?",
