@@ -18,8 +18,6 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent {
   registerForm: FormGroup;
-  aceptaTerminos: boolean = true;
-
 
   constructor(private formBuilder: FormBuilder) {
     this.registerForm = this.formBuilder.group({
@@ -86,9 +84,7 @@ export class LoginComponent {
       alert("Bienvenido, " + username);
     }
   }
-  terminos (){
-    this.aceptaTerminos = !this.aceptaTerminos;
-  }
+
   registrar_usuario() {
     const regEmailControl = this.registerForm.get('regEmail');
 
@@ -113,13 +109,7 @@ export class LoginComponent {
         title: 'Error',
         text: 'La contraseña debe tener al menos 6 caracteres',
       });
-    } else if (!this.aceptaTerminos) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Debes aceptar los términos y condiciones para registrar',
-      });
-    } else {
+    }  else {
       Swal.fire({
         icon: 'success',
         title: 'Registro exitoso',
