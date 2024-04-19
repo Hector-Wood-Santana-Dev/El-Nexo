@@ -39,5 +39,11 @@ export class TrolleyComponent implements OnInit{
     this.router.navigate(['payment']);
 
   }
+  esMayor(){
+    if(this.total>0){
+      return true
+    }
+    return false
+  }
 
 }
