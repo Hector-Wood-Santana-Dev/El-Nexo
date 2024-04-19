@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {NavigationEnd, Router, RouterOutlet} from '@angular/router';
 import {FooterComponent} from "./Componentes/footer/footer.component";
 import {HeaderComponent} from "./Componentes/header/header.component";
@@ -14,6 +14,7 @@ import {NgIf} from "@angular/common";
 })
 export class AppComponent {
   title = 'El-Nexo';
+
   showHeader: boolean = true;
   showFooter: boolean = true;
   constructor(private router: Router) {
