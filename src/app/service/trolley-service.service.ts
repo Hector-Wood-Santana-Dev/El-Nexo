@@ -24,8 +24,7 @@ private products$ = new BehaviorSubject<Product[]>([]); // El BehaviorSubject
       sessionStorage.setItem('misProductos', JSON.stringify(this.trolley));
       this.products$.next(this.trolley);
       this.calcularTotal(this.trolley);
-      console.log(this.total)
-      console.log(this.total$)
+
 
 
     }
@@ -64,6 +63,7 @@ private products$ = new BehaviorSubject<Product[]>([]); // El BehaviorSubject
 
   }
   getTotal():Observable<number>{
+    this.calcularTotal(this.trolley);
     return this.total$.asObservable();
 
   }

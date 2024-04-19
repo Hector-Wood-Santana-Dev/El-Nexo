@@ -7,6 +7,7 @@ import {ContactoComponent} from "./Paginas/contacto/contacto.component";
 import {FaqComponent} from "./Paginas/faq/faq.component";
 import {CatalogComponent} from "./Paginas/catalog/catalog.component";
 import {TrolleyComponent} from "./Paginas/trolley/trolley.component";
+import {PaymentComponent} from "./Paginas/payment/payment.component";
 
 
 
@@ -20,6 +21,7 @@ export const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'privacidad', component: PoliticaPrivacidadComponent },
   { path: 'trolley', component: TrolleyComponent },
+  { path: 'payment', component: PaymentComponent },
   { path: '**', component: HomeComponent },
 ];
 

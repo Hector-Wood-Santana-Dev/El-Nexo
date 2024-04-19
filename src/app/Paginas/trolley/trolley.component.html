@@ -16,7 +16,7 @@
   </div>
   <div class="col-md-2  d-flex justify-content-center align-items-center"></div>
   <div class="col-md-2  d-flex justify-content-center align-items-center">
-    <button class="btn" (click)="trolleyService.deleteProductTrolley(product)">
+    <button class="btn" (click)="clickDelete(product)">
       <i class="animation"></i><span class="material-symbols-outlined">
 delete
 </span><i class="animation"></i>
@@ -27,7 +27,7 @@ delete
   <div class="col-md-8 "></div>
   <div class="col-md-2 d-flex justify-content-center align-items-center"> Total: {{total}} €</div>
   <div class="col-md-2 d-flex justify-content-center align-items-center">
-    <button class="pagar">
+    <button class="pagar" (click)="clickPagar()">
       <span>Pagar</span>
     </button>
   </div>
