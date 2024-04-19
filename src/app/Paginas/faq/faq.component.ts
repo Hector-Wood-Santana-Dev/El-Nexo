@@ -30,12 +30,8 @@ q5: string;
 q6: string;
 
 Alert(id: number) {
-
-const acc = document.getElementsByClassName("accordion") as HTMLCollectionOf;
-
 const panel = document.getElementsByClassName("accordion").item(id) as HTMLElement;
 const panel2 = panel.nextElementSibling as HTMLElement;
-
 
 if (panel2.style.display === "block") {
 panel2.style.display = "none";
