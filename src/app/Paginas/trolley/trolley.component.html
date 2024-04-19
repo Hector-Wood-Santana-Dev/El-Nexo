@@ -23,7 +23,7 @@ delete
   </button>
   </div>
 </div>
-<div class="row">
+<div class="row" *ngIf="trolley.length!=0">
   <div class="col-md-8 "></div>
   <div class="col-md-2 d-flex justify-content-center align-items-center"> Total: {{total}} €</div>
   <div class="col-md-2 d-flex justify-content-center align-items-center">
