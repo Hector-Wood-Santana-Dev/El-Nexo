@@ -6,34 +6,41 @@ import datos_es from "../../../assets/json/textos-paginas.json"
 
 
 @Component({
-  selector: 'app-faq',
-  standalone: true,
-  imports: [
-    FooterComponent,
-    HeaderComponent
-  ],
-  templateUrl: './faq.component.html',
-  styleUrl: './faq.component.css'
+selector: 'app-faq',
+standalone: true,
+imports: [
+FooterComponent,
+HeaderComponent
+],
+templateUrl: './faq.component.html',
+styleUrl: './faq.component.css'
 })
 export class FaqComponent {
-Alert(){
-  const acc = document.getElementsByClassName("accordion") as HTMLCollectionOf<HTMLElement>;
+constructor() {
+this.q1 = "q1";
+this.q2 = "q2";
+this.q3 = "q3";
+this.q4 = "q4";
+this.q5 = "q5";
+this.q6 = "q6";
+}
 
-  for (let i = 0; i < acc.length; i++) {
-    acc[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      this.parentElement!.classList.toggle("active");
+q1: string;
+q2: string;
+q3: string;
+q4: string;
+q5: string;
+q6: string;
 
-      const panel = this.nextElementSibling as HTMLElement;
+Alert(id: number) {
+const panel = document.getElementsByClassName("accordion").item(id) as HTMLElement;
+const panel2 = panel.nextElementSibling as HTMLElement;
 
-      if (panel.style.display === "block") {
-        panel.style.display = "none";
-      } else {
-        panel.style.display = "block";
-      }
-    });
-  }
-
+if (panel2.style.display === "block") {
+panel2.style.display = "none";
+} else {
+panel2.style.display = "block";
+}
 }
 datosJson = datos_es;
 }
