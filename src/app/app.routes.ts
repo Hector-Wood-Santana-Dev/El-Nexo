@@ -8,6 +8,7 @@ import {FaqComponent} from "./Paginas/faq/faq.component";
 import {CatalogComponent} from "./Paginas/catalog/catalog.component";
 import {TrolleyComponent} from "./Paginas/trolley/trolley.component";
 import {PaymentComponent} from "./Paginas/payment/payment.component";
+import {LoginComponent} from "./login/login.component";
 
 
 
@@ -22,6 +23,7 @@ export const routes: Routes = [
   { path: 'privacidad', component: PoliticaPrivacidadComponent },
   { path: 'trolley', component: TrolleyComponent },
   { path: 'payment', component: PaymentComponent },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: HomeComponent },
 ];
 
