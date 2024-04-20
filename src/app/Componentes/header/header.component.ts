@@ -3,6 +3,7 @@ import {Router} from "@angular/router";
 import {TrolleyServiceService} from "../../service/trolley-service.service";
 import {Product} from "../../interface/product";
 
+
 @Component({
   selector: 'app-header',
   standalone: true,

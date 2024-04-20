@@ -32,3 +32,13 @@ body {
   grid-row: 3;
   margin-top: auto;
 }
+.aviso{
+  width: 100%;
+  background-color: rgba(175,238,238);
+  text-align: center;
+  padding:10px;
+}
+.texto_aviso{
+  text-decoration: none;
+  color:black;
+}
