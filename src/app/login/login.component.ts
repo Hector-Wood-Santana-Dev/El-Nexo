@@ -59,24 +59,48 @@ export class LoginComponent {
 
   autenticar_usuario(): void {
     const rawForm = this.loginform.getRawValue()
+    if (!rawForm.email || !rawForm.email) {
+      Swal.fire({
+        icon: 'error',
+        text: 'Por favor, ingrese su correo electrónico y contraseña.',
+      });
+      return;
+    }
     this.authService.login(rawForm.email, rawForm.password).subscribe({
       next:()=>{
         this.router.navigateByUrl('/')
       },
       error: (err) => {
         this.errorMessage = err.code;
+        Swal.fire({
+          icon: 'error',
+          text: 'Inicio de Sesión Incorrecto.',
+        });
       }
     })
   }
 
   registrar_usuario():void {
     const rawForm = this.registerform.getRawValue()
+    if (!rawForm.email || !rawForm.email) {
+      Swal.fire({
+        icon: 'error',
+        text: 'Por favor, ingrese su correo electrónico y contraseña.',
+      });
+      return;
+    }
+
     this.authService.register(rawForm.email, rawForm.username, rawForm.password).subscribe({
       next:()=>{
         this.router.navigateByUrl('/')
       },
       error: (err) => {
         this.errorMessage = err.code;
+
+        Swal.fire({
+          icon: 'error',
+          text: 'El correo electrónico o la contraseña son incorrectos',
+        });
       }
     })
 
