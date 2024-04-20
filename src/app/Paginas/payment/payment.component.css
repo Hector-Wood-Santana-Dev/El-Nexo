@@ -120,6 +120,9 @@ label {
 #postal{
   width: 400px;
 }
+#direccion{
+  width: 400px;
+}
 /*estilo del boton confirmar*/
 .button {
   padding: 10px 20px;

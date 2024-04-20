@@ -1,10 +1,10 @@
 <body>
-<form (ngSubmit)="confirmarPago()">
+<form [formGroup]="buyForm" (ngSubmit)="confirmarPago()">
   <!--Nompbre del titular-->
   <div class="row">
     <div class="d-flex justify-content-center col-md-5">
       <div class="group">
-        <input id="name1"  type="text" class="input" required>
+        <input id="name1"  type="text" class="input" formControlName="name" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Nombre del titular</label>
@@ -15,7 +15,7 @@
   <div class="row">
     <div class="d-flex justify-content-center col-md-5">
       <div class="group">
-        <input id="tarjeta"  type="text" class="input"  (keypress)="soloNumeros($event)" required>
+        <input id="tarjeta"  type="text" class="input" formControlName="tarjeta" (keypress)="soloNumeros($event)" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Número de la tarjeta</label>
@@ -23,7 +23,7 @@
     </div>
     <div class="d-flex justify-content-center col-md-2">
       <div class="group">
-        <input id="csv"  type="text" class="input"  (keypress)="soloNumeros($event)" required>
+        <input id="csv"  type="text" class="input" formControlName="csv" (keypress)="soloNumeros($event)" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>csv</label>
@@ -32,7 +32,7 @@
     <div class="col-md-2 d-flex justify-content-center">Fecha de caducidad:</div>
     <div class="d-flex justify-content-end col-md-1">
       <div class="group">
-        <input id="month"  type="text" class="input"  (keypress)="soloNumeros($event)" required>
+        <input id="month"  type="text" class="input" formControlName="mes"  (keypress)="soloNumeros($event)" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Mes</label>
@@ -40,7 +40,7 @@
     </div>
     <div class="d-flex justify-content-start col-md-1">
       <div class="group">
-        <input id="year"  type="text" class="input"  (keypress)="soloNumeros($event)" required>
+        <input id="year"  type="text" class="input" formControlName="año" (keypress)="soloNumeros($event)" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Año</label>
@@ -50,7 +50,7 @@
   <div class="row">
     <div class="d-flex justify-content-center col-md-5">
       <div class="group">
-        <input id="telefono"  type="text" class="input"  (keypress)="soloNumeros($event)"required>
+        <input id="telefono"  type="text" class="input" formControlName="telefono" (keypress)="soloNumeros($event)"required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Número de teléfono</label>
@@ -58,7 +58,7 @@
     </div>
     <div class="d-flex justify-content-center col-md-4">
       <div class="group">
-        <input id="postal"  type="text" class="input" required>
+        <input id="postal"  type="text" formControlName="postal" class="input" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Código postal</label>
@@ -68,7 +68,7 @@
   <div class="row">
     <div class="d-flex justify-content-center col-md-5">
       <div class="group">
-        <input id="postal"  type="text" class="input" required>
+        <input id="direccion"  type="text" formControlName="direccion" class="input" required>
         <span class="highlight"></span>
         <span class="bar"></span>
         <label>Dirección de facturación</label>
@@ -76,18 +76,9 @@
     </div>
   </div>
   <div class="row">
-    <div></div>
-    <div class="col-md- d-flex justify-content-center b">
+    <div class="col-md-12 d-flex justify-content-center">
       <button type="submit" class="button">Confirmar</button>
-
     </div>
-    <div></div>
-
   </div>
-
-  <!--Boton aceptar-->
-
-
-
 </form>
 </body>
