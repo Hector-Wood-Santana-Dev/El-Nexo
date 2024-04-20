@@ -38,7 +38,7 @@ export class AppComponent {
   title = 'El-Nexo';
   showHeader: boolean = true;
   showFooter: boolean = true;
-  mostraraviso: boolean = true;
+
 
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
@@ -47,11 +47,10 @@ export class AppComponent {
         if (this.router.url === '/login') {
           this.showHeader = false;
           this.showFooter = false;
-          this.mostraraviso = false;
+
         } else {
           this.showHeader = true;
           this.showFooter = true;
-          this.mostraraviso = true;
         }
       }
     });

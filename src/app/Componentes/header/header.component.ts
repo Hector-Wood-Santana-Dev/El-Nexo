@@ -1,17 +1,45 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {Router} from "@angular/router";
 import {TrolleyServiceService} from "../../service/trolley-service.service";
 import {Product} from "../../interface/product";
-
+import {AuthService} from "../../auth.service";
+import {HttpClient} from "@angular/common/http";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [
+    NgIf
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  isSidebarVisible: boolean = false;
+
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
+  }
+  authService = inject(AuthService)
+  http = inject(HttpClient);
+  ngOnInit(): void{
+    this.authService.user$.subscribe((user) => {
+      if (user) {
+        this.authService.currentUserSig.set({
+          email: user.email!,
+          username: user.displayName!,
+        });
+      } else {
+        this.authService.currentUserSig.set(null);
+      }
+      console.log(this.authService.currentUserSig());
+    });
+  }
+
+  logout(): void {
+    this.authService.logout();
+  }
   result:Product[];
   constructor(private router: Router, private trolley:TrolleyServiceService){
     this.result= this.trolley.getTrolley();

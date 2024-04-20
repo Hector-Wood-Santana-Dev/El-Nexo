@@ -34,9 +34,23 @@
       <li><a> ESP </a></li>
       <li><a> <span class="material-symbols-outlined">shopping_cart</span>({{result.length}}) </a></li>
 
-      <a (click)="cargarPagina('login')" class ="cta"><button class="button"> <span class="material-symbols-outlined">
-  account_circle
-</span> </button></a>
+      <a *ngIf="!authService.currentUserSig()" (click)="cargarPagina('login')" class="cta">
+        <button class="button">
+          <span class="material-symbols-outlined">account_circle</span>
+        </button>
+      </a>
+
+      <a *ngIf="authService.currentUserSig()" class="cta">
+        <img (click)="toggleSidebar()" class="profile_icon" src="./assets/image/solo-leveling.png" height="30" weight="30" border="" alt="profile">
+
+        <div class="sidebar" [class.visible]="isSidebarVisible">
+          <span class="close-btn" (click)="toggleSidebar()">&times;</span>
+          <p><a href="/conf" class="sidebar-link">Configuration</a></p>
+          <p><a href="/profile" class="sidebar-link">Profile</a></p>
+          <p><a  class="sidebar-link" (click)="logout()">Logout</a></p>
+        </div>
+
+      </a>
     </ul>
     <a class ="cta1"><button class="button"> <span class="material-symbols-outlined">
 account_circle

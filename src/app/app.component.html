@@ -1,14 +1,3 @@
-@if (authService.currentUserSig()) {
-  <div>
-    <span (click)="logout()">Logout</span>
-  </div>
-}
-@if (authService.currentUserSig() == null) {
-  <div class="aviso"  *ngIf="mostraraviso">
-    <a class="texto_aviso"routerLink="/login">¡ Inicia Sesión para disfrutar de todo lo que ofrece Nexo !</a>
-  </div>
-}
-
 <div class="app-container">
   <app-header class="header" *ngIf="showHeader"></app-header>
   <div class="content">
