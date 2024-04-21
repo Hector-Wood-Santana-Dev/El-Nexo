@@ -2,27 +2,29 @@
   <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
 <body>
-<div class="container">
-  <div class="form-box">
-    <div class="button-box">
-      <div id="elegir"></div>
-      <button type="button" class="toggle-btn" (click)="login()">Iniciar Sesión</button>
-      <button type="button" class="toggle-btn" (click)="registrar()">Registrar</button>
-    </div>
+  <div class="row">
+    <div class="container col-md-auto">
+      <div class="form-box">
+        <div class="button-box">
+          <div id="elegir"></div>
+          <button type="button" class="toggle-btn" (click)="login()">Iniciar Sesión</button>
+          <button type="button" class="toggle-btn" (click)="registrar()">Registrar</button>
+        </div>
 
-    <form id="login" class="input-group" [formGroup]="loginform" (ngSubmit)="autenticar_usuario()">
-      <input type="text" class="input-field" formControlName="email" placeholder="Correo Electrónico" required>
-      <input type="password" class="input-field" formControlName="password" placeholder="Contraseña" required>
-      <button type="submit" class="submit-btn" id="login-form">Acceder</button>
-    </form>
-    <form id="register" class="input-group" [formGroup]="registerform" (ngSubmit)="registrar_usuario()">
-      <input type="text" class="input-field" formControlName="username" placeholder="Nombre de Usuario" required>
-      <input type="text" class="input-field" formControlName="email" placeholder="Correo Electrónico" required>
-      <input type="password" class="input-field" formControlName="password" placeholder="Contraseña" required>
-      <div>
-        <button type="submit" class="submit-btn">Registrar</button>
+        <form id="login" class="input-group" [formGroup]="loginform" (ngSubmit)="autenticar_usuario()">
+          <input type="text" class="input-field" formControlName="email" placeholder="Correo Electrónico" required>
+          <input type="password" class="input-field" formControlName="password" placeholder="Contraseña" required>
+          <button type="submit" class="submit-btn" id="login-form">Acceder</button>
+        </form>
+        <form id="register" class="input-group" [formGroup]="registerform" (ngSubmit)="registrar_usuario()">
+          <input type="text" class="input-field" formControlName="username" placeholder="Nombre de Usuario" required>
+          <input type="text" class="input-field" formControlName="email" placeholder="Correo Electrónico" required>
+          <input type="password" class="input-field" formControlName="password" placeholder="Contraseña" required>
+          <div>
+            <button type="submit" class="submit-btn">Registrar</button>
+          </div>
+        </form>
       </div>
-    </form>
+    </div>
   </div>
-</div>
 </body>
