@@ -45,7 +45,10 @@
 
         <div class="sidebar" [class.visible]="isSidebarVisible">
           <span class="close-btn" (click)="toggleSidebar()">&times;</span>
-          <p class="nombre_usuario">{{ authService.currentUserSig()?.username }}</p>
+          <p class="nombre_usuario" *ngIf="authService.currentUserSig()?.email === 'adminnexo@nexo.com'">
+            <span class="admin">ADMIN: </span><span class="username">{{ authService.currentUserSig()?.username }}</span>
+          </p>
+          <p class="nombre_usuario" *ngIf="authService.currentUserSig()?.email !== 'adminnexo@nexo.com'">{{ authService.currentUserSig()?.username }}</p>
           <img class="sidebar_profile_image" src="/assets/image/solo-leveling.png">
           <p><a href="/conf" class="sidebar-link">Configuración</a></p>
           <p><a href="/profile" class="sidebar-link">Perfil</a></p>
