@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators, FormControl, ReactiveFormsModule, FormsModule} from '@angular/forms';
 import 'sweetalert2/src/sweetalert2.scss'
 import Swal from 'sweetalert2';
-
+import {HttpClient} from "@angular/common/http";
+import {AuthService} from "../auth.service";
 
 
 @Component({
@@ -17,42 +18,21 @@ import Swal from 'sweetalert2';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  registerForm: FormGroup;
-
-  constructor(private formBuilder: FormBuilder) {
-    this.registerForm = this.formBuilder.group({
-      regEmail: [
-        '',
-        [
-          Validators.required,
-          this.emailFormat.bind(this)
-        ]
-      ],
-      regPassword: [
-        '',
-        [
-          Validators.required,
-          Validators.minLength(6)
-        ]
-      ],
-    });
-  }
-
-  emailFormat(control: FormControl) {
-    const emailPattern = /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}/;
-    if (!control.value) {
-      return { invalidEmail: true, required: true };
-    } else if (!emailPattern.test(control.value)) {
-      return { invalidEmail: true };
-    }
-    return null;
-  };
-
-  loginForm = new FormGroup({
-    username: new FormControl(''),
-    password: new FormControl('')
+  fb = inject(FormBuilder);
+  http = inject(HttpClient);
+  authService = inject(AuthService)
+  router = inject(Router);
+  loginform = this.fb.nonNullable.group({
+    email: ['', Validators.required],
+    password: ['', Validators.required],
   });
 
+  registerform = this.fb.nonNullable.group({
+    username: ['', Validators.required],
+    email: ['', Validators.required],
+    password: ['', Validators.required],
+  });
+  errorMessage: string | null = null;
   login() {
     const loginElement = document.getElementById('login');
     const registerElement = document.getElementById('register');
@@ -77,45 +57,52 @@ export class LoginComponent {
     }
   }
 
-  autenticar_usuario() {
-    const username = this.loginForm.get('username')?.value;
-
-    if (username && username.trim() !== '') {
-      alert("Bienvenido, " + username);
+  autenticar_usuario(): void {
+    const rawForm = this.loginform.getRawValue()
+    if (!rawForm.email || !rawForm.email) {
+      Swal.fire({
+        icon: 'error',
+        text: 'Por favor, ingrese su correo electrónico y contraseña.',
+      });
+      return;
     }
+    this.authService.login(rawForm.email, rawForm.password).subscribe({
+      next:()=>{
+        this.router.navigateByUrl('/')
+      },
+      error: (err) => {
+        this.errorMessage = err.code;
+        Swal.fire({
+          icon: 'error',
+          text: 'Inicio de Sesión Incorrecto.',
+        });
+      }
+    })
   }
 
-  registrar_usuario() {
-    const regEmailControl = this.registerForm.get('regEmail');
+  registrar_usuario():void {
+    const rawForm = this.registerform.getRawValue()
+    if (!rawForm.email || !rawForm.email) {
+      Swal.fire({
+        icon: 'error',
+        text: 'Por favor, ingrese su correo electrónico y contraseña.',
+      });
+      return;
+    }
 
-    // Verificar si el campo de correo está vacío
-    if (!regEmailControl?.value) {
-      return; // Salir de la función sin hacer nada si está vacío
-    }
-    if (this.registerForm.get('regEmail')?.errors?.['invalidEmail']) {
-      Swal.fire({
-        icon: "error",
-        text: "El formato del correo electrónico es inválido",
-      });
-    } else if (this.registerForm.get('regPassword')?.errors?.['required']) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'La contraseña es requerida',
-      });
-    } else if (this.registerForm.get('regPassword')?.errors?.['minlength']) {
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'La contraseña debe tener al menos 6 caracteres',
-      });
-    }  else {
-      Swal.fire({
-        icon: 'success',
-        title: 'Registro exitoso',
-        text: '¡Tu registro se ha realizado correctamente!',
-      });
-    }
+    this.authService.register(rawForm.email, rawForm.username, rawForm.password).subscribe({
+      next:()=>{
+        this.router.navigateByUrl('/')
+      },
+      error: (err) => {
+        this.errorMessage = err.code;
+
+        Swal.fire({
+          icon: 'error',
+          text: 'El correo electrónico o la contraseña son incorrectos',
+        });
+      }
+    })
 
   }
 

@@ -1,16 +1,31 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
 import {TrolleyServiceService} from "../../service/trolley-service.service";
 import {Product} from "../../interface/product";
+import {AuthService} from "../../auth.service";
+import {NgIf} from "@angular/common";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [
+    NgIf
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit{
+  isSidebarVisible: boolean = false;
+
+  toggleSidebar() {
+    this.isSidebarVisible = !this.isSidebarVisible;
+  }
+  authService = inject(AuthService)
+
+  logout(): void {
+    this.authService.logout();
+  }
+
   result:Product[];
   constructor(private router: Router, private trolley:TrolleyServiceService){
     this.result=[];
@@ -24,17 +39,6 @@ export class HeaderComponent implements OnInit{
 
   cargarPagina(url: string) {
     this.router.navigate([url]);
-  }
-  cargarPaginaV(url:string) {
-    if (localStorage.getItem("miClave") !== null) {
-      this.router.navigate([url]);
-
-    } else {
-      // la clave "nombre" no existe en localStorage
-      // hacer algo, como redirigir a una página de registro
-      this.router.navigate(['login']);
-    }
-
   }
 
   abrir(){

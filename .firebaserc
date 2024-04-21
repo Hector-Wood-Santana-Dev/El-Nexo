@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "elnexousuarios": {
+      "hosting": {
+        "el-nexo": [
+          "elnexousuarios"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "elnexousuarios"
+  }
+}
