@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {FooterComponent} from "../../Componentes/footer/footer.component";
 import {HeaderComponent} from "../../Componentes/header/header.component";
 import {NgForOf, NgIf} from "@angular/common";
@@ -6,6 +6,9 @@ import {Product} from "../../interface/product";
 import {SearchComponent} from "../../Componentes/search/search.component"
 import {TrolleyServiceService} from "../../service/trolley-service.service";
 import {BODCatalogService} from "../../service/bodcatalog.service";
+import {AuthService} from "../../auth.service";
+import {Router} from "@angular/router";
+
 @Component({
   selector: 'app-catalog',
   standalone: true,
@@ -20,7 +23,13 @@ import {BODCatalogService} from "../../service/bodcatalog.service";
   styleUrl: './catalog.component.css'
 })
 export class CatalogComponent {
-  constructor(public trolley:TrolleyServiceService, private bodCataloc:BODCatalogService) {
+  authService = inject(AuthService)
+
+  cargarPagina(url: string) {
+    this.router.navigate([url]);
+  }
+
+  constructor(private router: Router, public trolley:TrolleyServiceService, private bodCataloc:BODCatalogService) {
     this.bodCataloc.getCatalog().subscribe(products=>
     this.productos=products);
     this.mostradors= document.getElementById("mostrador");
