@@ -206,11 +206,24 @@ header {
   position: absolute;
   top: 0;
   right: 10px;
-  font-size: 25px;
+  font-size: 35px;
   cursor: pointer;
   color:white;
 }
-
+.sidebar_profile_image{
+  margin-top:20px;
+  margin-bottom: 20px;
+  width: 95%;
+  border-radius: 10px;
+  text-align: center;
+}
+.sidebar_profile_image img{
+  text-align: center;
+}
+.nombre_usuario{
+  margin-top:20px;
+  text-align: center;
+}
 
 .sidebar p {
   color: white;
