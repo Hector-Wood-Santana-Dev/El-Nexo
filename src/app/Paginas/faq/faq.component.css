@@ -11,9 +11,10 @@ body {
   margin: auto;
 }
 
-.wrapper > p,
-.wrapper > h1 {
-  margin: 1.5rem 0;
+.wrapper h1 {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 2.2em;
   text-align: center;
 }
 
@@ -47,6 +48,7 @@ body {
   background-color: #e3e3e3;
 }
 .pannel {
+  background-color: #d9d9d9;
   padding: 0 2rem 2.5rem 2rem;
   overflow: hidden;
   display: none;

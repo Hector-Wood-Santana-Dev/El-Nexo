@@ -1,0 +1,164 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.row{
+  padding: 60px;
+}
+body{
+  background-color: rgba(175,238,238);
+}
+/*input stile*/
+.group {
+  position: relative;
+}
+
+.input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+}
+
+.input:focus {
+  outline: none;
+}
+
+label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.input:focus ~ label, .input:valid ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: #5264AE;
+}
+
+.bar {
+  position: relative;
+  display: block;
+}
+
+.bar:before, .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+  left: 50%;
+}
+
+.bar:after {
+  right: 50%;
+}
+
+.input:focus ~ .bar:before, .input:focus ~ .bar:after {
+  width: 50%;
+}
+
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.input:focus ~ .highlight {
+  animation: inputHighlighter 0.3s ease;
+}
+
+@keyframes inputHighlighter {
+  from {
+    background: #5264AE;
+  }
+
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+/*tamaños para los distintos inputs*/
+#name1{
+  width: 400px;
+}
+#tarjeta{
+  width: 400px;
+}
+#csv{
+  width: 100px;
+}
+#month{
+  width: 50px;
+}
+#year{
+  width: 50px;
+}
+#telefono{
+  width: 400px;
+}
+#postal{
+  width: 400px;
+}
+#direccion{
+  width: 400px;
+}
+/*estilo del boton confirmar*/
+.button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  background-color: rgb(121, 235, 250);
+  border: none;
+  color: white;
+  position: relative;
+  width: 120px;
+  height: 45px;
+  transition: background-color 0.2s ease-in, all 0.15s ease-in;
+}
+
+button::after {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  content: "Confirmar";
+  width: 120px;
+  height: 45px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(5px, 5px);
+  background-color: rgb(0, 208, 236);
+  transition: all 0.15s ease-in;
+}
+
+button:hover::after {
+  transform: translate(-5px, -5px);
+}
+
+button:hover {
+  transform: translate(5px, 5px);
+}
+
+button:active::after {
+  background-color: rgb(0, 174, 197);
+}

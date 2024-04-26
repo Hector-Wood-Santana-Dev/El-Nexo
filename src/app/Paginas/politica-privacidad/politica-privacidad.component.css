@@ -37,3 +37,16 @@ body{background-color: rgba(175, 238, 238, 0.78);}
 span {
   font-weight: bold;
 }
+li {
+  margin-left: 1.875em;
+}
+
+.policy_content h3, .policy_content p {
+  margin-top: 0.625em;
+  margin-bottom: 0.625em;
+}
+
+.policy_content li{
+  margin-top: 0.313em;
+  margin-bottom: 0.313em;
+}
