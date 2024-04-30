@@ -343,6 +343,7 @@ header {
   }
 
   .underbar_text {
-    font-size: 15px;
+    font-size: small;
+    transition: 0.7s;
   }
 }
