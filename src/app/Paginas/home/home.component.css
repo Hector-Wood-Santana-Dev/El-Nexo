@@ -52,7 +52,7 @@ body{
 }
 /*centramos el texto de las imagenes*/
 .centered-tex-img{
-  transform: translate(37%,-250%);
+  transform: translate(22%,-250%);
   font-family: "Just Another Hand", cursive;
   font-size: 45px;
   color:white; /* Cambia el color según tu preferencia */
@@ -80,8 +80,6 @@ body{
   color: white;
   position: absolute;
   padding: 100px;
-  transform: translate(170%,-80%);
-
 
 }
 
@@ -91,18 +89,74 @@ body{
 }
 
 /*-----------------------------------------*/
-@media screen and (max-width: 750px) {
 
+@media screen and (min-width: 1251px){
+  .row {
+    margin-left: 250px;
+  }
+  .text-content {
+    transform: translate(100%,-80%);
+  }
+}
+
+@media screen and (max-width: 1250px) {
 
   .texto-centrado {
-    top: 25%;
+    top: 35%;
     font-size: 75px;
 }
   .cielo{
     height: 452px;
   }
+
+  .row {
+    margin-left: 250px;
+  }
+
+  .text-content {
+    transform: translate(80%,-80%);
+  }
 }
 
+.row{
+  margin-right: 80px;
+}
 
+@media screen and (max-width: 1200px) {
+  .centered-tex-img{
+    transform: translate(12%,-250%);
+  }
 
+  .row {
+    margin-left: 350px;
+  }
 
+  .text-content {
+    transform: translate(60%,-80%);
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .row {
+    margin-left: 235px;
+  }
+  .text-content {
+    transform: translate(20%,-80%);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .centered-tex-img{
+    transform: translate(20%,-250%);
+  }
+  .row {
+    margin-left: 115px;
+  }
+
+  .text-content {
+    width: 536px;
+    font-size: xx-large;
+    transform: translate(5%,-80%);
+  }
+}

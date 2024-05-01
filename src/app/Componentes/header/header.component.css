@@ -255,9 +255,6 @@ header {
   button {
     padding: 10px 10px;
   }
-  img.logo{
-    margin-left: 50px;
-  }
 }
 
 /* Estilos para tablet */
@@ -324,17 +321,11 @@ header {
     color: #ecececec;
   }
 
-  header {
-    justify-content: space-around;
-  }
-
   button#abrir.abrir-menu {
     transform: scale(2.24);
   }
 
-  img.logo{
-    margin-left: 0px;
-  }
+
 }
 
 @media screen and (max-width: 995px) {
@@ -346,4 +337,12 @@ header {
     font-size: small;
     transition: 0.7s;
   }
+
+  .nav2_hide {
+    display: none;
+  }
+}
+
+img.logo {
+  margin: 0 auto;
 }
