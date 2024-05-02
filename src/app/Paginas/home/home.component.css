@@ -56,6 +56,7 @@ body{
   font-family: "Just Another Hand", cursive;
   font-size: 45px;
   color:white; /* Cambia el color según tu preferencia */
+  text-shadow: -1px 0 yellow;
 }
 /*-----------------------------------------*/
 /*Texto e imagen*/
@@ -74,7 +75,7 @@ body{
   background-color: #5069ED; /* Cambia el color según tu preferencia */
   text-align: center;
   font-family: "Just Another Hand", cursive;
-  font-size: 45px;
+  font-size: 2em;
   width: 672px;
   height: 704px;
   color: white;
@@ -104,6 +105,7 @@ body{
   .texto-centrado {
     top: 35%;
     font-size: 75px;
+    transition: 0.7s;
 }
   .cielo{
     height: 452px;
@@ -156,7 +158,16 @@ body{
 
   .text-content {
     width: 536px;
-    font-size: xx-large;
     transform: translate(5%,-80%);
+    font-size: 1.8em;
+    transition: 0.7s;
   }
+}
+
+.highlight {
+  color: black;
+}
+
+.collab {
+  margin-bottom: 80px;
 }
