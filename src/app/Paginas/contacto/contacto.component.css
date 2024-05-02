@@ -35,6 +35,10 @@ body{background-color: rgba(175, 238, 238, 0.78);}
   margin-bottom: 20px;
 }
 
+.contact_content p, .contact_content li {
+  width: 100%;
+}
+
 .contact_content h3, .contact_content p {
   margin-top: 0.625em;
   margin-bottom: 0.625em;
