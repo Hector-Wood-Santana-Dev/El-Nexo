@@ -17,6 +17,7 @@ export class AuthService {
   user$ = user(this.firebaseAuth)
   currentUserSig = signal<UserInterface |null | undefined>(undefined)
 
+
   register(email: string, username:string, password:string): Observable<void>{
     const promise = createUserWithEmailAndPassword(
       this.firebaseAuth,
@@ -40,5 +41,6 @@ export class AuthService {
     const promise = signOut(this.firebaseAuth);
     return from(promise);
   }
+
 
 }

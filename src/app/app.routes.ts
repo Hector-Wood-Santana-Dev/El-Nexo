@@ -9,6 +9,8 @@ import {CatalogComponent} from "./Paginas/catalog/catalog.component";
 import {TrolleyComponent} from "./Paginas/trolley/trolley.component";
 import {PaymentComponent} from "./Paginas/payment/payment.component";
 import {LoginComponent} from "./login/login.component";
+import {PerfilComponent} from "./Paginas/perfil/perfil.component";
+import {PerfilGuardarComponent} from "./Paginas/perfil-guardar/perfil-guardar.component";
 
 
 
@@ -24,6 +26,8 @@ export const routes: Routes = [
   { path: 'trolley', component: TrolleyComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'profile', component: PerfilComponent },
+  { path: 'editar', component: PerfilGuardarComponent },
   { path: '**', component: HomeComponent },
 ];
 

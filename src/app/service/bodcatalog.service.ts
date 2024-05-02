@@ -10,8 +10,8 @@ import {Product} from "../interface/product";
 export class BODCatalogService {
 
   constructor( private firestore:Firestore) {}
-  getCatalog():Observable<Product[]>{
-    const ref= collection(this.firestore, 'catalogo');
-    return collectionData(ref, {idField:'id'})as Observable<Product[]>
-  }
+    getCatalog():Observable<Product[]>{
+      const ref= collection(this.firestore, 'catalogo');
+      return collectionData(ref, {idField:'id'})as Observable<Product[]>
+    }
 }
