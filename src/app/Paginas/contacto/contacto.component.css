@@ -19,7 +19,7 @@ body{background-color: rgba(175, 238, 238, 0.78);}
 .contact_content {
   flex: 0 0 50%;
   padding: 20px;
-  text-align: justify;
+  text-align: left;
 }
 
 .contact_image {
