@@ -1,0 +1,78 @@
+.total{
+  background-color: rgba(175, 238, 238, 0.78);
+  padding-top:40px;
+  padding-bottom:40px;
+}
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.card-details {
+  display: none;
+}
+
+::-moz-selection {
+  background: #2D3363;
+  color: #FAEECF
+}
+
+::selection {
+  background: #2D3363;
+  color: #FAEECF
+}
+
+.text {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  color: black;
+  font-family: Arial,sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 99
+}
+
+a {
+  color: #6172BA;
+  text-decoration: none;
+  cursor: pointer
+}
+
+a:hover {
+  text-decoration: underline
+}

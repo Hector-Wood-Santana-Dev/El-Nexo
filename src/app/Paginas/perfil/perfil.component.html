@@ -1,0 +1,56 @@
+<div class="total">
+<div class="container" xmlns="http://www.w3.org/1999/html">
+
+  <h2>Perfil</h2>
+  <form (ngSubmit)="guardarUser()">
+    <div class="form-group">
+      <label class="email">Email:</label>
+      <input type="email" id="email"  value="{{ authService.currentUserSig()?.email }}" #emailInput readonly>
+    </div>
+    <div class="form-group">
+      <label class="username">Username:</label>
+      <input type="text" id="username" value="{{ authService.currentUserSig()?.username }}" #usernameInput readonly>
+    </div>
+
+    <div class="form-group">
+
+      <button class="sidebar" (click)="getUserData()">Mostrar Datos de Compra</button>
+      <div [ngStyle]="{'display': mostrarDetallesTarjeta ? 'block' : 'none'}">
+        <div class="form-group">
+          <label class="direccion">Dirección:</label>
+          <input type="text" id="direccion" name="direccion" [value]="DireccionValue" #direccionInput readonly>
+        </div>
+        <div class="form-group">
+          <label class="postal">Código Postal:</label>
+          <input type="text" id="postal" name="postal" [value]="postalValue" readonly>
+        </div>
+        <div class="form-group">
+          <label class="telefono">Teléfono:</label>
+          <input type="tel" id="telefono" name="telefono" [value]="TelefonoValue" #telefonoInput readonly>
+        </div>
+        <div class="form-group">
+          <label for="nombre_titular">Nombre del Titular:</label>
+          <input type="text" id="nombre_titular" name="nombre_titular" [value]="NombreValue" #nombreInput readonly>
+        </div>
+        <div class="form-group">
+          <label for="numero_tarjeta">Número de Tarjeta:</label>
+          <input type="text" id="numero_tarjeta" name="numero_tarjeta" [value]="TarjetaValue" #numerotarjetaInput readonly>
+        </div>
+        <div class="form-group">
+          <label for="csv">CSV:</label>
+          <input type="text" id="csv" name="csv" [value]="CSVValue" #csvInput readonly>
+        </div>
+        <div class="form-group">
+          <label for="mes_caducidad">Mes de Caducidad:</label>
+          <input type="text" id="mes_caducidad" name="mes_caducidad" [value]="MesValue" #mescaducidadInput readonly>
+        </div>
+        <div class="form-group">
+          <label for="year_caducidad">Año de Caducidad:</label>
+          <input type="text" id="year_caducidad" name="year_caducidad" [value]="YearValue" #yearcaducidadInput readonly>
+        </div>
+      </div>
+    </div>
+    <button (click)="cargarPagina('editar')" type="submit">Editar</button>
+    </form>
+</div>
+</div>

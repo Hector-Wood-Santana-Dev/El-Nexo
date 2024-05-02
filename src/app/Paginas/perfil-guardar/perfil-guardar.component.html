@@ -1,0 +1,52 @@
+<div class="total">
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <h2>Perfil</h2>
+  <form (keydown.enter)="$event.preventDefault()">
+    <div class="form-group">
+      <label class="email">Email:</label>
+      <input type="email" id="email" value="{{ authService.currentUserSig()?.email }}" #emailInput readonly>
+    </div>
+    <div class="form-group">
+      <label class="username">Username:</label>
+      <input type="text" id="username" value="{{ authService.currentUserSig()?.username }}" #usernameInput readonly>
+    </div>
+    <div class="form-group">
+      <label class="direccion">Dirección:</label>
+      <input type="text" id="direccion" name="direccion" #direccionInput maxlength="60">
+    </div>
+    <div class="form-group">
+      <label class="postal">Código Postal:</label>
+      <input type="text" id="postal" name="postal" #postalInput maxlength="5" (keydown)="soloNumeros($event)">
+    </div>
+    <div class="form-group">
+      <label class="telefono">Teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" #telefonoInput maxlength="9" (keydown)="soloNumeros($event)">
+    </div>
+    <div class="form-group">
+        <div class="form-group">
+          <label for="nombre_titular">Nombre del Titular:</label>
+          <input type="text" id="nombre_titular" name="nombre_titular" #nombreInput maxlength="50" (keydown)="soloLetras($event)">
+        </div>
+        <div class="form-group">
+          <label for="numero_tarjeta">Número de Tarjeta:</label>
+          <input type="text" id="numero_tarjeta" name="numero_tarjeta" #numerotarjetaInput maxlength="16" (keydown)="soloNumeros($event)" >
+        </div>
+        <div class="form-group">
+          <label for="csv">CSV:</label>
+          <input type="text" id="csv" name="csv" #csvInput maxlength="3" (keydown)="soloNumeros($event)">
+        </div>
+      <div class="form-group">
+        <label for="mes_caducidad">Mes de Caducidad:</label>
+        <input type="text" id="mes_caducidad" name="mes_caducidad" #mescaducidadInput maxlength="2" (keydown)="soloNumeros($event)">
+      </div>
+        <div class="form-group">
+        <label for="year_caducidad">Año de Caducidad:</label>
+        <input type="text" id="year_caducidad" name="year_caducidad" #yearcaducidadInput maxlength="4" (keydown)="soloNumeros($event)">
+      </div>
+
+    </div>
+    <button (click)="guardarUser() " type="submit">Guardar</button>
+    <button (click)="cargarPagina('profile')" type="submit">Atras</button>
+  </form>
+</div>
+</div>
