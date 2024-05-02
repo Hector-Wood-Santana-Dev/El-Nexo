@@ -10,3 +10,4 @@ import {provideHttpClient} from "@angular/common/http";
 //TODO: Recordar añadir clave en local. NO subir clave al repositorio.
 export const appConfig: ApplicationConfig = {
   providers:
+}
