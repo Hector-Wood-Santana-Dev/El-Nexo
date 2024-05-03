@@ -1,15 +1,34 @@
 <div class="total">
 <div class="container" xmlns="http://www.w3.org/1999/html">
-  <h2>Perfil</h2>
+  <div class="titulo"><h2>Perfil</h2></div>
+
   <form (keydown.enter)="$event.preventDefault()">
+    <div class="image-grp">
+      <img class="main_image" [src]="foto_elegida" (click)="verImagenes()">
+      <div *ngIf="verimagenes" class="contenedor_imagenes" >
+      <label class="photo-url">Selecciona una imagen:</label>
+      <div class="image-container">
+        <div class="fila" *ngFor="let fila of  imagenes.slice(0, 4); let i=index">
+          <div class="item"  *ngFor="let img of imagenes.slice((i* 4)+indiceActual, ((i + 1) * 4)+indiceActual)"
+               (click)="seleccionarImagen(img)">
+            <div class="contenedor-foto">
+              <img src="{{img.image}}">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
     <div class="form-group">
       <label class="email">Email:</label>
-      <input type="email" id="email" value="{{ authService.currentUserSig()?.email }}" #emailInput readonly>
+      <input type="email" id="email" value="{{ authService.currentUserSig()?.email }}" #emailInput readonly >
     </div>
     <div class="form-group">
       <label class="username">Username:</label>
-      <input type="text" id="username" value="{{ authService.currentUserSig()?.username }}" #usernameInput readonly>
+      <input type="text" id="username" value="{{ authService.currentUserSig()?.username }}" #usernameInput >
     </div>
+
+
     <div class="form-group">
       <label class="direccion">Dirección:</label>
       <input type="text" id="direccion" name="direccion" #direccionInput maxlength="60">

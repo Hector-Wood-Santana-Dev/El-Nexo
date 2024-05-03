@@ -1,23 +1,29 @@
-import {Component, ElementRef, inject, ViewChild} from '@angular/core';
+import {Component, ElementRef, inject, OnInit, ViewChild} from '@angular/core';
 import {FormsModule} from "@angular/forms";
-import {NgStyle} from "@angular/common";
+import {NgForOf, NgIf, NgStyle} from "@angular/common";
 import {AuthService} from "../../auth.service";
 import {doc, Firestore, setDoc} from "@angular/fire/firestore";
 import {Router} from "@angular/router";
 import 'sweetalert2/src/sweetalert2.scss'
 import Swal from 'sweetalert2';
+import {BODCatalogService} from "../../service/bodcatalog.service";
+import {PerfilService} from "../../service/perfil.service";
+import {Product} from "../../interface/product";
+import {Perfil} from "../../interface/profile";
 
 @Component({
   selector: 'app-perfil-guardar',
   standalone: true,
   imports: [
     NgStyle,
-    FormsModule
+    FormsModule,
+    NgIf,
+    NgForOf
   ],
   templateUrl: './perfil-guardar.component.html',
   styleUrl: './perfil-guardar.component.css'
 })
-export class PerfilGuardarComponent {
+export class PerfilGuardarComponent implements OnInit{
   authService = inject(AuthService)
   @ViewChild('emailInput', { static: true }) emailInput!: ElementRef;
   @ViewChild('usernameInput', { static: true }) usernameInput!: ElementRef;
@@ -29,8 +35,39 @@ export class PerfilGuardarComponent {
   @ViewChild('csvInput', { static: true }) csvInput!: ElementRef;
   @ViewChild('mescaducidadInput', { static: true }) mescaducidadInput!: ElementRef;
   @ViewChild('yearcaducidadInput', { static: true }) yearcaducidadInput!: ElementRef;
-  constructor(private firestore: Firestore, private router: Router) {
+  constructor(private firestore: Firestore, private router: Router, private perfilimage:PerfilService) {
   }
+  selectedImageUrl = this.authService.currentUserSig()?.photoURL;
+  verimagenes:boolean = false;
+  imagenes : Perfil[] = [];
+  indiceActual = 0;
+  foto_elegida = this.authService.currentUserSig()?.photoURL;
+  seleccionarImagen( imageUrl: Perfil) {
+    console.log(this.foto_elegida);
+    this.selectedImageUrl = imageUrl.image;
+    this.foto_elegida = imageUrl.image;
+    console.log(imageUrl.image);
+    this.verimagenes = !this.verimagenes;
+
+  }
+  verImagenes(){
+    this.verimagenes = !this.verimagenes;
+    console.log('cambio');
+  }
+  loading = false;
+  ngOnInit(){
+    if (this.foto_elegida == undefined){
+      this.foto_elegida = '/assets/image/solo-leveling.png'
+    }
+    this.loading=true;
+    this.perfilimage.getImages().subscribe(images=>{
+      this.imagenes=images ;
+      this.originalItems = [...this.imagenes];
+      setTimeout(() => {
+        this.loading = false;
+      }, 3000);});
+  }
+  originalItems = [...this.imagenes];
   soloNumeros(event: any) {
     const pattern = /[0-9]/;
     let inputChar = String.fromCharCode(event.keyCode);
@@ -42,7 +79,7 @@ export class PerfilGuardarComponent {
     }
   }
   soloLetras(event: any) {
-    const pattern = /[a-zA-Z]/;
+    const pattern = /[a-zA-ZñÑ\s]/;
     let inputChar = String.fromCharCode(event.keyCode);
 
     if (!pattern.test(inputChar) && event.keyCode != 8 && event.keyCode != 46) {
@@ -55,11 +92,11 @@ export class PerfilGuardarComponent {
 
   cargarPagina(url: string) {
     this.router.navigate([url]);
+    localStorage.setItem('returnUrl', this.router.url);
   }
 
   async guardarUser() {
     let year = new Date().getFullYear();
-
     const valorEmail = this.emailInput.nativeElement.value;
     const valorUsername = this.usernameInput.nativeElement.value;
     const valorDireccion = this.direccionInput.nativeElement.value;
@@ -92,7 +129,7 @@ export class PerfilGuardarComponent {
       valorTelefono.length != 9 ||
       valorNumeroTarjeta.length != 16 ||
       valorCsv.length != 3 ||
-      valorMesCaducidad.length != 2 ||
+      valorMesCaducidad.length > 2 ||
       valorYearCaducidad.length != 4
     ){      Swal.fire({
       icon: 'error',
@@ -103,24 +140,37 @@ export class PerfilGuardarComponent {
         icon: 'error',
         text: 'Fecha de caducidad inválida.',
       }); }
-      else{
-        if (typeof uid === "string") {
-          await setDoc(doc(this.firestore, "users", uid), {
-            email: valorEmail,
-            username: valorUsername,
-            direccion: valorDireccion,
-            postal: valorPostal,
-            telefono: valorTelefono,
-            nombre_titular: valorNombre,
-            numero_tarjeta: valorNumeroTarjeta,
-            csv: valorCsv,
-            mes_caducidad: valorMesCaducidad,
-            year_caducidad: valorYearCaducidad
-
-          });
+    else {
+      if (typeof uid === "string") {
+        if (this.selectedImageUrl != this.authService.currentUserSig()?.photoURL){
+          await this.authService.actualizarFoto(this.selectedImageUrl);
+          console.log('foto distinta')
         }
-        this.cargarPagina('/profile');
+        if (valorUsername != this.authService.currentUserSig()?.username){
+          await this.authService.actualizarUsername(valorUsername);
+          console.log('username distinto')
+        }
+        if (valorEmail != this.authService.currentUserSig()?.email){
+          await this.authService.actualizarEmail(valorEmail);
+        }
+        await this.authService.actualizarUsername(valorUsername);
+        await setDoc(doc(this.firestore, "users", uid), {
+          email: valorEmail,
+          username: valorUsername,
+          direccion: valorDireccion,
+          postal: valorPostal,
+          telefono: valorTelefono,
+          nombre_titular: valorNombre,
+          numero_tarjeta: valorNumeroTarjeta,
+          csv: valorCsv,
+          mes_caducidad: valorMesCaducidad,
+          year_caducidad: valorYearCaducidad
+        });
       }
+
+      this.cargarPagina('/profile');
+
+    }
 
   }
 

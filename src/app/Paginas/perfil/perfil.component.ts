@@ -1,4 +1,4 @@
-import {Component, ElementRef, inject, ViewChild} from '@angular/core';
+import {Component, ElementRef, inject, OnInit, ViewChild} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgIf, NgStyle} from "@angular/common";
 import {AuthService} from "../../auth.service";
@@ -20,7 +20,9 @@ import {Router} from "@angular/router";
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.css'
 })
-export class PerfilComponent {
+export class PerfilComponent implements OnInit{
+
+
   authService = inject(AuthService)
   @ViewChild('emailInput', {static: true}) emailInput!: ElementRef;
   @ViewChild('usernameInput', {static: true}) usernameInput!: ElementRef;
@@ -33,6 +35,14 @@ export class PerfilComponent {
   @ViewChild('mescaducidadInput', {static: true}) mescaducidadInput!: ElementRef;
   @ViewChild('yearcaducidadInput', {static: true}) yearcaducidadInput!: ElementRef;
 
+  ngOnInit(){
+    let returnUrl = localStorage.getItem('returnUrl');
+      if (returnUrl == '/editar'){
+      localStorage.removeItem('returnUrl');
+      location.reload();
+    }
+
+  }
 
   mostrarDetallesTarjeta: boolean = false;
 

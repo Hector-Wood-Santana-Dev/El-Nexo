@@ -15,12 +15,13 @@ import {NgIf} from "@angular/common";
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit{
+  authService = inject(AuthService)
   isSidebarVisible: boolean = false;
-
+  foto_seleccionada = this.authService.currentUserSig()?.photoURL;
   toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible;
   }
-  authService = inject(AuthService)
+
 
   logout(): void {
     this.authService.logout();
@@ -32,6 +33,10 @@ export class HeaderComponent implements OnInit{
 
   }
   ngOnInit() {
+    console.log('SALE EN EL NAVBAR' + this.foto_seleccionada)
+    if(this.foto_seleccionada == undefined ){
+      this.foto_seleccionada = '/assets/image/solo-leveling.png'
+    }
     this.trolley.getTrolley().subscribe(trolleys=>
       this.result=trolleys);
   }
@@ -39,6 +44,8 @@ export class HeaderComponent implements OnInit{
 
   cargarPagina(url: string) {
     this.router.navigate([url]);
+    localStorage.setItem('returnUrl', this.router.url);
+
   }
 
   abrir(){

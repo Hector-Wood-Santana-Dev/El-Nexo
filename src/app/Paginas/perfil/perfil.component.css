@@ -1,15 +1,24 @@
 .total{
   background-color: rgba(175, 238, 238, 0.78);
-  padding-top:40px;
-  padding-bottom:40px;
+  padding-top: 40px;
+  padding-bottom: 100px;
 }
 .container {
   max-width: 600px;
-  margin: 20px auto;
+  margin: auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.titulo{text-align: center}
+.image-container{
+  text-align: center;
+}
+.image-container img{
+  width:200px;
+  height:200px;
+  border-radius: 50%;
 }
 .form-group {
   margin-bottom: 20px;

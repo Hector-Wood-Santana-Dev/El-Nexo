@@ -11,6 +11,58 @@
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.titulo{text-align: center}
+.photo-url {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.image-grp{
+  text-align: center;
+}
+.image-container {
+  display: flex;
+  justify-content: space-between;
+}
+.main_image{
+  width:200px;
+  height:200px;
+  border-radius: 50%;
+}
+.contenedor-foto{
+  width:100%;
+}
+.contenedor-foto img{
+  border-radius: 50%;
+}
+.contenedor-foto img {
+  transition: filter 0.3s ease;
+}
+
+/* Quita el filtro de escala de grises cuando el puntero está sobre una imagen */
+.contenedor-foto img:hover {
+  transform: scale(1.1);
+}
+
+.image-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  transition: filter 300ms;
+}
+.image-container:has(.image-container img:hover)
+.image-container img:not(:hover){
+  filter: grayscale(100%) brightness(50%);
+}
+
+.image-container img:active {
+  transform: scale(1.1);
+}
+.image-container img.selected {
+  transform: scale(1.1);
 }
 .form-group {
   margin-bottom: 20px;

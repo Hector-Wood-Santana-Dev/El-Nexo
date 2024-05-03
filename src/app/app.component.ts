@@ -24,6 +24,7 @@ export class AppComponent {
           email: user.email!,
           username: user.displayName!,
           uid: user.uid!,
+          photoURL: user.photoURL!,
         });
       } else {
         this.authService.currentUserSig.set(null);
