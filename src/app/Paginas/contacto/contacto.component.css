@@ -46,3 +46,20 @@ body{background-color: rgba(175, 238, 238, 0.78);}
 .info_contact_list {
   margin-left: 1.875em;
 }
+
+@media screen and (max-width: 750px) {
+  p {
+    font-size: 0.65rem;
+    transition: 0.7s;
+  }
+
+  .contact_header h1 {
+    font-size: 1.2rem;
+    transition: 0.7s;
+  }
+
+  h3 {
+    font-size: 1rem;
+    transition: 0.7s;
+  }
+}

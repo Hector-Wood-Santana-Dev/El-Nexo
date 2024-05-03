@@ -55,3 +55,19 @@ li {
   margin-bottom: 0.313em;
 }
 
+@media screen and (max-width: 750px) {
+  p, li, span {
+    font-size: 0.65rem;
+    transition: 0.7s;
+  }
+
+  .policy_header h1 {
+    font-size: 1.2rem;
+    transition: 0.7s;
+  }
+
+  h3 {
+    font-size: 1rem;
+    transition: 0.7s;
+  }
+}
