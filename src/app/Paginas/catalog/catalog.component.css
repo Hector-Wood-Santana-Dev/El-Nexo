@@ -221,6 +221,11 @@ body{
   .mostrador .fila .item .descripcion{
     font-size: 16.5px;
   }
-
+  .seleccion {
+    position: absolute;
+    max-width: 90%;
+    align-content: center;
+    margin-left: 5%;
+  }
 
 }
