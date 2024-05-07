@@ -3,13 +3,15 @@ body {
 }
 
 footer {
-  text-align: right;
+  text-align: center;
   bottom: 0;
   width: 100%;
   background-color: rgba(175,238,238);
 }
 
-
+.row {
+  justify-content: center;
+}
 
 footer hr {
   background-color: white;
@@ -62,14 +64,24 @@ a::before {
   font-size: 14px;
   padding: 10px;
   text-transform: uppercase;
-  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  footer a {
+    margin: 0 6px;
+  }
+  footer li {
+    display: contents;
+  }
 }
 
 /* Estilos para tablet */
 @media screen and (max-width: 768px) {
   footer a {
     font-size: 12px;
+
   }
+
 }
 
 /* Estilos para móvil */
