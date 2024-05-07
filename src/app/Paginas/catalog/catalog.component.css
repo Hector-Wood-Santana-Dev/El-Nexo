@@ -164,7 +164,6 @@ body{
 }
 .descripcion2{
   padding: 30px;
-  font-size: larger;
 }
 /*------------------------------------------------------*/
 /*Valoracion */
@@ -226,6 +225,15 @@ body{
     max-width: 90%;
     align-content: center;
     margin-left: 5%;
+  }
+
+  .info h2, .nombrePrecio, .info .fila button {
+    font-size: small;
+  }
+
+  .rating {
+    width: 50%;
+    height: 50%;
   }
 
 }
