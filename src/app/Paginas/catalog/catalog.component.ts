@@ -86,6 +86,7 @@ export class CatalogComponent implements OnInit{
 
     if (activeFilters.length > 0) {
       filteredItems = filteredItems.filter(item => activeFilters.some(([key, value]) => item.categoria === key));
+      this.indiceActual = 0;
     }
 
     this.productos = filteredItems;
@@ -131,15 +132,17 @@ export class CatalogComponent implements OnInit{
 
 
   mover(direccion: number) {
-    this.indiceActualAnterior= this.indiceActual
+    this.indiceActualAnterior = this.indiceActual;
     this.indiceActual += direccion;
-    console.log(this.productos.length)
-    if(direccion==1) console.log(1)
-    if (direccion==-1)console.log(-1)
-    if (this.indiceActual < 0) this.indiceActual = 0;
-    if (this.indiceActual >= this.productos.length) this.indiceActual= this.indiceActualAnterior;
-    console.log(this.indiceActual)
 
+    if (this.indiceActual < 0) {
+      this.indiceActual = 0;
+    }
+
+    if (this.indiceActual >= this.productos.length) {
+      this.indiceActual = this.indiceActualAnterior;
+    }
   }
 }
+
 
