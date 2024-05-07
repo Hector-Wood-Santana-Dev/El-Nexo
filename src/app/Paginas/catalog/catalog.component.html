@@ -12,7 +12,7 @@
 <div class="catalogo-fondo">
   <section class="contenido">
     <div class="mostrador" id="mostrador">
-      <div class="fila row" *ngFor="let fila of  productos.slice(0, 2); let i=index">
+      <div class="fila row justify-content-center" *ngFor="let fila of  productos.slice(0, 2); let i=index">
         <div class="item"  *ngFor="let product of productos.slice((i* 4)+indiceActual, ((i + 1) * 4)+indiceActual)"
 
              (click)="seleccionarProducto(product)">
