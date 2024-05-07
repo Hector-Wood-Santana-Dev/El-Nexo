@@ -5,17 +5,27 @@ import {Product} from "../../interface/product";
 import {AuthService} from "../../auth.service";
 import {NgIf} from "@angular/common";
 
+import {MatButtonToggle, MatButtonToggleGroup} from '@angular/material/button-toggle';
+
+import {ChangeLanguageService} from "../../service/change-language.service";
+import {ReadTextService} from "../../service/read-text.service";
+
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
-    NgIf
+    NgIf,
+    MatButtonToggle,
+    MatButtonToggleGroup,
+
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
+
 export class HeaderComponent implements OnInit{
   isSidebarVisible: boolean = false;
+  datosJson: any;
 
   toggleSidebar() {
     this.isSidebarVisible = !this.isSidebarVisible;
@@ -27,13 +37,18 @@ export class HeaderComponent implements OnInit{
   }
 
   result:Product[];
-  constructor(private router: Router, private trolley:TrolleyServiceService){
+  constructor(private router: Router, private trolley:TrolleyServiceService, private ChangeLanguageService:ChangeLanguageService, private ReadText: ReadTextService) {
     this.result=[];
 
   }
   ngOnInit() {
     this.trolley.getTrolley().subscribe(trolleys=>
       this.result=trolleys);
+
+    this.updateJson();
+    this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
+      this.updateJson();
+    })
   }
 
 
@@ -53,6 +68,16 @@ export class HeaderComponent implements OnInit{
     const elementCerrar = document.querySelector("#cerrar")!;
     elementCerrar.addEventListener('click', () => {
       nav.classList.remove("visible");
+    })
+  }
+
+  changeLanguage(language:string){
+    this.ChangeLanguageService.setLanguage(language);
+  }
+
+  updateJson(){
+    this.ReadText.getJson().subscribe(json => {
+      this.datosJson = json;
     })
   }
 

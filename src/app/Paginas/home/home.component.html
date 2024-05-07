@@ -9,28 +9,28 @@
 <body>
 <div class="container col-md-12 bg-danger">
   <img class="cielo " src="https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2Fcielo.png?alt=media&token=f5cbc34a-cc14-4d96-8286-20e26bab8b61"alt="logo">
-  <div class="texto-centrado">De cómics a animes, ¡tu universo friki en un solo lugar!</div>
+  <div class="texto-centrado">{{ datosJson.paginas.home.texto_centrado }}</div>
 </div>
 <div class="ofrecemos">
-Ofrecemos
+  {{ datosJson.paginas.home.ofrecemos }}
 </div>
   <div class="ofrecemosimg">
     <img src="https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2FrecordOftagnarok.png?alt=media&token=686ab26b-78ba-4fd0-9b04-f08412fd7ccb" style="width: 221px; height: 221px;border-radius: 50%;"  >
-    <div class="centered-tex-img">Manga</div>
+    <div class="centered-tex-img">{{ datosJson.paginas.home.manga }}</div>
   </div>
   <div class="ofrecemosimg" >
     <img src="https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2Fwallhaven.jpg?alt=media&token=d82703a9-1972-4158-a7b1-d53d8d77269c" style="width: 221px; height: 221px;border-radius: 50%;">
-    <div class="centered-tex-img">Comics</div>
+    <div class="centered-tex-img">{{ datosJson.paginas.home.comics }}</div>
 
   </div>
   <div class="ofrecemosimg" >
     <img src="https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2Fsolo-leveling.png?alt=media&token=1c074bdb-054f-4576-b617-738fa729d934" style="width: 221px; height: 221px;border-radius: 50%;">
-    <div class="centered-tex-img">Anime</div>
+    <div class="centered-tex-img">{{ datosJson.paginas.home.anime }}</div>
 
   </div>
   <div class="ofrecemosimg" >
     <img src="https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2Ffiguras.png?alt=media&token=8deb17b0-3841-4fa8-9930-58883ff4ab2b" style="width: 221px; height: 221px;border-radius: 50%;">
-    <div class="centered-tex-img">Figuras</div>
+    <div class="centered-tex-img">{{ datosJson.paginas.home.figuras }}</div>
 
   </div>
 
@@ -38,12 +38,12 @@ Ofrecemos
   <img src="https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2FAnime-banner.jpg?alt=media&token=0d56e3a1-8e33-4313-8870-91aa9010589a" class="background-image">
   <div class="text-content">
     <!-- Inserta tu texto aquí -->
-    El objetivo<br>
-    La misión de "El  Nexus" era clara: ser un puente entre el mundo de los cómics y el manga y el mundo normal. Querían demostrar que estos mundos no estaban tan separados como uno podría pensar. Que las historias, los personajes y las lecciones que encontramos en los cómics y el manga pueden enriquecer nuestras vidas cotidianas.
+    {{ datosJson.paginas.home.texto1 }}<br>
+    {{ datosJson.paginas.home.texto2 }}
   </div>
 </div>
-<div class="ofrecemos" id="colaborar" (mouseover)="cambiarTexto()" (mouseout)="textoOriginal()">
-  {{texto}}
+<div class="ofrecemos" id="colaborar">
+  {{ datosJson.paginas.home.texto3 }}
 </div>
 <div class="ofrecemosimg" >
   <!--DE CARA A PRODUCCION HABRIA QUE TOMAR MEDIDAS SOBRE TEMAS LEGALES CON LAS MARCAS PEMITENTES-->

@@ -5,6 +5,10 @@ import {NgForOf, NgIf} from "@angular/common";
 import 'sweetalert2/src/sweetalert2.scss'
 import Swal from 'sweetalert2';
 import {Router} from "@angular/router";
+
+import {ReadTextService} from "../../service/read-text.service";
+import {ChangeLanguageService} from "../../service/change-language.service";
+
 @Component({
   selector: 'app-trolley',
   standalone: true,
@@ -16,9 +20,12 @@ import {Router} from "@angular/router";
   styleUrl: './trolley.component.css'
 })
 export class TrolleyComponent implements OnInit{
+  datosJson: any;
+
   trolley:Product[]
   total:number;
-  constructor(protected trolleyService:TrolleyServiceService, private router:Router) {
+
+  constructor(protected trolleyService:TrolleyServiceService, private router:Router, private ReadText: ReadTextService, private ChangeLanguageService: ChangeLanguageService) {
     this.trolley=[]
     this.total=0
   }
@@ -26,6 +33,12 @@ export class TrolleyComponent implements OnInit{
     this.trolleyService.getTrolley().subscribe(trolleys=>
       this.trolley=trolleys);
     this.trolleyService.getTotal().subscribe(total=> this.total=total);
+
+    this.updateJson();
+
+    this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
+      this.updateJson();
+    })
   }
 
   clickDelete(product:Product){
@@ -44,6 +57,12 @@ export class TrolleyComponent implements OnInit{
       return true
     }
     return false
+  }
+
+  updateJson(){
+    this.ReadText.getJson().subscribe(json => {
+      this.datosJson = json;
+    })
   }
 
 }

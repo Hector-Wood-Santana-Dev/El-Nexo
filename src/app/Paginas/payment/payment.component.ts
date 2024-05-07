@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import Swal from "sweetalert2";
+
+import {ReadTextService} from "../../service/read-text.service";
+import {ChangeLanguageService} from "../../service/change-language.service";
 
 @Component({
   selector: 'app-payment',
@@ -13,8 +16,10 @@ import Swal from "sweetalert2";
   templateUrl: './payment.component.html',
   styleUrl: './payment.component.css'
 })
-export class PaymentComponent {
-  constructor(private router:Router) {
+export class PaymentComponent implements OnInit{
+  datosJson: any;
+
+  constructor(private router:Router, private ReadText: ReadTextService, private ChangeLanguageService: ChangeLanguageService) {
   }
   buyForm = new FormGroup({
     name: new FormControl('', Validators.required),
@@ -143,5 +148,18 @@ export class PaymentComponent {
 
   }
 
+  ngOnInit(): void{
+    this.updateJson();
+
+    this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
+      this.updateJson();
+    })
+  }
+
+  updateJson(){
+    this.ReadText.getJson().subscribe(json => {
+      this.datosJson = json;
+    })
+  }
 
 }
