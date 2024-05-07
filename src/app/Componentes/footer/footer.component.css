@@ -3,7 +3,7 @@ body {
 }
 
 footer {
-  text-align: center;
+  text-align: right;
   bottom: 0;
   width: 100%;
   background-color: rgba(175,238,238);
@@ -62,6 +62,7 @@ a::before {
   font-size: 14px;
   padding: 10px;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* Estilos para tablet */
