@@ -62,4 +62,8 @@ body{background-color: rgba(175, 238, 238, 0.78);}
     font-size: 1rem;
     transition: 0.7s;
   }
+
+  .contact_image {
+    display: none;
+  }
 }
