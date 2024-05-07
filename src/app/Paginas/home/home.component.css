@@ -158,9 +158,11 @@ body{
 
   .text-content {
     width: 536px;
-    transform: translate(5%,-80%);
-    font-size: 1.8em;
+    transform: translate(-10%,-80%);
+    font-size: 1.5em;
     transition: 0.7s;
+    padding: -1px;
+    height: 525px;
   }
 }
 
