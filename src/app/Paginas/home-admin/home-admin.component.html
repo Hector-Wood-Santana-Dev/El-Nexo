@@ -15,10 +15,10 @@
 </div>
 <div class="row" *ngFor="let product of productos">
   <div class="col-12 justify-content-center" style="margin-top: 1% ">
-    <div style="background-color: black;height: 1px; margin-left: 10%"></div>
+    <div style="background-color: white;height: 1px; margin-left: 10%"></div>
   </div>
   <div class="col-md-4  d-flex justify-content-center"><img src="{{product.imagen}}"></div>
-  <div class="col-md-4  d-flex  align-items-start" style="flex-direction: column;">
+  <div class="col-md-4  d-flex  align-items-lg-start align-items-sm-center" style="flex-direction: column;color: white;">
     <br>{{product.nombre}} <br>
     {{product.descripcion}}<br>
     {{product.precio}}€
