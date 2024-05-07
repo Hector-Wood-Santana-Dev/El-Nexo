@@ -1,7 +1,66 @@
-import { Component } from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import Swal from "sweetalert2";
+import {AuthService} from "../../auth.service";
+import {Firestore, setDoc, doc, collection, getDoc} from "@angular/fire/firestore";
+
+
+async function getData(user: AuthService,database:Firestore) {
+  const uid = user.currentUserSig()?.uid;
+  console.log(uid);
+  if(typeof uid === "string"){
+    const docRef = doc(database, "users", uid);
+    const docSnap = await getDoc(docRef);
+
+
+
+    if (docSnap.exists()) {
+      const userData = docSnap.data();
+
+      let nombre = userData['name']
+      let tlf
+      let tarjeta
+      let csv
+      let mes
+      let año
+      let direccion
+      let postal
+      let name1:HTMLInputElement | null = document.getElementById('name1');
+      if(name1){
+        name1.value = "hcaud";
+      }
+      console.log("Document data:", docSnap.data());
+    } else {
+      // docSnap.data() will be undefined in this case
+
+      console.log("No such document!");
+    }
+  }
+
+  // try {
+  //   const userDoc = await getDoc(userRef);
+  //
+  //   if (userDoc.exists()) {
+  //     const userData = userDoc.data();
+  //     // this.postalValue = userData['postal'];
+  //     // this.TelefonoValue = userData['telefono'];
+  //     // this.DireccionValue = userData['direccion'];
+  //     // this.NombreValue = userData['nombre_titular'];
+  //     // this.TarjetaValue = userData['numero_tarjeta'];
+  //     // this.CSVValue = userData['csv'];
+  //     // this.MesValue = userData['mes_caducidad'];
+  //     // this.YearValue = userData['year_caducidad'];
+  //     // console.log(this.postalValue);
+  //     // console.log(this.CSVValue);
+  //
+  //   } else {
+  //     console.log('No se encontró el documento para el UID especificado.');
+  //   }
+  // } catch (error) {
+  //   console.error('Error al recuperar los datos del usuario:', error);
+  // }
+}
 
 @Component({
   selector: 'app-payment',
@@ -13,9 +72,12 @@ import Swal from "sweetalert2";
   templateUrl: './payment.component.html',
   styleUrl: './payment.component.css'
 })
-export class PaymentComponent {
-  constructor(private router:Router) {
+export class PaymentComponent implements OnInit{
+  authService = inject(AuthService);
+
+  constructor(private firestore:Firestore, private router:Router) {
   }
+
   buyForm = new FormGroup({
     name: new FormControl('', Validators.required),
     tarjeta: new FormControl('',[Validators.required, Validators.maxLength(16), Validators.minLength(16)]),
@@ -25,7 +87,7 @@ export class PaymentComponent {
     telefono: new FormControl('', [Validators.required, Validators.maxLength(9), Validators.minLength(9)]),
     postal: new FormControl('', [Validators.required, Validators.maxLength(5), Validators.minLength(5)]),
     direccion: new FormControl('', Validators.required),
-
+    guardar: new FormControl(false),
 
   });
   soloNumeros(e: KeyboardEvent) {
@@ -33,8 +95,31 @@ export class PaymentComponent {
     return !isNaN(Number(key));
   }
   confirmarPago(){
+    let formulario = this.buyForm
+    let firestore = this.firestore;
+    let user = this.authService;
+    const uid: string | undefined = user.currentUserSig()?.uid;
+
+    async function guardarDatos() {
+      if(typeof uid === "string" ){
+        await setDoc(doc(firestore, "users", uid),
+         {
+          direccion: formulario.get('direccion')?.value,
+          postal: formulario.get('postal')?.value,
+          telefono: formulario.get('telefono')?.value,
+          nombre_titular: formulario.get('name')?.value,
+          numero_tarjeta: formulario.get('tarjeta')?.value,
+          csv: formulario.get('csv')?.value,
+          mes_caducidad: formulario.get('mes')?.value,
+          year_caducidad: formulario.get('año')?.value
+        });
+      }
+    }
 
     if (this.buyForm.valid) {
+      console.log(this.buyForm.get('guardar')?.value);
+      guardarDatos();
+
       console.log('Formulario enviado!');
       sessionStorage.removeItem('misProductos');
       this.router.navigate(['catalog']);
@@ -142,6 +227,11 @@ export class PaymentComponent {
     }
 
   }
+
+   ngOnInit(): void {
+       getData(this.authService,this.firestore);
+  }
+
 
 
 }
