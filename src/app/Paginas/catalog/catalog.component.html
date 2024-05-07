@@ -5,10 +5,14 @@
 <div *ngIf="loading"><app-loader></app-loader></div>
 <div *ngIf="!loading">
 <!--barra de busqueda-->
-<div class="buscar">
-  <app-search></app-search>
-
-</div>
+  <div class="buscar">
+    <div class="search-container">
+      <app-search></app-search>
+    </div>
+    <div class="filter-container">
+      <app-filter></app-filter>
+    </div>
+  </div>
 <div class="catalogo-fondo">
   <section class="contenido">
     <div class="mostrador" id="mostrador">

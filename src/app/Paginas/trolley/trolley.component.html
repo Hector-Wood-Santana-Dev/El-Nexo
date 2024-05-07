@@ -2,8 +2,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body >
-<div class="row" *ngFor="let product of trolley.splice(0,trolley.length)">
-  <div class="col-12 justify-content-center" style="margin-top: 1% ">
+<div class="row" *ngFor="let product of trolley">  <div class="col-12 justify-content-center" style="margin-top: 1% ">
     <div style="background-color: black;height: 1px; margin-left: 10%"></div>
   </div>
   <div class="col-md-4  d-flex justify-content-center"><img src="{{product.imagen}}"></div>

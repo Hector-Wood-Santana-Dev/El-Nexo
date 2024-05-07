@@ -21,9 +21,22 @@ body{
 }
 
 
-.buscar{
+.buscar {
+  display: flex;
   margin-top: 20px;
+  justify-content: center; /* Ajustamos la alineación al centro */
+  align-items: center;
+  padding: 10px;
 }
+
+.search-container {
+  flex-grow: 1; /* Esto permite que el contenedor de búsqueda ocupe el espacio restante */
+}
+
+.filter-container {
+  order:-1;
+}
+
 /*-------------------------------------------------------------*/
 /*catalogo*/
 .contenido{
