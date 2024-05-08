@@ -149,6 +149,9 @@ body{
 }
 
 @media screen and (max-width: 750px) {
+  .texto-centrado {
+    font-size: xxx-large;
+  }
   .centered-tex-img{
     transform: translate(20%,-250%);
   }
