@@ -123,4 +123,7 @@ img{
   .total {
     margin-top: 10%;
   }
+  .product-details {
+    align-content: center;
+  }
 }
