@@ -225,6 +225,7 @@ body{
     max-width: 90%;
     align-content: center;
     margin-left: 5%;
+    height: 75%;
   }
 
   .info h2, .nombrePrecio, .info .fila button {
