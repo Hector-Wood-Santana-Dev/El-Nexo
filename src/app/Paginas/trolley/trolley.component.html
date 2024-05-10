@@ -25,10 +25,10 @@ delete
 </div>
 <div class="row" *ngIf="esMayor()">
   <div class="col-md-8 "></div>
-  <div class="col-md-2 d-flex justify-content-center align-items-center"> Total de la cesta: {{total}} €
-  <br>Impuestos: {{impuestos}} €
-    <br>Gastos de envio: {{gastosEn}} €
-    <br> Total: {{pagar}} €
+  <div class="col-md-2 d-flex justify-content-center align-items-center"> {{ datosJson.paginas.carrito.cesta }} {{total}} {{ datosJson.paginas.carrito.euro }}
+  <br>{{ datosJson.paginas.carrito.impuestos }} {{impuestos}} {{ datosJson.paginas.carrito.euro }}
+    <br>{{ datosJson.paginas.carrito.gastosenvio }} {{gastosEn}} {{ datosJson.paginas.carrito.euro }}
+    <br> {{ datosJson.paginas.carrito.total }} {{pagar}} {{ datosJson.paginas.carrito.euro }}
   </div>
   <div class="col-md-2 d-flex justify-content-center align-items-center">
     <div *ngIf="authService.currentUserSig()">

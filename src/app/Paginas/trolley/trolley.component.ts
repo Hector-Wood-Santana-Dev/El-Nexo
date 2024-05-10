@@ -59,6 +59,7 @@ export class TrolleyComponent implements OnInit{
 
   cargarPagina(url: string) {
     this.router.navigate([url]);
+    localStorage.setItem('returnUrl', this.router.url);
   }
 
   clickDelete(product:Product){
