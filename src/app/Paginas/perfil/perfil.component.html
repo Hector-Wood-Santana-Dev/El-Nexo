@@ -19,7 +19,7 @@
 
     <div class="form-group">
 
-      <button class="sidebar" (click)="getUserData()">Mostrar Datos de Compra</button>
+      <button class='botones' (click)="getUserData()">Mostrar Datos de Compra</button>
       <div [ngStyle]="{'display': mostrarDetallesTarjeta ? 'block' : 'none'}">
         <div class="form-group">
           <label class="direccion">Dirección:</label>
@@ -55,7 +55,8 @@
         </div>
       </div>
     </div>
-    <button (click)="cargarPagina('editar')" type="submit">Editar</button>
+    <button class='botones' (click)="cargarPagina('editar')" type="submit">Editar</button>
+    <button class='botones-del' (click)="EliminarTarjeta()" type="submit">Eliminar Datos de Tarjeta</button>
     </form>
 </div>
 </div>

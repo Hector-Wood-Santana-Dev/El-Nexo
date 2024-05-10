@@ -38,6 +38,24 @@
 .contenedor-foto img{
   border-radius: 50%;
 }
+
+.botones {
+  background-image: linear-gradient(to bottom, #cccccc, #999999);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bolder;
+}
+.botones:hover{
+  color:black;
+}
 .contenedor-foto img {
   transition: filter 0.3s ease;
 }
