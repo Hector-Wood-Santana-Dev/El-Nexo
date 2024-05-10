@@ -146,6 +146,33 @@
       "contrasena" : "Password",
       "acceder" : "Access",
       "nombre" : "User Name"
+    },
+    "filter" : {
+      "categorias" : "All categories",
+      "figura" : "Figures",
+      "peluche" : "Dolls",
+      "videojuego" : "Videogames",
+      "manga" : "Mangas",
+      "comic" : "Comics"
+    },
+    "perfil": {
+      "perfil" : "Profile",
+      "email" : "Email:",
+      "nombreusuario" : "Username:",
+      "datoscompra" : "Show Shopping Information",
+      "direccion" : "Address:",
+      "codigopostal" : "Postal Code:",
+      "telefono" : "Phone Number:",
+      "nombre" : "Cardholder:",
+      "tarjeta" : "Card Number:",
+      "csv" : "CSV:",
+      "mescaducidad" : "Expiration Month:",
+      "anocaducidad" : "Expiration Year",
+      "editar" : "Edit",
+      "eliminar" : "Delete Card Information",
+      "seleccionimagen" : "Choose an image:",
+      "guardar" : "Save",
+      "atras" : "Go back"
     }
   }
 

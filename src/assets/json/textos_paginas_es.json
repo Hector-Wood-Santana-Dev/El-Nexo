@@ -144,6 +144,34 @@
         "contrasena" : "Contraseña",
         "acceder" : "Acceder",
         "nombre" : "Nombre de Usuario"
+      },
+      "filter" : {
+        "categorias" : "Todas las categorías",
+        "figura" : "Figuras",
+        "peluche" : "Peluches",
+        "videojuego" : "Videojuegos",
+        "manga" : "Mangas",
+        "comic" : "Comics"
+      },
+      "perfil": {
+        "perfil" : "Perfil",
+        "email" : "Email:",
+        "nombreusuario" : "Nombre de Usuario:",
+        "datoscompra" : "Mostrar los datos de compra",
+        "direccion" : "Dirección:",
+        "codigopostal" : "Código Postal:",
+        "telefono" : "Teléfono:",
+        "nombre" : "Nombre del Titular:",
+        "tarjeta" : "Número de Tarjeta:",
+        "csv" : "CSV:",
+        "mescaducidad" : "Mes de Caducidad:",
+        "anocaducidad" : "Año de Caducidad",
+        "editar" : "Editar",
+        "eliminar" : "Eliminar Datos de Tarjeta",
+        "seleccionimagen" : "Selecciona una imagen:",
+        "guardar" : "Guardar",
+        "atras" : "Atras"
+
       }
     }
 

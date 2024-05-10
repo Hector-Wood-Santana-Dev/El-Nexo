@@ -5,8 +5,8 @@ import {AuthService} from "../../auth.service";
 import {collection, doc, Firestore, getDoc, setDoc} from "@angular/fire/firestore";
 import {Router} from "@angular/router";
 
-
-
+import {ReadTextService} from "../../service/read-text.service";
+import {ChangeLanguageService} from "../../service/change-language.service";
 
 @Component({
   selector: 'app-perfil',
@@ -21,7 +21,7 @@ import {Router} from "@angular/router";
   styleUrl: './perfil.component.css'
 })
 export class PerfilComponent implements OnInit {
-
+  datosJson: any;
 
   authService = inject(AuthService)
   @ViewChild('emailInput', {static: true}) emailInput!: ElementRef;
@@ -41,6 +41,11 @@ export class PerfilComponent implements OnInit {
       localStorage.removeItem('returnUrl');
       location.reload();
     }
+    this.updateJson();
+
+    this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
+      this.updateJson();
+    })
 
   }
 
@@ -55,8 +60,14 @@ export class PerfilComponent implements OnInit {
   MesValue: string | undefined;
   YearValue: string | undefined;
 
-  constructor(private firestore: Firestore, private router: Router) {
+  constructor(private firestore: Firestore, private router: Router, private ReadText: ReadTextService, private ChangeLanguageService: ChangeLanguageService) {
 
+  }
+
+  updateJson(){
+    this.ReadText.getJson().subscribe(json => {
+      this.datosJson = json;
+    })
   }
 
   cargarPagina(url: string) {

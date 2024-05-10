@@ -11,6 +11,9 @@ import {PerfilService} from "../../service/perfil.service";
 import {Product} from "../../interface/product";
 import {Perfil} from "../../interface/profile";
 
+import {ReadTextService} from "../../service/read-text.service";
+import {ChangeLanguageService} from "../../service/change-language.service";
+
 @Component({
   selector: 'app-perfil-guardar',
   standalone: true,
@@ -24,6 +27,7 @@ import {Perfil} from "../../interface/profile";
   styleUrl: './perfil-guardar.component.css'
 })
 export class PerfilGuardarComponent implements OnInit{
+  datosJson: any;
   authService = inject(AuthService)
   @ViewChild('emailInput', { static: true }) emailInput!: ElementRef;
   @ViewChild('usernameInput', { static: true }) usernameInput!: ElementRef;
@@ -35,7 +39,7 @@ export class PerfilGuardarComponent implements OnInit{
   @ViewChild('csvInput', { static: true }) csvInput!: ElementRef;
   @ViewChild('mescaducidadInput', { static: true }) mescaducidadInput!: ElementRef;
   @ViewChild('yearcaducidadInput', { static: true }) yearcaducidadInput!: ElementRef;
-  constructor(private firestore: Firestore, private router: Router, private perfilimage:PerfilService) {
+  constructor(private firestore: Firestore, private router: Router, private perfilimage:PerfilService,private ReadText: ReadTextService, private ChangeLanguageService: ChangeLanguageService) {
   }
   selectedImageUrl = this.authService.currentUserSig()?.photoURL;
   verimagenes:boolean = false;
@@ -56,6 +60,11 @@ export class PerfilGuardarComponent implements OnInit{
   }
   loading = false;
   ngOnInit(){
+    this.updateJson();
+
+    this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
+      this.updateJson();
+    })
     if (this.foto_elegida == undefined){
       this.foto_elegida = 'https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2Fsolo-leveling.png?alt=media&token=1c074bdb-054f-4576-b617-738fa729d934'
     }
@@ -78,6 +87,13 @@ export class PerfilGuardarComponent implements OnInit{
       event.preventDefault();
     }
   }
+
+  updateJson(){
+    this.ReadText.getJson().subscribe(json => {
+      this.datosJson = json;
+    })
+  }
+
   soloLetras(event: any) {
     const pattern = /[a-zA-ZñÑ\s]/;
     let inputChar = String.fromCharCode(event.keyCode);
