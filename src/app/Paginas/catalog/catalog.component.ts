@@ -30,11 +30,7 @@ export class CatalogComponent implements OnInit{
   indiceActual = 0;
   indiceActualAnterior=0;
 
-  authService = inject(AuthService)
 
-  cargarPagina(url: string) {
-    this.router.navigate([url]);
-  }
 
   constructor(private router: Router,
               protected trolley:TrolleyServiceService,

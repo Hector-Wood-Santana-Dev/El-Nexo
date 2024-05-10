@@ -27,9 +27,14 @@ delete
   <div class="col-md-8 "></div>
   <div class="col-md-2 d-flex justify-content-center align-items-center total"> Total: {{total}} €</div>
   <div class="col-md-2 d-flex justify-content-center align-items-center">
-    <button class="pagar" (click)="clickPagar()">
-      <span>Pagar</span>
-    </button>
+    <div *ngIf="authService.currentUserSig()">
+      <button class="pagar" (click)="clickPagar()">
+        <span>Pagar</span>
+      </button>
+    </div>
+    <div *ngIf="!authService.currentUserSig()">
+      <button class="pagar" (click)="cargarPagina('login')">Pagar</button>
+    </div>
   </div>
 </div>
 </body>
