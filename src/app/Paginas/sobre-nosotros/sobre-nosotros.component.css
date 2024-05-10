@@ -83,16 +83,19 @@ body{
 .down-container {
   display: flex;
   margin:30px;
+  align-items: flex-start;
 }
 .down_container_header{
-  position: absolute;
   width: 400px;
-  margin-left:50%;
 
 }
 .down_container_header h1{
   color: black;
   font-size: xx-large;
+}
+
+.image-container {
+  flex: 0 0 auto;
 }
 
 .image-container img {
@@ -102,17 +105,28 @@ body{
 
 }
 
+.content-container {
+  flex:1;
+  padding-left: 20px;
+}
+
 .text-container{
-  position: absolute;
-  margin-left: 45%;
   text-align: justify;
   margin-top: 50px;
   margin-bottom: 50px;
-  width:auto;
 
 }
 .text-container p{
   color:  black;
   width: 95%;
-  font-size: larger;
+}
+
+@media screen and (max-width: 995px){
+  .image-container {
+    display: none;
+  }
+  .text-container p {
+    font-size:small;
+    transition: 0.7s;
+  }
 }

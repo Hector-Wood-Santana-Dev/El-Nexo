@@ -166,3 +166,12 @@ button:active::after {
 .checkboxGuardar {
   margin-top: 50px;
 }
+
+@media screen and (max-width: 750px){
+  .expiration-date {
+    font-size: .8rem;
+    margin-top: .8rem;
+    margin-right: .8em;
+    transition: 0.7s;
+  }
+}

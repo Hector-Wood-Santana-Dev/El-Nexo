@@ -7,7 +7,7 @@
     <div style="background-color: black;height: 1px; margin-left: 10%"></div>
   </div>
   <div class="col-md-4  d-flex justify-content-center"><img src="{{product.imagen}}"></div>
-  <div class="col-md-4  d-flex  align-items-start" style="flex-direction: column;">
+  <div class="col-md-4  d-flex flex-wrap  align-items-lg-start align-items-sm-center product-details" style="flex-direction: column;">
     <br>{{product.nombre}} <br>
     {{product.descripcion}}<br>
     {{product.precio}}€
@@ -25,7 +25,7 @@ delete
 </div>
 <div class="row" *ngIf="esMayor()">
   <div class="col-md-8 "></div>
-  <div class="col-md-2 d-flex justify-content-center align-items-center"> Total: {{total}} €</div>
+  <div class="col-md-2 d-flex justify-content-center align-items-center total"> Total: {{total}} €</div>
   <div class="col-md-2 d-flex justify-content-center align-items-center">
     <button class="pagar" (click)="clickPagar()">
       <span>Pagar</span>
