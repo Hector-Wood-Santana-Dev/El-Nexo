@@ -15,6 +15,40 @@
 .image-container{
   text-align: center;
 }
+.botones {
+  background-image: linear-gradient(to bottom, #cccccc, #999999);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bolder;
+}
+.botones:hover{
+  color:black;
+}
+.botones-del{
+  background-image: linear-gradient(to bottom, #cccccc, #999999);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bolder;
+}
+.botones-del:hover{
+  color:red;
+}
 .image-container img{
   width:200px;
   height:200px;

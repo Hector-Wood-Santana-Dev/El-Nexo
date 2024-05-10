@@ -63,6 +63,7 @@
           authService.currentUserSig()?.photoURL : '/assets/image/solo-leveling.png' }}">
           <p><a href="/conf" class="sidebar-link">{{ datosJson.header.sidebar.configuracion }}</a></p>
           <p><a href="/profile" class="sidebar-link">{{ datosJson.header.sidebar.perfil }}</a></p>
+          <p><a *ngIf="authService.currentUserSig()?.email === 'adminnexo@nexo.com'" href="/admin" class="sidebar-link">Administrador</a></p>
           <p><a  class="sidebar-link" (click)="logout()">{{ datosJson.header.sidebar.cerrar_sesion }}</a></p>
         </div>
 

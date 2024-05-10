@@ -20,7 +20,7 @@ import {Router} from "@angular/router";
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.css'
 })
-export class PerfilComponent implements OnInit{
+export class PerfilComponent implements OnInit {
 
 
   authService = inject(AuthService)
@@ -35,9 +35,9 @@ export class PerfilComponent implements OnInit{
   @ViewChild('mescaducidadInput', {static: true}) mescaducidadInput!: ElementRef;
   @ViewChild('yearcaducidadInput', {static: true}) yearcaducidadInput!: ElementRef;
 
-  ngOnInit(){
+  ngOnInit() {
     let returnUrl = localStorage.getItem('returnUrl');
-      if (returnUrl == '/editar'){
+    if (returnUrl == '/editar') {
       localStorage.removeItem('returnUrl');
       location.reload();
     }
@@ -48,16 +48,17 @@ export class PerfilComponent implements OnInit{
 
   postalValue: string | undefined;
   TelefonoValue: string | undefined;
-  DireccionValue : string | undefined;
-  NombreValue : string | undefined;
-  TarjetaValue : string | undefined;
-  CSVValue : string | undefined;
-  MesValue : string | undefined;
-  YearValue : string | undefined;
+  DireccionValue: string | undefined;
+  NombreValue: string | undefined;
+  TarjetaValue: string | undefined;
+  CSVValue: string | undefined;
+  MesValue: string | undefined;
+  YearValue: string | undefined;
 
   constructor(private firestore: Firestore, private router: Router) {
 
   }
+
   cargarPagina(url: string) {
     this.router.navigate([url]);
   }
@@ -90,6 +91,7 @@ export class PerfilComponent implements OnInit{
       console.error('Error al recuperar los datos del usuario:', error);
     }
   }
+
   async guardarUser() {
     const valorEmail = this.emailInput.nativeElement.value;
     const valorUsername = this.usernameInput.nativeElement.value;
@@ -117,5 +119,26 @@ export class PerfilComponent implements OnInit{
 
       });
     }
+  }
+
+  async EliminarTarjeta() {
+    const uid: string | undefined = this.authService.currentUserSig()?.uid;
+    const valorEmail = this.emailInput.nativeElement.value;
+    const valorUsername = this.usernameInput.nativeElement.value;
+    if (typeof uid === "string") {
+      await setDoc(doc(this.firestore, "users", uid), {
+        username: valorUsername,
+        email: valorEmail,
+        direccion: '',
+        postal: '',
+        telefono: '',
+        nombre_titular: '',
+        numero_tarjeta: '',
+        csv: '',
+        mes_caducidad: '',
+        year_caducidad: '',
+      });
+    }
+    location.reload();
   }
 }
