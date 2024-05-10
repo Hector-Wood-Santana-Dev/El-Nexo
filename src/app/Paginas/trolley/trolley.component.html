@@ -25,7 +25,11 @@ delete
 </div>
 <div class="row" *ngIf="esMayor()">
   <div class="col-md-8 "></div>
-  <div class="col-md-2 d-flex justify-content-center align-items-center"> Total: {{total}} €</div>
+  <div class="col-md-2 d-flex justify-content-center align-items-center"> Total de la cesta: {{total}} €
+  <br>Impuestos: {{impuestos}} €
+    <br>Gastos de envio: {{gastosEn}} €
+    <br> Total: {{pagar}} €
+  </div>
   <div class="col-md-2 d-flex justify-content-center align-items-center">
     <button class="pagar" (click)="clickPagar()">
       <span>Pagar</span>
