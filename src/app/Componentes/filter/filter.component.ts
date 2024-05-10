@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {NgClass} from "@angular/common";
 import {FilterService} from "../../service/filter.service";
 
+import {ReadTextService} from "../../service/read-text.service";
+import {ChangeLanguageService} from "../../service/change-language.service";
+
 @Component({
   selector: 'app-filter',
   standalone: true,
@@ -12,6 +15,7 @@ import {FilterService} from "../../service/filter.service";
   styleUrl: './filter.component.css'
 })
 export class FilterComponent implements OnInit {
+  datosJson: any;
   dropdownOpen: boolean = false;
   filters: any = {
     figura: false,
@@ -21,9 +25,19 @@ export class FilterComponent implements OnInit {
     comic: false
   };
 
-  constructor(private filterService: FilterService) { }
+  constructor(private filterService: FilterService,private ReadText: ReadTextService, private ChangeLanguageService: ChangeLanguageService) { }
 
   ngOnInit(): void {
+    this.updateJson();
+
+    this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
+      this.updateJson();
+    })
+  }
+  updateJson(){
+    this.ReadText.getJson().subscribe(json => {
+      this.datosJson = json;
+    })
   }
 
   toggleDropdown() {

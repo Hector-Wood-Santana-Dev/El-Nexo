@@ -11,6 +11,8 @@ import {PaymentComponent} from "./Paginas/payment/payment.component";
 import {LoginComponent} from "./login/login.component";
 import {PerfilComponent} from "./Paginas/perfil/perfil.component";
 import {PerfilGuardarComponent} from "./Paginas/perfil-guardar/perfil-guardar.component";
+import {HomeAdminComponent} from "./Paginas/home-admin/home-admin.component";
+import {FormularioAddComponent} from "./Componentes/formulario-add/formulario-add.component";
 
 
 
@@ -26,6 +28,8 @@ export const routes: Routes = [
   { path: 'trolley', component: TrolleyComponent },
   { path: 'payment', component: PaymentComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'admin', component: HomeAdminComponent },
+  { path: 'prueba', component: FormularioAddComponent},
   { path: 'profile', component: PerfilComponent },
   { path: 'editar', component: PerfilGuardarComponent },
   { path: '**', component: HomeComponent },

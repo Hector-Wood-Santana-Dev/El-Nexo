@@ -1,7 +1,7 @@
 <body class="cuerpo">
   <div class="video-container">
     <video autoplay loop muted class="video-background">
-      <source src="./assets/videos/ElNexo_intro.mp4" type="video/mp4"> <!-- Ruta del video -->
+      <source src="https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/videos%2FElNexo_intro.mp4?alt=media&token=4303db7b-10db-4f4a-9d5a-09e543891f65" type="video/mp4"> <!-- Ruta del video -->
       Your browser does not support the video tag.
     </video>
     <div class="overlay"></div>
@@ -17,24 +17,26 @@
       </div>
     </div>
   </div>
-  <div class="down-container">
-    <div class="down_container_header"><h1>{{datosJson.header.sobre_nosotros.titulo_parrafo}}</h1></div>
-    <div class="image-container">
-      <img src="./assets/image/Toys.png">
+  <div class="down-container row">
+    <div class="image-container col-lg-12">
+      <img src="https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2FToys.png?alt=media&token=768d0a52-18ce-4197-9a01-02f5ec2aaf43">
     </div>
-    <div class="text-container">
-      <p>
-        {{datosJson.header.sobre_nosotros.linea1}}
-        <br>
-        <br>
-        {{datosJson.header.sobre_nosotros.linea2}}
-        <br>
-        <br>
-        {{datosJson.header.sobre_nosotros.linea3}}
-        <br>
-        <br>
-        {{datosJson.header.sobre_nosotros.linea4}}
-      </p>
+    <div class="content-container col-lg-12">
+      <div class="down_container_header"><h1>{{datosJson.header.sobre_nosotros.titulo_parrafo}}</h1></div>
+      <div class="text-container">
+        <p>
+          {{datosJson.header.sobre_nosotros.linea1}}
+          <br>
+          <br>
+          {{datosJson.header.sobre_nosotros.linea2}}
+          <br>
+          <br>
+          {{datosJson.header.sobre_nosotros.linea3}}
+          <br>
+          <br>
+          {{datosJson.header.sobre_nosotros.linea4}}
+        </p>
+      </div>
     </div>
 
   </div>

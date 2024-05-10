@@ -30,7 +30,7 @@ body {
   padding: 2rem 2.5rem;
   border: none;
   outline: none;
-  transition: 0.4s;
+  transition: 0.7s;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -64,4 +64,15 @@ body {
 }
 .faq.active {
   border: none;
+}
+
+@media screen and (max-width: 750px) {
+  .accordion, .pannel p {
+    font-size: 0.65rem;
+  }
+
+  .wrapper h1 {
+    font-size: 1.2rem;
+    transition: 0.7s;
+  }
 }

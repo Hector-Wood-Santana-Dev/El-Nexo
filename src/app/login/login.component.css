@@ -10,14 +10,14 @@
 .container{
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgba(44, 44, 44, 0.5), rgba(26, 26, 26, 0.5)),url('/assets/image/backLogin.jpg');
+  background-image: linear-gradient(rgba(44, 44, 44, 0.5), rgba(26, 26, 26, 0.5)),url('https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2FbackLogin.jpg?alt=media&token=0e2aa1d2-d317-4fa3-90c4-bdaa19c9c61e');
   background-position: center;
   background-size: 100%;
   position: absolute;
 }
 .form-box{
   width: 370px;
-  height: 455px;
+  height: 480px;
   position: relative;
   margin: 6% auto;
   background: white;

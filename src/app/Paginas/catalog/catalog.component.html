@@ -16,7 +16,7 @@
 <div class="catalogo-fondo">
   <section class="contenido">
     <div class="mostrador" id="mostrador">
-      <div class="fila" *ngFor="let fila of  productos.slice(0, 2); let i=index">
+      <div class="fila row justify-content-center" *ngFor="let fila of  productos.slice(0, 2); let i=index">
         <div class="item"  *ngFor="let product of productos.slice((i* 4)+indiceActual, ((i + 1) * 4)+indiceActual)"
 
              (click)="seleccionarProducto(product)">
@@ -54,12 +54,8 @@
               <input value="1" name="rate" id="star1" type="radio">
               <label title="1" for="star1"></label>
             </div>
-          <a *ngIf="authService.currentUserSig()">
           <button class="boton" (click)="trolley.addProductTrollet(productoSeleccionado)">AGREGAR AL CARRITO</button>
-          </a>
-          <a *ngIf="!authService.currentUserSig()">
-            <button class="boton" (click)="cargarPagina('login')">AGREGAR AL CARRITO</button>
-          </a>
+
         </div>
         <h2 class="descripcion2">{{productoSeleccionado.descripcion}}</h2>
         <div class="review">

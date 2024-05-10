@@ -1,0 +1,185 @@
+{
+    "header" : {
+        "sobre_nosotros" : {
+            "titulo_centrado" : "Sobre Nosotros",
+            "linea_centrado" : "El Nexo, siempre friki",
+            "titulo_parrafo" : "¡Descubre El Nexo!",
+            "linea1" : "En El Nexo, somos mucho más que una tienda online, somos el destino definitivo para todos los aficionados y coleccionistas 'frikis'. Desde miniaturas hasta libros, cartas, videojuegos y posters, ofrecemos una amplia selección de productos que satisfacen todas tus pasiones.",
+            "linea2" : "Nuestra visión va más allá de simplemente ofrecer productos. Nos esforzamos por crear un espacio donde los entusiastas puedan reunirse, compartir sus intereses y encontrar todo lo que necesitan para alimentar su pasión. Con el tiempo, planeamos expandir nuestros servicios para incluir la compra y venta de artículos de segunda mano, colaboraciones con tiendas físicas, un foro animado y mucho más.",
+            "linea3" : "En El Nexo, entendemos las dificultades que enfrentan los aficionados al buscar productos específicos y servicios especializados. Por eso estamos aquí, para brindarte una experiencia de compra única y satisfactoria, respaldada por una comunidad vibrante y comprometida.",
+            "linea4" : "Descubre un mundo de posibilidades en El Nexo, donde tu pasión se convierte en nuestra prioridad. ¡Únete a nosotros y forma parte de esta emocionante aventura!"
+
+        },
+        "header0" : {
+          "tienda" : "tienda",
+          "calendario_eventos" : "calendario de eventos",
+          "segunda_mano" : "segunda mano",
+          "foro" : "foro",
+          "nosotros" : "Nosotros",
+          "EUR" : "EUR €",
+          "frase0" : "ENVÍO GRATUITO PARA PEDIDOS SUPERIORES A 100€"
+        },
+        "sidebar" : {
+          "configuracion" : "Configuración",
+          "perfil" : "Perfil",
+          "cerrar_sesion" : "Cerrar Sesión"
+        }
+    },
+
+    "footers": {
+        "politica_privacidad" : {
+            "info_general": "Información General",
+            "p_info_general": "Esta Política de Privacidad describe cómo recopilamos, utilizamos y protegemos la información personal que obtenemos a través de nuestro sitio web. Al utilizar nuestro sitio, aceptas los términos de esta política.",
+            "info_recopilamos": "Información que Recopilamos",
+            "span_li1": "Información de Contacto:",
+            "texto_li1": "Recopilamos tu nombre, dirección de correo electrónico, dirección postal y número de teléfono cuando realizas una compra o te registras en nuestro sitio.",
+            "span_li2": "Información de Pago:",
+            "texto_li2": "Si realizas una compra, recopilamos información de pago, como detalles de tarjetas de crédito o cuentas bancarias.",
+            "span_li3": "Información de Navegación:",
+            "texto_li3": "Utilizamos cookies y tecnologías similares para recopilar información sobre tu navegación en nuestro sitio, como las páginas visitadas y el tiempo que pasas en cada página.",
+            "span_li4": "Información de Envío:",
+            "texto_li4": "Si realizas una compra, recopilamos información de envío, como tu dirección de entrega.",
+            "uso_informacion": "Uso de la Información",
+            "p_uso_informacion": "Utilizamos la información recopilada para:",
+            "texto_li5": "Procesar tus pedidos y envíos.",
+            "texto_li6": "Personalizar tu experiencia en nuestro sitio.",
+            "texto_li7": "Enviar correos electrónicos promocionales y actualizaciones.",
+            "texto_li8": "Mejorar nuestros productos y servicios.",
+            "compartir_informacion": "Compartir Información",
+            "p_compartir_informacion": "No compartimos tu información personal con terceros, excepto cuando sea necesario para procesar tus pedidos o cumplir con las leyes aplicables.",
+            "seguridad": "Seguridad",
+            "p_seguridad": "Tomamos medidas para proteger tu información personal y mantenerla segura. Utilizamos cifrado SSL para proteger la transmisión de datos.",
+            "tus_derechos": "Tus Derechos",
+            "p_tus_derechos": "Tienes derecho a acceder, corregir o eliminar tu información personal. Si deseas ejercer estos derechos, contáctanos a través de los datos de contacto proporcionados al final de esta política."
+        },
+
+        "devoluciones" : {
+            "politica_devoluciones": "Política de devoluciones",
+            "p_politica_devoluciones": "Los clientes pueden devolver productos dentro de los 30 días posteriores a la entrega, siempre que estén en su estado original y sin uso. Los reembolsos se procesarán dentro de los 5 días hábiles posteriores a la recepción del producto. Además, se hacen excepciones para productos defectuosos, dañados o incorrectos. Para más detalles, comunícate con nuestro equipo de atención al cliente.",
+            "p_imagen1": "Los clientes pueden devolver los productos dentro de los 30 días posteriores a la fecha de entrega.",
+            "p_imagen2": "Los clientes deben contactarnos a través de nuestro formulario de contacto o por correo electrónico para iniciar el proceso de devolución.",
+            "p_imagen3": "El reembolso se procesará dentro de los 5 días hábiles posteriores a la recepción del producto."
+        },
+
+        "contacto" : {
+            "contacto": "Contacto:",
+            "p_contacto": "¡Hola! En El Nexo, estamos encantados de atenderte. Si tienes alguna pregunta, comentario o simplemente quieres saludar, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte.",
+            "informacion_contacto": "Información de Contacto:",
+            "direccion": "Direccion: Escuela de Ingeniería Informática, ULPGC, Las Palmas de Gran Canaria",
+            "telefono": "Telefono: +34 +34 666 77 88 99",
+            "correo_electronico": "Correo Electrónico: contacto@elnexo.com",
+            "horario_atencion": "Horario de Atención al Cliente:",
+            "p_horario_atencion": "Nuestro equipo está disponible de lunes a viernes, de 9:00 a 18:00 horas.",
+            "redes_sociales": "Redes Sociales:",
+            "p_redes_sociales": "Síguenos en Facebook, Instagram y Twitter para estar al tanto de las últimas novedades y ofertas especiales",
+            "oficinas": "Oficinas:",
+            "oficina1": "Geek central",
+            "oficina2": "Nerd nook",
+            "oficina3": "Pixel palace",
+            "ubicaciones_oficinas": "Ubicaciones de nuestras oficinas:",
+            "ubicacion1": "Geek central: Seattle, Washington, Estados Unidos",
+            "ubicacion2": "Nerd nook: Silicon Valley, California, Estados Unidos",
+            "ubicacion3": "Pixel palace: Londres, Reino Unido"
+        },
+
+        "faq" : {
+            "titulofaq": "Preguntas Frecuentes",
+            "pregunta1": "Cómo puedo realizar una compra en la tienda?",
+            "respuesta1": "Para realizar una compra, navega por nuestra tienda y selecciona los productos que deseas comprar. Agrega los productos al carrito de compras. Ve al carrito y verifica los artículos seleccionados. Procede al pago, completa la información requerida... ¡Y listo! Tu pedido estará en camino.",
+            "pregunta2": "¿Cuáles son las opciones de pago disponibles?",
+            "respuesta2": "Aceptamos pagos con tarjeta de crédito, débito y PayPal. También ofrecemos la opción de pago contra reembolso en algunos casos.",
+            "pregunta3": "¿Cuánto tiempo tarda en llegar mi pedido?",
+            "respuesta3": "El tiempo de entrega varía según la ubicación y el tipo de envío seleccionado. Por lo general, los pedidos se entregan en un plazo de 3 a 5 días hábiles.",
+            "pregunta4": " ¿Puedo devolver un producto si no estoy satisfecho?",
+            "respuesta4": "Sí, aceptamos devoluciones dentro de los 14 días posteriores a la entrega. Consulta nuestra política de devoluciones para obtener más detalles.",
+            "pregunta5": "¿Cómo puedo contactar al servicio de atención al cliente?",
+            "respuesta5": "Puedes comunicarte con nuestro equipo de atención al cliente a través del formulario de contacto en nuestro sitio web o enviando un correo electrónico a contacto@elnexo.com.",
+            "pregunta6": "¿Cómo puedo cancelar un pedido?",
+            "respuesta6": "Para cancelar un pedido, inicia sesión en tu cuenta en nuestra tienda en línea. Ve a la sección de “Mis Pedidos” o “Historial de Pedidos”. Busca el pedido que deseas cancelar y selecciona la opción correspondiente. Confirma la cancelación y recibirás una notificación por correo electrónico."
+        },
+      "footer0" : {
+        "faq" : "FAQ",
+        "contacto" : "Contacto",
+        "devoluciones" : "Devoluciones",
+        "privacidad" : "Política de privacidad",
+        "derechos" : "© 2024 TODOS LOS DERECHOS RESERVADOS"
+      }
+
+    },
+    "paginas" : {
+      "home" : {
+        "texto_centrado" : "De cómics a animes, ¡tu universo friki en un solo lugar!",
+        "ofrecemos" : "Ofrecemos",
+        "manga" : "Manga",
+        "comics" : "Comics",
+        "anime" : "Anime",
+        "figuras" : "Figuras",
+        "texto1" : "El Objetivo",
+        "texto2" : "La misión de 'El  Nexus' era clara: ser un puente entre el mundo de los cómics y el manga y el mundo normal. Querían demostrar que estos mundos no estaban tan separados como uno podría pensar. Que las historias, los personajes y las lecciones que encontramos en los cómics y el manga pueden enriquecer nuestras vidas cotidianas.",
+        "texto3" : "Colaboradores"
+
+      },
+      "pago" : {
+        "nombre" : "Nombre del Titular",
+        "targeta" : "Número de Targeta",
+        "csv" : "CSV",
+        "caducidad" : "Fecha de Caducidad",
+        "mes": "Mes",
+        "ano" : "Año",
+        "telefono" : "Número de Telefono",
+        "codigo_postal" : "Código Postal",
+        "direccion_factura" : "Dirección Factura",
+        "confirmar" : "Confirmar"
+      },
+      "carrito" : {
+        "pagar" : "Pagar",
+        "cesta" : "Total de la cesta:",
+        "euro" : "€",
+        "impuestos" : "Impuestos:",
+        "gastosenvio" : "Gastos de envio:",
+        "total" : "Total:"
+       },
+      "barra_busqueda" : {
+        "buscar": "Buscar"
+      },
+      "login" : {
+        "inicio_sesion" : "Iniciar Sesión",
+        "registrar" : "Registrar",
+        "correo" : "Correo Electrónico",
+        "contrasena" : "Contraseña",
+        "acceder" : "Acceder",
+        "nombre" : "Nombre de Usuario"
+      },
+      "filter" : {
+        "categorias" : "Todas las categorías",
+        "figura" : "Figuras",
+        "peluche" : "Peluches",
+        "videojuego" : "Videojuegos",
+        "manga" : "Mangas",
+        "comic" : "Comics"
+      },
+      "perfil": {
+        "perfil" : "Perfil",
+        "email" : "Email:",
+        "nombreusuario" : "Nombre de Usuario:",
+        "datoscompra" : "Mostrar los datos de compra",
+        "direccion" : "Dirección:",
+        "codigopostal" : "Código Postal:",
+        "telefono" : "Teléfono:",
+        "nombre" : "Nombre del Titular:",
+        "tarjeta" : "Número de Tarjeta:",
+        "csv" : "CSV:",
+        "mescaducidad" : "Mes de Caducidad:",
+        "anocaducidad" : "Año de Caducidad",
+        "editar" : "Editar",
+        "eliminar" : "Eliminar Datos de Tarjeta",
+        "seleccionimagen" : "Selecciona una imagen:",
+        "guardar" : "Guardar",
+        "atras" : "Atras"
+
+      }
+    }
+
+
+
+}

@@ -1,0 +1,51 @@
+<body>
+<form [formGroup]="productForm">
+  <div class="row">
+    <div class="col-md-6">
+      <label for="image">Imagen:</label>
+      <input type="file" id="image"  (change)="uploadImage($event)">
+    </div>
+    <div class="col-md-3">
+      <label for="name" class="name ">Name:</label>
+      <input type="text" id="name" formControlName="nombre" class="input">
+    </div>
+
+    <div class="col-md-3">
+      <label for="price">Precio:</label>
+      <input type="number" id="price" formControlName="precio" class="input">
+    </div>
+
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+    </div>
+    <div class="col-md-3">
+      <label for="category">Categoría:</label>
+      <select id="category" formControlName="categoria" class="input">
+        <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <img [src]="foto" class="imagen" alt=" ">
+    </div>
+    <div class="col-md-6">
+      <label for="description">Descripción:</label>
+      <textarea id="description" formControlName="descripcion"  ></textarea>
+    </div>
+  </div>
+
+</form>
+<div class="row">
+  <div class="col-md-6 d-flex justify-content-center">
+    <button (click)="cancelClick()">Cancelar</button>
+  </div>
+  <div class="col-md-6 d-flex justify-content-center">
+    <button type="submit" (click)="onSubmit()">Añadir</button>
+  </div>
+</div>
+
+
+
+</body>

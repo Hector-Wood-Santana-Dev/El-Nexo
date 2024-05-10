@@ -1,6 +1,9 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HeaderComponent} from "../../Componentes/header/header.component";
 import {FooterComponent} from "../../Componentes/footer/footer.component";
+
+import {ReadTextService} from "../../service/read-text.service";
+import {ChangeLanguageService} from "../../service/change-language.service";
 
 @Component({
   selector: 'app-home',
@@ -12,18 +15,26 @@ import {FooterComponent} from "../../Componentes/footer/footer.component";
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
-cargarPagina(  url:string){
-  window.location.href = url;
-}
+export class HomeComponent implements OnInit{
+  datosJson: any;
 
-texto = 'Colaboradores';
+  constructor(private ReadText: ReadTextService, private ChangeLanguageService: ChangeLanguageService) {  }
 
-  cambiarTexto() {
-    this.texto = '¿Dónde encontrarlos?';
+  ngOnInit(): void{
+    this.updateJson();
+
+    this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
+      this.updateJson();
+    })
   }
 
-  textoOriginal() {
-    this.texto = 'Colaboradores';
+  updateJson(){
+    this.ReadText.getJson().subscribe(json => {
+      this.datosJson = json;
+    })
+  }
+
+  cargarPagina(  url:string){
+    window.location.href = url;
   }
 }
