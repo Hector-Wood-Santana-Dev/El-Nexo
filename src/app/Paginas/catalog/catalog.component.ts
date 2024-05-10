@@ -10,6 +10,9 @@ import {AuthService} from "../../auth.service";
 import {Router} from "@angular/router";
 import {SearchServiceService} from "../../service/search-service.service";
 import {LoaderComponent} from "../../Componentes/loader/loader.component";
+import {FilterComponent} from "../../Componentes/filter/filter.component";
+import {FilterService} from "../../service/filter.service";
+import {combineLatest} from "rxjs";
 
 @Component({
   selector: 'app-catalog',
@@ -20,7 +23,8 @@ import {LoaderComponent} from "../../Componentes/loader/loader.component";
     NgForOf,
     NgIf,
     SearchComponent,
-    LoaderComponent
+    LoaderComponent,
+    FilterComponent
   ],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.css'
@@ -39,19 +43,25 @@ export class CatalogComponent implements OnInit{
   constructor(private router: Router,
               protected trolley:TrolleyServiceService,
               private bodCataloc:BODCatalogService,
-              private searchService: SearchServiceService) {
+              private searchService: SearchServiceService,
+              private filterService: FilterService) {
     this.mostradors= document.getElementById("mostrador");
     this.selecions=document.getElementById("selecion");
   }
   ngOnInit() {
-    this.loading=true;
-    this.bodCataloc.getCatalog().subscribe(products=>{
-      this.productos=products ;
+    this.loading = true;
+    this.bodCataloc.getCatalog().subscribe(products => {
+      this.productos = products;
       this.originalItems = [...this.productos];
-      setTimeout(() => {
-        this.loading = false;
-      }, 3000);});
-    this.searchService.currentSearch.subscribe(search => this.filterItems(search));
+      this.loading = false;
+    });
+
+    combineLatest([
+      this.searchService.currentSearch,
+      this.filterService.currentFilters
+    ]).subscribe(([search, filters]) => {
+      this.filterItems(search, filters);
+    });
   }
 
   productos: Product[] = [];
@@ -62,13 +72,28 @@ export class CatalogComponent implements OnInit{
   selecions:HTMLElement|null=null;
 
   originalItems = [...this.productos];
-  filterItems(search: string) {
-    if (search.trim()) {
-      this.productos = this.originalItems.filter(item => item.nombre.toLowerCase().includes(search.toLowerCase()));
-    } else {
-      this.productos = [...this.originalItems];
+
+  filterItems(search: string, filters: any) {
+    let filteredItems = [...this.originalItems];
+
+    // Filtrar por búsqueda si hay algún término de búsqueda
+    if (search && search.trim() !== '') {
+      filteredItems = filteredItems.filter(item => item.nombre.toLowerCase().includes(search.toLowerCase()));
     }
+
+    // Filtrar por categoría según los filtros activos
+    const activeFilters = Object.entries(filters).filter(([key, value]) => value);
+
+    if (activeFilters.length > 0) {
+      filteredItems = filteredItems.filter(item => activeFilters.some(([key, value]) => item.categoria === key));
+      this.indiceActual = 0;
+    }
+
+    this.productos = filteredItems;
   }
+
+
+
 
   seleccionarProducto(producto: Product) {
     this.productoSeleccionado = producto;
@@ -107,15 +132,17 @@ export class CatalogComponent implements OnInit{
 
 
   mover(direccion: number) {
-    this.indiceActualAnterior= this.indiceActual
+    this.indiceActualAnterior = this.indiceActual;
     this.indiceActual += direccion;
-    console.log(this.productos.length)
-    if(direccion==1) console.log(1)
-    if (direccion==-1)console.log(-1)
-    if (this.indiceActual < 0) this.indiceActual = 0;
-    if (this.indiceActual >= this.productos.length) this.indiceActual= this.indiceActualAnterior;
-    console.log(this.indiceActual)
 
+    if (this.indiceActual < 0) {
+      this.indiceActual = 0;
+    }
+
+    if (this.indiceActual >= this.productos.length) {
+      this.indiceActual = this.indiceActualAnterior;
+    }
   }
 }
+
 

@@ -68,7 +68,9 @@ export class LoginComponent {
     }
     this.authService.login(rawForm.email, rawForm.password).subscribe({
       next:()=>{
-        this.router.navigateByUrl('/')
+        let returnUrl = localStorage.getItem('returnUrl');
+        this.router.navigateByUrl(returnUrl ? returnUrl : '/');
+        localStorage.removeItem('returnUrl');
       },
       error: (err) => {
         this.errorMessage = err.code;
@@ -92,7 +94,9 @@ export class LoginComponent {
 
     this.authService.register(rawForm.email, rawForm.username, rawForm.password).subscribe({
       next:()=>{
-        this.router.navigateByUrl('/')
+        let returnUrl = localStorage.getItem('returnUrl');
+        this.router.navigateByUrl(returnUrl ? returnUrl : '/');
+        localStorage.removeItem('returnUrl');
       },
       error: (err) => {
         this.errorMessage = err.code;

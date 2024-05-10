@@ -1,4 +1,4 @@
-import {Component, inject, HostListener} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {NavigationEnd, Router, RouterLink, RouterOutlet} from '@angular/router';
 import {FooterComponent} from "./Componentes/footer/footer.component";
 import {HeaderComponent} from "./Componentes/header/header.component";
@@ -23,6 +23,8 @@ export class AppComponent {
         this.authService.currentUserSig.set({
           email: user.email!,
           username: user.displayName!,
+          uid: user.uid!,
+          photoURL: user.photoURL!,
         });
       } else {
         this.authService.currentUserSig.set(null);
