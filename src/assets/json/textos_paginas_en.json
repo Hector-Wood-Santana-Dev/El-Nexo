@@ -134,7 +134,12 @@
       "confirmar" : "Confirm"
     },
     "carrito" : {
-      "pagar" : "Pay"
+      "pagar" : "Pay",
+      "cesta" : "Total of the trolley:",
+      "euro" : "€",
+      "impuestos" : "Taxes:",
+      "gastosenvio" : "Delivery Fees:",
+      "total" : "Total:"
     },
     "barra_busqueda" : {
       "buscar": "Search"

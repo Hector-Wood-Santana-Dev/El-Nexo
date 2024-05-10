@@ -132,8 +132,13 @@
         "confirmar" : "Confirmar"
       },
       "carrito" : {
-        "pagar" : "Pagar"
-      },
+        "pagar" : "Pagar",
+        "cesta" : "Total de la cesta:",
+        "euro" : "€",
+        "impuestos" : "Impuestos:",
+        "gastosenvio" : "Gastos de envio:",
+        "total" : "Total:"
+       },
       "barra_busqueda" : {
         "buscar": "Buscar"
       },
