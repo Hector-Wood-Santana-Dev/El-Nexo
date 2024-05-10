@@ -28,9 +28,9 @@ export class FormularioAddComponent {
               private router:Router) {
     file:File;
     this.productForm = new FormGroup({
-      nombre:new FormControl(''),
-      precio: new FormControl(0),
-      imagen: new FormControl(''),
+      nombre:new FormControl('',Validators.required),
+      precio: new FormControl(0, Validators.required),
+      imagen: new FormControl('',Validators.required),
       descripcion: new FormControl(''),
       categoria: new FormControl(this.categories[0])
     });
@@ -69,16 +69,39 @@ export class FormularioAddComponent {
     this.addIMG();
     this.getIMG();
     console.log(this.productForm);
-    await this.delay(5000);
-    await this.catalogService.addProduct(this.productForm.value);
-    Swal.fire({
-      icon: 'success',
-      text: 'Producto añadido con éxito.',
-      willClose: () => {
-        // Aquí va tu función navigate
-        this.router.navigate(['admin']);
-      }
-    });
+    await this.delay(3000);
+    if(this.productForm.valid){
+
+      await this.catalogService.addProduct(this.productForm.value);
+      Swal.fire({
+        icon: 'success',
+        text: 'Producto añadido con éxito.',
+        willClose: () => {
+
+          this.router.navigate(['admin']);
+        }
+      });
+
+    }else if (this.productForm.get('nombre')?.errors){
+      Swal.fire({
+        icon: "error",
+        text: "Campo de nombre sin introducir",
+      });
+
+    }else if (this.productForm.get('precio')?.errors){
+      Swal.fire({
+        icon: "error",
+        text: "Campo de precio sin introducir",
+      });
+
+    }else{
+      Swal.fire({
+        icon: "error",
+        text: "Campo de imagen sin introducir",
+      });
+
+    }
+
 
 
   }
