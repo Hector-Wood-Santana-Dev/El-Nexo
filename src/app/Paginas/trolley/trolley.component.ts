@@ -47,7 +47,7 @@ export class TrolleyComponent implements OnInit{
       this.gastosEn=10;
     }
     this.impuestos= parseFloat((this.total*0.07).toFixed(2));
-    this.pagar=this.impuestos+this.impuestos+this.total;
+    this.pagar=this.impuestos+this.gastosEn+this.total;
 
 
     this.updateJson();
