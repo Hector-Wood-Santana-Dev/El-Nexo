@@ -5,6 +5,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 import Swal from 'sweetalert2';
 import {HttpClient} from "@angular/common/http";
 import {AuthService} from "../auth.service";
+import {LoginGoogleComponent} from "../Componentes/login-google/login-google.component";
 
 import {ReadTextService} from "../service/read-text.service";
 import {ChangeLanguageService} from "../service/change-language.service";
@@ -15,7 +16,8 @@ import {ChangeLanguageService} from "../service/change-language.service";
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    LoginGoogleComponent
   ],
   styleUrls: ['./login.component.css']
 })
