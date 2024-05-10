@@ -79,6 +79,7 @@ export class CatalogComponent implements OnInit{
     // Filtrar por búsqueda si hay algún término de búsqueda
     if (search && search.trim() !== '') {
       filteredItems = filteredItems.filter(item => item.nombre.toLowerCase().includes(search.toLowerCase()));
+      this.indiceActual = 0;
     }
 
     // Filtrar por categoría según los filtros activos
