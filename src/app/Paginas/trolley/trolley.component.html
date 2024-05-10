@@ -31,9 +31,14 @@ delete
     <br> Total: {{pagar}} €
   </div>
   <div class="col-md-2 d-flex justify-content-center align-items-center">
-    <button class="pagar" (click)="clickPagar()">
-      <span>{{ datosJson.paginas.carrito.pagar }}</span>
-    </button>
+    <div *ngIf="authService.currentUserSig()">
+      <button class="pagar" (click)="clickPagar()">
+        <span>{{ datosJson.paginas.carrito.pagar }}</span>
+      </button>
+    </div>
+    <div *ngIf="!authService.currentUserSig()">
+      <button class="pagar" (click)="cargarPagina('login')">{{ datosJson.paginas.carrito.pagar }}</button>
+    </div>
   </div>
 </div>
 </body>

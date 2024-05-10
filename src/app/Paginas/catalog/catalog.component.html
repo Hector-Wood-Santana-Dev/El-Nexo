@@ -54,12 +54,8 @@
               <input value="1" name="rate" id="star1" type="radio">
               <label title="1" for="star1"></label>
             </div>
-          <a *ngIf="authService.currentUserSig()">
           <button class="boton" (click)="trolley.addProductTrollet(productoSeleccionado)">AGREGAR AL CARRITO</button>
-          </a>
-          <a *ngIf="!authService.currentUserSig()">
-            <button class="boton" (click)="cargarPagina('login')">AGREGAR AL CARRITO</button>
-          </a>
+
         </div>
         <h2 class="descripcion2">{{productoSeleccionado.descripcion}}</h2>
         <div class="review">

@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {TrolleyServiceService} from "../../service/trolley-service.service";
 import {Product} from "../../interface/product";
 import {NgForOf, NgIf} from "@angular/common";
 import 'sweetalert2/src/sweetalert2.scss'
 import Swal from 'sweetalert2';
 import {Router} from "@angular/router";
+import {AuthService} from "../../auth.service";
 
 import {ReadTextService} from "../../service/read-text.service";
 import {ChangeLanguageService} from "../../service/change-language.service";
@@ -27,6 +28,7 @@ export class TrolleyComponent implements OnInit{
   impuestos:number;
   gastosEn:number;
   pagar:number;
+  authService = inject(AuthService)
 
   constructor(protected trolleyService:TrolleyServiceService, private router:Router, private ReadText: ReadTextService, private ChangeLanguageService: ChangeLanguageService) {
     this.trolley=[]
@@ -53,6 +55,10 @@ export class TrolleyComponent implements OnInit{
     this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
       this.updateJson();
     })
+  }
+
+  cargarPagina(url: string) {
+    this.router.navigate([url]);
   }
 
   clickDelete(product:Product){
