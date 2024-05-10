@@ -7,7 +7,7 @@
         <input id="name1"  type="text" class="input" formControlName="name" value="" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label class="datos">Nombre del titular</label>
+        <label class="datos">{{ datosJson.paginas.pago.nombre }}</label>
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
         <input id="tarjeta"  type="text" class="input" formControlName="tarjeta" (keypress)="soloNumeros($event)" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label class="datos">Número de la tarjeta</label>
+        <label class="datos">{{ datosJson.paginas.pago.targeta }}</label>
       </div>
     </div>
     <div class="d-flex justify-content-center col-sm-12 col-lg-2">
@@ -26,16 +26,16 @@
         <input id="csv"  type="text" class="input" formControlName="csv" (keypress)="soloNumeros($event)" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label class="datos">csv</label>
+        <label class="datos">{{ datosJson.paginas.pago.csv }}</label>
       </div>
     </div>
-    <div class="col-sm-2 d-flex justify-content-center expiration-date">Fecha de caducidad:</div>
+    <div class="col-sm-2 d-flex justify-content-center expiration-date">{{ datosJson.paginas.pago.caducidad }}</div>
     <div class="d-flex justify-content-center col-sm-1">
       <div class="group">
         <input id="month"  type="text" class="input" formControlName="mes"  (keypress)="soloNumeros($event)" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label class="datos">Mes</label>
+        <label class="datos">{{ datosJson.paginas.pago.mes }}</label>
       </div>
     </div>
     <div class="d-flex justify-content-center col-sm-1">
@@ -43,7 +43,7 @@
         <input id="year"  type="text" class="input" formControlName="año" (keypress)="soloNumeros($event)" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label class="datos">Año</label>
+        <label class="datos">{{ datosJson.paginas.pago.ano }}</label>
       </div>
     </div>
   </div>
@@ -53,7 +53,7 @@
         <input id="telefono"  type="text" class="input" formControlName="telefono" (keypress)="soloNumeros($event)"required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label class="datos">Número de teléfono</label>
+        <label class="datos">{{ datosJson.paginas.pago.telefono }}</label>
       </div>
     </div>
     <div class="d-flex justify-content-center col-md-12 col-lg-4">
@@ -61,7 +61,7 @@
         <input id="postal"  type="text" formControlName="postal" class="input" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label class="datos">Código postal</label>
+        <label class="datos">{{ datosJson.paginas.pago.codigo_postal }}</label>
       </div>
     </div>
   </div>
@@ -71,7 +71,7 @@
         <input id="direccion"  type="text" formControlName="direccion" class="input" required>
         <span class="highlight"></span>
         <span class="bar"></span>
-        <label class="datos">Dirección de facturación</label>
+        <label class="datos">{{ datosJson.paginas.pago.direccion_factura }}</label>
       </div>
     </div>
   </div>
@@ -81,7 +81,7 @@
 
   <div class="row">
     <div class="col-md-12 d-flex justify-content-center">
-      <button type="submit" class="button">Confirmar</button>
+      <button type="submit" class="button">{{ datosJson.paginas.pago.confirmar }}</button>
     </div>
         <div class="d-flex  justify-content-center checkboxGuardar">
         <input type="checkbox" id="guardar" name="guardar" formControlName="guardar">

@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import {FormBuilder, FormGroup, Validators, FormControl, ReactiveFormsModule, FormsModule} from '@angular/forms';
 import 'sweetalert2/src/sweetalert2.scss'
@@ -6,6 +6,8 @@ import Swal from 'sweetalert2';
 import {HttpClient} from "@angular/common/http";
 import {AuthService} from "../auth.service";
 
+import {ReadTextService} from "../service/read-text.service";
+import {ChangeLanguageService} from "../service/change-language.service";
 
 @Component({
   selector: 'app-login',
@@ -17,7 +19,9 @@ import {AuthService} from "../auth.service";
   ],
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+  datosJson: any;
+
   fb = inject(FormBuilder);
   http = inject(HttpClient);
   authService = inject(AuthService)
@@ -33,6 +37,9 @@ export class LoginComponent {
     password: ['', Validators.required],
   });
   errorMessage: string | null = null;
+
+  constructor(private ReadText: ReadTextService, private ChangeLanguageService: ChangeLanguageService) {  }
+
   login() {
     const loginElement = document.getElementById('login');
     const registerElement = document.getElementById('register');
@@ -108,6 +115,20 @@ export class LoginComponent {
       }
     })
 
+  }
+
+  ngOnInit(): void{
+    this.updateJson();
+
+    this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
+      this.updateJson();
+    })
+  }
+
+  updateJson(){
+    this.ReadText.getJson().subscribe(json => {
+      this.datosJson = json;
+    })
   }
 
 }

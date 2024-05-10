@@ -94,6 +94,9 @@ async function getData(user: AuthService,database:Firestore, formulario:FormGrou
   }
 }
 
+import {ReadTextService} from "../../service/read-text.service";
+import {ChangeLanguageService} from "../../service/change-language.service";
+
 @Component({
   selector: 'app-payment',
   standalone: true,
@@ -105,9 +108,10 @@ async function getData(user: AuthService,database:Firestore, formulario:FormGrou
   styleUrl: './payment.component.css'
 })
 export class PaymentComponent implements OnInit{
+  datosJson: any;
   authService = inject(AuthService);
 
-  constructor(private firestore:Firestore, private router:Router) {
+  constructor(private router:Router, private ReadText: ReadTextService, private ChangeLanguageService: ChangeLanguageService, private firestore:Firestore) {
   }
 
   buyForm = new FormGroup({
@@ -259,10 +263,20 @@ export class PaymentComponent implements OnInit{
 
   }
 
-   ngOnInit(): void {
-       getData(this.authService,this.firestore,this.buyForm);
+  ngOnInit(): void{
+    getData(this.authService,this.firestore,this.buyForm);
+
+    this.updateJson();
+
+    this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
+      this.updateJson();
+    })
   }
 
-
+  updateJson(){
+    this.ReadText.getJson().subscribe(json => {
+      this.datosJson = json;
+    })
+  }
 
 }
