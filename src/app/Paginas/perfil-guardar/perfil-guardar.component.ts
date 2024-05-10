@@ -57,7 +57,7 @@ export class PerfilGuardarComponent implements OnInit{
   loading = false;
   ngOnInit(){
     if (this.foto_elegida == undefined){
-      this.foto_elegida = '/assets/image/solo-leveling.png'
+      this.foto_elegida = 'https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2Fsolo-leveling.png?alt=media&token=1c074bdb-054f-4576-b617-738fa729d934'
     }
     this.loading=true;
     this.perfilimage.getImages().subscribe(images=>{
