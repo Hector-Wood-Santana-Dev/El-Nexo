@@ -3,10 +3,10 @@ import {FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {Router} from "@angular/router";
 import Swal from "sweetalert2";
 import {AuthService} from "../../auth.service";
-import {Firestore, setDoc, doc, collection, getDoc} from "@angular/fire/firestore";
+import {Firestore, setDoc, doc, getDoc} from "@angular/fire/firestore";
 
 
-async function getData(user: AuthService,database:Firestore) {
+async function getData(user: AuthService,database:Firestore, formulario:FormGroup) {
   const uid = user.currentUserSig()?.uid;
   console.log(uid);
   if(typeof uid === "string"){
@@ -17,19 +17,74 @@ async function getData(user: AuthService,database:Firestore) {
 
     if (docSnap.exists()) {
       const userData = docSnap.data();
-
-      let nombre = userData['name']
-      let tlf
-      let tarjeta
-      let csv
-      let mes
-      let año
-      let direccion
-      let postal
-      let name1:HTMLInputElement | null = document.getElementById('name1');
+      // const formulario = this.buyForm;
+      // Carga de elementos de pago
+      let name1:HTMLInputElement | null = document.getElementById('name1') as HTMLInputElement;
       if(name1){
-        name1.value = "hcaud";
+        name1.value = userData['nombre_titular'];
+        let form1 = formulario.get('name');
+        if(form1){
+          form1.setValue(userData['nombre_titular']);
+        }
+
       }
+      let tarjeta:HTMLInputElement | null = document.getElementById('tarjeta') as HTMLInputElement;
+      if(tarjeta){
+        tarjeta.value = userData['numero_tarjeta'];
+        let form2 = formulario.get('tarjeta');
+        if(form2){
+          form2.setValue(userData['numero_tarjeta']);
+        }
+      }
+      let csv:HTMLInputElement | null = document.getElementById('csv') as HTMLInputElement;
+      if(csv) {
+        csv.value = userData['csv'];
+        let form3 = formulario.get('csv');
+        if(form3){
+          form3.setValue(userData['csv']);
+        }
+      }
+      let month:HTMLInputElement | null = document.getElementById('month') as HTMLInputElement;
+      if(month) {
+        month.value = userData['mes_caducidad'];
+        let form4 = formulario.get('mes');
+        if(form4){
+          form4.setValue(userData['mes_caducidad']);
+        }
+      }
+      let year:HTMLInputElement | null = document.getElementById('year') as HTMLInputElement;
+      if(year) {
+        year.value = userData['year_caducidad'];
+        let form5 = formulario.get('año');
+        if(form5){
+          form5.setValue(userData['year_caducidad']);
+        }
+      }
+      let telefono:HTMLInputElement | null = document.getElementById('telefono') as HTMLInputElement;
+      if(telefono) {
+        telefono.value = userData['telefono'];
+        let form6 = formulario.get('telefono');
+        if(form6){
+          form6.setValue(userData['telefono']);
+        }
+      }
+      let postal:HTMLInputElement | null = document.getElementById('postal') as HTMLInputElement;
+      if(postal) {
+        postal.value = userData['postal'];
+        let form7 = formulario.get('postal');
+        if(form7){
+          form7.setValue(userData['postal']);
+        }
+      }
+      let direccion:HTMLInputElement | null = document.getElementById('direccion') as HTMLInputElement;
+      if(direccion) {
+        direccion.value = userData['direccion'];
+      }
+      let form8 = formulario.get('direccion');
+      if(form8){
+        form8.setValue(userData['direccion']);
+      }
+
       console.log("Document data:", docSnap.data());
     } else {
       // docSnap.data() will be undefined in this case
@@ -37,29 +92,6 @@ async function getData(user: AuthService,database:Firestore) {
       console.log("No such document!");
     }
   }
-
-  // try {
-  //   const userDoc = await getDoc(userRef);
-  //
-  //   if (userDoc.exists()) {
-  //     const userData = userDoc.data();
-  //     // this.postalValue = userData['postal'];
-  //     // this.TelefonoValue = userData['telefono'];
-  //     // this.DireccionValue = userData['direccion'];
-  //     // this.NombreValue = userData['nombre_titular'];
-  //     // this.TarjetaValue = userData['numero_tarjeta'];
-  //     // this.CSVValue = userData['csv'];
-  //     // this.MesValue = userData['mes_caducidad'];
-  //     // this.YearValue = userData['year_caducidad'];
-  //     // console.log(this.postalValue);
-  //     // console.log(this.CSVValue);
-  //
-  //   } else {
-  //     console.log('No se encontró el documento para el UID especificado.');
-  //   }
-  // } catch (error) {
-  //   console.error('Error al recuperar los datos del usuario:', error);
-  // }
 }
 
 @Component({
@@ -117,7 +149,6 @@ export class PaymentComponent implements OnInit{
     }
 
     if (this.buyForm.valid) {
-      console.log(this.buyForm.get('guardar')?.value);
       guardarDatos();
 
       console.log('Formulario enviado!');
@@ -229,7 +260,7 @@ export class PaymentComponent implements OnInit{
   }
 
    ngOnInit(): void {
-       getData(this.authService,this.firestore);
+       getData(this.authService,this.firestore,this.buyForm);
   }
 
 
