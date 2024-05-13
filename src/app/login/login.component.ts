@@ -103,6 +103,24 @@ export class LoginComponent implements OnInit{
 
     this.authService.register(rawForm.email, rawForm.username, rawForm.password).subscribe({
       next:()=>{
+        this.authService.sendEmailVerification().subscribe({
+          next: () => {
+            // Correo electrónico de verificación enviado con éxito
+            Swal.fire({
+              icon: 'success',
+              text: 'Se ha enviado un correo electrónico de verificación. Por favor, revise su bandeja de entrada.',
+            });
+            this.router.navigateByUrl('/');
+          },
+          error: (err) => {
+            // Error al enviar el correo electrónico de verificación
+            Swal.fire({
+              icon: 'error',
+              text: 'Hubo un problema al enviar el correo electrónico de verificación. Por favor, inténtelo de nuevo más tarde.',
+            });
+            console.error('Error al enviar el correo electrónico de verificación:', err);
+          }
+        });
         let returnUrl = localStorage.getItem('returnUrl');
         this.router.navigateByUrl(returnUrl ? returnUrl : '/');
         localStorage.removeItem('returnUrl');

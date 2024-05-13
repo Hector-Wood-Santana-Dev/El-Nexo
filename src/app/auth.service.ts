@@ -3,7 +3,7 @@ import {
   applyActionCode,
   Auth,
   createUserWithEmailAndPassword, sendEmailVerification,
-  signInWithEmailAndPassword, signOut, updateEmail,
+  signInWithEmailAndPassword, signOut, updateEmail, updatePassword,
   updateProfile,
   user, verifyBeforeUpdateEmail
 } from "@angular/fire/auth";
@@ -14,6 +14,7 @@ import {User} from "@firebase/auth";
 import firebase from "firebase/compat";
 import ActionCodeSettings = firebase.auth.ActionCodeSettings;
 import auth = firebase.auth;
+import Swal from "sweetalert2";
 
 @Injectable({
   providedIn:'root'
@@ -65,6 +66,7 @@ export class AuthService {
       }
     }
   }
+
   async actualizarFoto(foto: string | undefined) {
     const user = this.firebaseAuth.currentUser;
     if (user) {
@@ -81,18 +83,50 @@ export class AuthService {
       }
     }
   }
-
-  async actualizarEmail(email: string) {
+  sendEmailVerification(): Observable<void> {
     const user = this.firebaseAuth.currentUser;
     if (user) {
-      try {
-        // Actualizar el correo electrónico
-        await updateEmail(user, email);
-      } catch (error) {
-        console.error("Error al actualizar el correo electrónico:", error);
-        throw error;
-      }
+      const promise = sendEmailVerification(user);
+      return from(promise);
+    } else {
+      return new Observable(observer => {
+        observer.error('Usuario no verificado');
+      })
     }
   }
 
+  changeInfoUser(username: string, email: string, password: string): Observable<void> {
+    const user = this.firebaseAuth.currentUser;
+    const emailRegex = /^[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}$/;
+
+    if (user) {
+      if (email && !emailRegex.test(email)) { // Verificar el formato del email
+        Swal.fire({
+          icon: 'error',
+          text: 'El formato del correo electrónico no es válido.',
+        });
+      }
+
+      const promises = [];
+      if (username) {
+        promises.push(updateProfile(user, {displayName: username}));
+      }
+      if (email && email !== user.email && emailRegex.test(email)) { // Verificar si el email pasado es diferente al email actual
+        promises.push(verifyBeforeUpdateEmail(user, email));
+        Swal.fire({
+          icon: 'success',
+          text: 'Se ha enviado un correo electrónico de verificación a su nueva cuenta. Por favor, revise su bandeja de entrada.',
+        });
+      }
+      if (password) {
+        promises.push(updatePassword(user, password));
+      }
+      return from(Promise.all(promises).then(() => {
+      }));
+    } else {
+      return new Observable(observer => {
+        observer.error('Usuario no logeado');
+      });
+    }
+  }
 }

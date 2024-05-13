@@ -21,11 +21,11 @@
     </div>
     <div class="form-group">
       <label class="email">{{ datosJson.paginas.perfil.email }}</label>
-      <input type="email" id="email" value="{{ authService.currentUserSig()?.email }}" #emailInput readonly >
+      <input type="email" id="email" value="{{ authService.currentUserSig()?.email }}" #emailInput readonly>
     </div>
     <div class="form-group">
       <label class="username">{{ datosJson.paginas.perfil.nombreusuario }}</label>
-      <input type="text" id="username" value="{{ authService.currentUserSig()?.username }}" #usernameInput >
+      <input type="text" id="username" value="{{ authService.currentUserSig()?.username }}" #usernameInput readonly>
     </div>
 
 

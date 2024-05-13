@@ -1,12 +1,13 @@
 import {Component, ElementRef, inject, OnInit, ViewChild} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {NgIf, NgStyle} from "@angular/common";
+import {NgForOf, NgIf, NgStyle} from "@angular/common";
 import {AuthService} from "../../auth.service";
 import {collection, doc, Firestore, getDoc, setDoc} from "@angular/fire/firestore";
 import {Router} from "@angular/router";
 
 import {ReadTextService} from "../../service/read-text.service";
 import {ChangeLanguageService} from "../../service/change-language.service";
+import {Perfil} from "../../interface/profile";
 
 @Component({
   selector: 'app-perfil',
@@ -15,7 +16,8 @@ import {ChangeLanguageService} from "../../service/change-language.service";
     FormsModule,
     NgIf,
     NgStyle,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgForOf
   ],
   templateUrl: './perfil.component.html',
   styleUrl: './perfil.component.css'
@@ -36,6 +38,10 @@ export class PerfilComponent implements OnInit {
   @ViewChild('yearcaducidadInput', {static: true}) yearcaducidadInput!: ElementRef;
 
   ngOnInit() {
+    const valorEmail = this.emailInput.nativeElement.value;
+    if(this.authService.currentUserSig()?.email !== valorEmail){
+
+    }
     let returnUrl = localStorage.getItem('returnUrl');
     if (returnUrl == '/editar') {
       localStorage.removeItem('returnUrl');

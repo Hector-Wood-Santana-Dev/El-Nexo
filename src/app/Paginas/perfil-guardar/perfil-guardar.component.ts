@@ -151,25 +151,21 @@ export class PerfilGuardarComponent implements OnInit{
       icon: 'error',
       text: 'Hay campos con un número de dígitos incorrecto.',
     }); }
-    else if (valorYearCaducidad < year || valorMesCaducidad > 12 ) {
+    else if (valorYearCaducidad < year || valorMesCaducidad > 12) {
       Swal.fire({
         icon: 'error',
         text: 'Fecha de caducidad inválida.',
-      }); }
-    else {
+      });
+    } else {
       if (typeof uid === "string") {
-        if (this.selectedImageUrl != this.authService.currentUserSig()?.photoURL){
+        if (this.selectedImageUrl != this.authService.currentUserSig()?.photoURL) {
           await this.authService.actualizarFoto(this.selectedImageUrl);
           console.log('foto distinta')
         }
-        if (valorUsername != this.authService.currentUserSig()?.username){
+        if (valorUsername != this.authService.currentUserSig()?.username) {
           await this.authService.actualizarUsername(valorUsername);
           console.log('username distinto')
         }
-        if (valorEmail != this.authService.currentUserSig()?.email){
-          await this.authService.actualizarEmail(valorEmail);
-        }
-        await this.authService.actualizarUsername(valorUsername);
         await setDoc(doc(this.firestore, "users", uid), {
           email: valorEmail,
           username: valorUsername,
