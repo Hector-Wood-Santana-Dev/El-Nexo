@@ -1,0 +1,149 @@
+
+.total{
+  background-color: rgba(175, 238, 238, 0.78);
+  padding-top:40px;
+  padding-bottom:40px;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+.titulo{text-align: center}
+.photo-url {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.image-grp{
+  text-align: center;
+}
+.image-container {
+  display: flex;
+  justify-content: space-between;
+}
+.main_image{
+  width:200px;
+  height:200px;
+  border-radius: 50%;
+}
+.contenedor-foto{
+  width:100%;
+}
+.contenedor-foto img{
+  border-radius: 50%;
+}
+
+.botones {
+  background-image: linear-gradient(to bottom, #cccccc, #999999);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bolder;
+}
+.botones:hover{
+  color:black;
+}
+.contenedor-foto img {
+  transition: filter 0.3s ease;
+}
+
+/* Quita el filtro de escala de grises cuando el puntero está sobre una imagen */
+.contenedor-foto img:hover {
+  transform: scale(1.1);
+}
+
+.image-container img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  transition: filter 300ms;
+}
+.image-container:has(.image-container img:hover)
+.image-container img:not(:hover){
+  filter: grayscale(100%) brightness(50%);
+}
+
+.image-container img:active {
+  transform: scale(1.1);
+}
+.image-container img.selected {
+  transform: scale(1.1);
+}
+.form-group {
+  margin-bottom: 20px;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+.card-details {
+  display: none;
+}
+
+::-moz-selection {
+  background: #2D3363;
+  color: #FAEECF
+}
+
+::selection {
+  background: #2D3363;
+  color: #FAEECF
+}
+
+.text {
+  position: absolute;
+  bottom: 20px;
+  left: 25px;
+  color: black;
+  font-family: Arial,sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 99
+}
+
+a {
+  color: #6172BA;
+  text-decoration: none;
+  cursor: pointer
+}
+
+a:hover {
+  text-decoration: underline
+}

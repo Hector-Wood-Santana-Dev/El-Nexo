@@ -1,8 +1,9 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HeaderComponent} from "../../Componentes/header/header.component";
 import {FooterComponent} from "../../Componentes/footer/footer.component";
 
-import datos_es from "../../../assets/json/textos-paginas.json"
+import {ReadTextService} from "../../service/read-text.service";
+import {ChangeLanguageService} from "../../service/change-language.service";
 
 
 @Component({
@@ -15,7 +16,23 @@ import datos_es from "../../../assets/json/textos-paginas.json"
   templateUrl: './sobre-nosotros.component.html',
   styleUrl: './sobre-nosotros.component.css'
 })
-export class SobreNosotrosComponent {
+export class SobreNosotrosComponent implements OnInit{
+  datosJson: any;
 
-  datosJson = datos_es;
+  constructor(private ReadText: ReadTextService, private ChangeLanguageService: ChangeLanguageService) {  }
+
+  ngOnInit(): void{
+    this.updateJson();
+
+    this.ChangeLanguageService.getLanguageChangeObservable().subscribe(newLanguage=>{
+      this.updateJson();
+    })
+  }
+
+  updateJson(){
+    this.ReadText.getJson().subscribe(json => {
+      this.datosJson = json;
+    })
+  }
+
 }

@@ -21,9 +21,22 @@ body{
 }
 
 
-.buscar{
+.buscar {
+  display: flex;
   margin-top: 20px;
+  justify-content: center; /* Ajustamos la alineación al centro */
+  align-items: center;
+  padding: 10px;
 }
+
+.search-container {
+  flex-grow: 1; /* Esto permite que el contenedor de búsqueda ocupe el espacio restante */
+}
+
+.filter-container {
+  order:-1;
+}
+
 /*-------------------------------------------------------------*/
 /*catalogo*/
 .contenido{
@@ -164,7 +177,6 @@ body{
 }
 .descripcion2{
   padding: 30px;
-  font-size: larger;
 }
 /*------------------------------------------------------*/
 /*Valoracion */
@@ -221,6 +233,21 @@ body{
   .mostrador .fila .item .descripcion{
     font-size: 16.5px;
   }
+  .seleccion {
+    position: absolute;
+    max-width: 90%;
+    align-content: center;
+    margin-left: 5%;
+    height: 75%;
+  }
 
+  .info h2, .nombrePrecio, .info .fila button {
+    font-size: small;
+  }
+
+  .rating {
+    width: 50%;
+    height: 50%;
+  }
 
 }

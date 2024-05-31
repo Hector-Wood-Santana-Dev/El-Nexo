@@ -8,7 +8,7 @@
 
 li, a {
   font-weight: bold;
-  font-size: 20px;
+  font-size: small;
   color: white;
   text-decoration: none;
   text-transform: uppercase;
@@ -185,6 +185,11 @@ header {
 .profile_icon:hover{
   cursor:pointer;
 }
+.profile_icon{
+  border-radius: 50%;
+  width: 40px;
+  height:40px;
+}
 .sidebar {
   position: fixed;
   top: 0;
@@ -214,7 +219,8 @@ header {
   margin-top:20px;
   margin-bottom: 20px;
   width: 95%;
-  border-radius: 10px;
+  height: auto;
+  border-radius: 50%;
   text-align: center;
 }
 .sidebar_profile_image img{
@@ -249,7 +255,7 @@ header {
 
 @media screen and (max-width: 1450px) {
   .nav_links li {
-    padding: 0px 10px;
+    padding: 0px 15px;
   }
 
   button {
@@ -260,16 +266,69 @@ header {
 /* Estilos para tablet */
 
 @media screen and (max-width: 1250px) {
-  .nav_links li {
-    padding: 0px 5px;
+  .cta1{display: flex;}
+  .nav_links{display: none;}
+  .abrir-menu,
+  .cerrar-menu {
+    display: block;
+    border: 0;
+    font-size: 1.25rem;
+    background-color: transparent;
+    cursor: pointer;
   }
 
-  li, a {
-    font-size: 15px;
+  .abrir-menu {
+    color: #1c1c1c;
   }
 
-  .button {
-    font-size: 13px;
+  .cerrar-menu {
+    color: #ececec;
+  }
+
+  .nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav-list li a {
+    text-decoration: none;
+    color: #1c1c1c;
+  }
+  .nav{
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    align-items: end;
+    gap: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #1c1c1c;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    border-radius: 0px 30px 30px 0px;
+  }
+
+  .nav.visible {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: end;
+  }
+
+  .nav-list li a {
+    color: #ecececec;
+  }
+
+  button#abrir.abrir-menu {
+    transform: scale(2.24);
   }
 
 
@@ -281,6 +340,15 @@ header {
   }
 
   .underbar_text {
-    font-size: 15px;
+    font-size: small;
+    transition: 0.7s;
   }
+
+  .nav2_hide {
+    display: none;
+  }
+}
+
+img.logo {
+  margin: 0 auto;
 }

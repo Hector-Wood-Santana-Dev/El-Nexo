@@ -1,0 +1,184 @@
+{
+  "header" : {
+    "sobre_nosotros" : {
+    "titulo_centrado" : "About Us",
+    "linea_centrado" : "El Nexo, always geeky",
+    "titulo_parrafo" : "Discover El Nexo!",
+    "linea1" : "At El Nexo, we are much more than an online store, we are the ultimate destination for all geek fans and collectors. From miniatures to books, cards, video games and posters, we offer a wide selection of products that satisfy all your passions.",
+    "linea2" : "Our vision goes beyond simply offering products. We strive to create a space where enthusiasts can meet, share their interests and find everything they need to feed their passion. Over time, we plan to expand our services to include the purchase and sale of second-hand items, collaborations with physical stores, a lively forum and much more.",
+    "linea3" : "At El Nexo, we understand the difficulties fans face when looking for specific products and specialized services. That's why we're here, to provide you with a unique and satisfying shopping experience, backed by a vibrant and committed community.",
+    "linea4" : "Discover a world of possibilities at El Nexo, where your passion becomes our priority. Join us and be part of this exciting adventure!"
+
+    },
+    "header0" : {
+      "tienda" : "Shop",
+      "calendario_eventos" : "Event Calendar",
+      "segunda_mano" : "Second Hand",
+      "foro" : "Forum",
+      "nosotros" : "About Us",
+      "EUR" : "EUR €",
+      "frase0" : "FREE SHIPPING FOR ORDERS OVER 100€"
+    },
+    "sidebar" : {
+      "configuracion" : "Configuration",
+      "perfil" : "Profile",
+      "cerrar_sesion" : "Log Out"
+    }
+  },
+
+  "footers": {
+
+      "politica_privacidad" : {
+      "info_general": "General Information",
+      "p_info_general": "This Privacy Policy describes how we collect, use, and protect the personal information we obtain through our website. By using our site, you agree to the terms of this policy.",
+      "info_recopilamos": "Information We Collect",
+      "span_li1": "Contact Information:",
+      "texto_li1": "We collect your name, email address, postal address, and phone number when you make a purchase or register on our site.",
+      "span_li2": "Payment Information:",
+      "texto_li2": "If you make a purchase, we collect payment information, such as credit card details or bank account details.",
+      "span_li3": "Navigation Information:",
+      "texto_li3": "We use cookies and similar technologies to collect information about your navigation on our site, such as the pages visited and the time you spend on each page.",
+      "span_li4": "Shipping Information:",
+      "texto_li4": "If you make a purchase, we collect shipping information, such as your delivery address.",
+      "uso_informacion": "Use of Information",
+      "p_uso_informacion": "We use the collected information to:",
+      "texto_li5": "Process your orders and shipments.",
+      "texto_li6": "Personalize your experience on our site.",
+      "texto_li7": "Send promotional emails and updates.",
+      "texto_li8": "Improve our products and services.",
+      "compartir_informacion": "Share Information",
+      "p_compartir_informacion": "We do not share your personal information with third parties, except when necessary to process your orders or comply with applicable laws.",
+      "seguridad": "Security",
+      "p_seguridad": "We take measures to protect your personal information and keep it safe. We use SSL encryption to protect data transmission.",
+      "tus_derechos": "Your Rights",
+      "p_tus_derechos": "You have the right to access, correct, or delete your personal information. If you wish to exercise these rights, contact us through the contact details provided at the end of this policy."
+      },
+
+      "devoluciones" : {
+      "politica_devoluciones": "Return Policy",
+      "p_politica_devoluciones": "Customers can return products within 30 days of delivery, making sure that they are in their original and unused condition. Refunds will be processed within 5 business days after receiving the product. In addition, exceptions are made for defective, damaged or incorrect products. For more details, please contact our customer service team.",
+      "p_imagen1": "Customers can return the products within 30 days of the delivery date.",
+      "p_imagen2": "Customers should contact us through our contact form or by email to initiate the return process.",
+      "p_imagen3": "The refund will be processed within 5 business days after receipt of the product."
+      },
+
+      "contacto" : {
+          "contacto": "Contact:",
+          "p_contacto": "Hello! At El Nexo, we are delighted to assist you. If you have any questions, comments or just want to say hello, do not hesitate to get in touch with us. We are here to help you.",
+          "informacion_contacto": "Contact Information:",
+          "direccion": "Address: School of Computer Science, ULPGC, Las Palmas de Gran Canaria",
+          "telefono": "Phone: +34 666 77 88 99",
+          "correo_electronico": "Email: contacto@elnexo.com",
+          "horario_atencion": "Customer Service Hours:",
+          "p_horario_atencion": "Our team is available from Monday to Friday, from 9:00 to 18:00 hours.",
+          "redes_sociales": "Social Networks:",
+          "p_redes_sociales": "Follow us on Facebook, Instagram and Twitter to stay up to date with the latest news and special offers",
+          "oficinas": "Offices:",
+          "oficina1": "Geek central",
+          "oficina2": "Nerd nook",
+          "oficina3": "Pixel palace",
+          "ubicaciones_oficinas": "Locations of our offices:",
+          "ubicacion1": "Geek central: Seattle, Washington, United States",
+          "ubicacion2": "Nerd nook: Silicon Valley, California, United States",
+          "ubicacion3": "Pixel palace: London, United Kingdom"
+      },
+
+      "faq" : {
+          "titulofaq": "Frequently Asked Questions",
+          "pregunta1":  "How can I make a purchase in the store?",
+          "respuesta1":"To make a purchase, browse our store and select the products you want to buy. Add the products to the shopping cart. Go to the cart and check the selected items. Proceed to payment, complete the required information... And that's it! Your order will be on its way.",
+          "pregunta2":  "What are the available payment options?",
+          "respuesta2":"We accept payments with credit card, debit and PayPal. We also offer the option of cash on delivery in some cases.",
+          "pregunta3":  "How long does it take for my order to arrive?",
+          "respuesta3":"Delivery time varies depending on the location and the type of shipping selected. Generally, orders are delivered within 3 to 5 business days.",
+          "pregunta4":  "Can I return a product if I am not satisfied?",
+          "respuesta4":"Yes, we accept returns within 14 days of delivery. Check our return policy for more details.",
+          "pregunta5":  "How can I contact customer service?",
+          "respuesta5":"You can communicate with our customer service team through the contact form on our website or by sending an email to contacto@elnexo.com.",
+          "pregunta6":  "How can I cancel an order?",
+          "respuesta6":"To cancel an order, log in to your account on our online store. Go to the ‘My Orders’ or ‘Order History’ section. Look for the order you want to cancel and select the corresponding option. Confirm the cancellation and you will receive a notification by email."
+
+
+      },
+    "footer0" : {
+      "faq" : "FAQ",
+      "contacto" : "Contact Us",
+      "devoluciones" : "Returns",
+      "privacidad" : "Privacy policy",
+      "derechos" : "© 2024 ALL RIGHTS RESERVED"
+    }
+
+  },
+  "paginas" : {
+    "home" : {
+      "texto_centrado" : "From comics to anime, your geek universe in one place!",
+      "ofrecemos" : "We Offer",
+      "manga" : "Manga",
+      "comics" : "Comics",
+      "anime" : "Anime",
+      "figuras" : "Figures",
+      "texto1" : "The Objective",
+      "texto2" : "The mission of 'The Nexus' was clear: to be a bridge between the world of comics and manga and the normal world. They wanted to show that these worlds were not as separate as one might think. That the stories, characters and lessons we find in comics and manga can enrich our everyday lives.",
+      "texto3" : "Colaborators"
+    },
+    "pago" : {
+      "nombre" : "Name of the Card Holder",
+      "targeta" : "Card Number",
+      "csv" : "CSV",
+      "caducidad" : "Expiration Date",
+      "mes": "Month",
+      "año" : "Year",
+      "telefono" : "Phone Number",
+      "codigo_postal" : "Postal Code",
+      "direccion_factura" : "Invoice Adress",
+      "confirmar" : "Confirm"
+    },
+    "carrito" : {
+      "pagar" : "Pay",
+      "cesta" : "Total of the trolley:",
+      "euro" : "€",
+      "impuestos" : "Taxes:",
+      "gastosenvio" : "Delivery Fees:",
+      "total" : "Total:"
+    },
+    "barra_busqueda" : {
+      "buscar": "Search"
+    },
+    "login" : {
+      "inicio_sesion" : "Log In",
+      "registrar" : "Register",
+      "correo" : "Email",
+      "contrasena" : "Password",
+      "acceder" : "Access",
+      "nombre" : "User Name"
+    },
+    "filter" : {
+      "categorias" : "All categories",
+      "figura" : "Figures",
+      "peluche" : "Dolls",
+      "videojuego" : "Videogames",
+      "manga" : "Mangas",
+      "comic" : "Comics"
+    },
+    "perfil": {
+      "perfil" : "Profile",
+      "email" : "Email:",
+      "nombreusuario" : "Username:",
+      "datoscompra" : "Show Shopping Information",
+      "direccion" : "Address:",
+      "codigopostal" : "Postal Code:",
+      "telefono" : "Phone Number:",
+      "nombre" : "Cardholder:",
+      "tarjeta" : "Card Number:",
+      "csv" : "CSV:",
+      "mescaducidad" : "Expiration Month:",
+      "anocaducidad" : "Expiration Year",
+      "editar" : "Edit",
+      "eliminar" : "Delete Card Information",
+      "seleccionimagen" : "Choose an image:",
+      "guardar" : "Save",
+      "atras" : "Go back"
+    }
+  }
+
+}

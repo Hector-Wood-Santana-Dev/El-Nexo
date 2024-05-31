@@ -9,6 +9,20 @@
             "linea3" : "En El Nexo, entendemos las dificultades que enfrentan los aficionados al buscar productos específicos y servicios especializados. Por eso estamos aquí, para brindarte una experiencia de compra única y satisfactoria, respaldada por una comunidad vibrante y comprometida.",
             "linea4" : "Descubre un mundo de posibilidades en El Nexo, donde tu pasión se convierte en nuestra prioridad. ¡Únete a nosotros y forma parte de esta emocionante aventura!"
 
+        },
+        "header0" : {
+          "tienda" : "tienda",
+          "calendario_eventos" : "calendario de eventos",
+          "segunda_mano" : "segunda mano",
+          "foro" : "foro",
+          "nosotros" : "Nosotros",
+          "EUR" : "EUR €",
+          "frase0" : "ENVÍO GRATUITO PARA PEDIDOS SUPERIORES A 100€"
+        },
+        "sidebar" : {
+          "configuracion" : "Configuración",
+          "perfil" : "Perfil",
+          "cerrar_sesion" : "Cerrar Sesión"
         }
     },
 
@@ -52,7 +66,7 @@
             "p_contacto": "¡Hola! En El Nexo, estamos encantados de atenderte. Si tienes alguna pregunta, comentario o simplemente quieres saludar, no dudes en ponerte en contacto con nosotros. Estamos aquí para ayudarte.",
             "informacion_contacto": "Información de Contacto:",
             "direccion": "Direccion: Escuela de Ingeniería Informática, ULPGC, Las Palmas de Gran Canaria",
-            "telefono": "Telefono: +34 XXX XX XX XX",
+            "telefono": "Telefono: +34 +34 666 77 88 99",
             "correo_electronico": "Correo Electrónico: contacto@elnexo.com",
             "horario_atencion": "Horario de Atención al Cliente:",
             "p_horario_atencion": "Nuestro equipo está disponible de lunes a viernes, de 9:00 a 18:00 horas.",
@@ -82,8 +96,88 @@
             "respuesta5": "Puedes comunicarte con nuestro equipo de atención al cliente a través del formulario de contacto en nuestro sitio web o enviando un correo electrónico a contacto@elnexo.com.",
             "pregunta6": "¿Cómo puedo cancelar un pedido?",
             "respuesta6": "Para cancelar un pedido, inicia sesión en tu cuenta en nuestra tienda en línea. Ve a la sección de “Mis Pedidos” o “Historial de Pedidos”. Busca el pedido que deseas cancelar y selecciona la opción correspondiente. Confirma la cancelación y recibirás una notificación por correo electrónico."
-        }
+        },
+      "footer0" : {
+        "faq" : "FAQ",
+        "contacto" : "Contacto",
+        "devoluciones" : "Devoluciones",
+        "privacidad" : "Política de privacidad",
+        "derechos" : "© 2024 TODOS LOS DERECHOS RESERVADOS"
+      }
 
+    },
+    "paginas" : {
+      "home" : {
+        "texto_centrado" : "De cómics a animes, ¡tu universo friki en un solo lugar!",
+        "ofrecemos" : "Ofrecemos",
+        "manga" : "Manga",
+        "comics" : "Comics",
+        "anime" : "Anime",
+        "figuras" : "Figuras",
+        "texto1" : "El Objetivo",
+        "texto2" : "La misión de 'El  Nexus' era clara: ser un puente entre el mundo de los cómics y el manga y el mundo normal. Querían demostrar que estos mundos no estaban tan separados como uno podría pensar. Que las historias, los personajes y las lecciones que encontramos en los cómics y el manga pueden enriquecer nuestras vidas cotidianas.",
+        "texto3" : "Colaboradores"
+
+      },
+      "pago" : {
+        "nombre" : "Nombre del Titular",
+        "targeta" : "Número de Targeta",
+        "csv" : "CSV",
+        "caducidad" : "Fecha de Caducidad",
+        "mes": "Mes",
+        "ano" : "Año",
+        "telefono" : "Número de Telefono",
+        "codigo_postal" : "Código Postal",
+        "direccion_factura" : "Dirección Factura",
+        "confirmar" : "Confirmar"
+      },
+      "carrito" : {
+        "pagar" : "Pagar",
+        "cesta" : "Total de la cesta:",
+        "euro" : "€",
+        "impuestos" : "Impuestos:",
+        "gastosenvio" : "Gastos de envio:",
+        "total" : "Total:"
+       },
+      "barra_busqueda" : {
+        "buscar": "Buscar"
+      },
+      "login" : {
+        "inicio_sesion" : "Iniciar Sesión",
+        "registrar" : "Registrar",
+        "correo" : "Correo Electrónico",
+        "contrasena" : "Contraseña",
+        "acceder" : "Acceder",
+        "nombre" : "Nombre de Usuario"
+      },
+      "filter" : {
+        "categorias" : "Todas las categorías",
+        "figura" : "Figuras",
+        "peluche" : "Peluches",
+        "videojuego" : "Videojuegos",
+        "manga" : "Mangas",
+        "comic" : "Comics"
+      },
+      "perfil": {
+        "perfil" : "Perfil",
+        "email" : "Email:",
+        "nombreusuario" : "Nombre de Usuario:",
+        "datoscompra" : "Mostrar los datos de compra",
+        "direccion" : "Dirección:",
+        "codigopostal" : "Código Postal:",
+        "telefono" : "Teléfono:",
+        "nombre" : "Nombre del Titular:",
+        "tarjeta" : "Número de Tarjeta:",
+        "csv" : "CSV:",
+        "mescaducidad" : "Mes de Caducidad:",
+        "anocaducidad" : "Año de Caducidad",
+        "editar" : "Editar",
+        "eliminar" : "Eliminar Datos de Tarjeta",
+        "seleccionimagen" : "Selecciona una imagen:",
+        "guardar" : "Guardar",
+        "atras" : "Atras"
+
+      }
     }
 
 

@@ -1,0 +1,12 @@
+<div class="dropdown">
+
+  <button class="dropbtn" (click)="toggleDropdown()">
+    <i class="bi bi-list"></i> {{ datosJson.paginas.filter.categorias }} <svg class="angledown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+  </button>  <div class="dropdown-content" [ngClass]="{'show': dropdownOpen}">
+    <label><input type="checkbox" (change)="toggleFilter('figura')" [checked]="filters.figura"> {{ datosJson.paginas.filter.figura }}</label>
+    <label><input type="checkbox" (change)="toggleFilter('peluche')" [checked]="filters.peluche"> {{ datosJson.paginas.filter.peluche }}</label>
+    <label><input type="checkbox" (change)="toggleFilter('videojuego')" [checked]="filters.videojuego"> {{ datosJson.paginas.filter.videojuego }}</label>
+    <label><input type="checkbox" (change)="toggleFilter('manga')" [checked]="filters.manga"> {{ datosJson.paginas.filter.manga }}</label>
+    <label><input type="checkbox" (change)="toggleFilter('comic')" [checked]="filters.comic"> {{ datosJson.paginas.filter.comic }}</label>
+  </div>
+</div>

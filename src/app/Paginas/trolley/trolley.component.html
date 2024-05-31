@@ -2,12 +2,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body >
-<div class="row" *ngFor="let product of trolley.splice(0,trolley.length)">
+<div class="row" *ngFor="let product of trolley">
   <div class="col-12 justify-content-center" style="margin-top: 1% ">
     <div style="background-color: black;height: 1px; margin-left: 10%"></div>
   </div>
   <div class="col-md-4  d-flex justify-content-center"><img src="{{product.imagen}}"></div>
-  <div class="col-md-4  d-flex  align-items-start" style="flex-direction: column;">
+  <div class="col-md-4  d-flex flex-wrap  align-items-lg-start align-items-sm-center product-details" style="flex-direction: column;">
     <br>{{product.nombre}} <br>
     {{product.descripcion}}<br>
     {{product.precio}}€
@@ -25,11 +25,20 @@ delete
 </div>
 <div class="row" *ngIf="esMayor()">
   <div class="col-md-8 "></div>
-  <div class="col-md-2 d-flex justify-content-center align-items-center"> Total: {{total}} €</div>
+  <div class="col-md-2 d-flex justify-content-center align-items-center"> {{ datosJson.paginas.carrito.cesta }} {{total}} {{ datosJson.paginas.carrito.euro }}
+  <br>{{ datosJson.paginas.carrito.impuestos }} {{impuestos}} {{ datosJson.paginas.carrito.euro }}
+    <br>{{ datosJson.paginas.carrito.gastosenvio }} {{gastosEn}} {{ datosJson.paginas.carrito.euro }}
+    <br> {{ datosJson.paginas.carrito.total }} {{pagar}} {{ datosJson.paginas.carrito.euro }}
+  </div>
   <div class="col-md-2 d-flex justify-content-center align-items-center">
-    <button class="pagar" (click)="clickPagar()">
-      <span>Pagar</span>
-    </button>
+    <div *ngIf="authService.currentUserSig()">
+      <button class="pagar" (click)="clickPagar()">
+        <span>{{ datosJson.paginas.carrito.pagar }}</span>
+      </button>
+    </div>
+    <div *ngIf="!authService.currentUserSig()">
+      <button class="pagar" (click)="cargarPagina('login')">{{ datosJson.paginas.carrito.pagar }}</button>
+    </div>
   </div>
 </div>
 </body>

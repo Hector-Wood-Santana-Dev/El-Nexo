@@ -7,31 +7,41 @@
   <nav class="nav" id="nav">
     <button class="cerrar-menu" id="cerrar" (click)="cerrar()"><i class="bi bi-x"></i></button>
     <ul class="nav-list">
-      <li><a> tienda </a></li>
-      <li><a> calendario de eventos </a></li>
-      <li><a > segunda mano </a></li>
-      <li><a> foro </a></li>
-      <li><a> Nosotros </a></li>
-      <li><a> EUR € </a></li>
-      <li><a> ESP </a></li>
+      <li><a> {{ datosJson.header.header0.tienda }} </a></li>
+      <li><a> {{ datosJson.header.header0.calendario_eventos }} </a></li>
+      <li><a > {{ datosJson.header.header0.segunda_mano }} </a></li>
+      <li><a> {{ datosJson.header.header0.foro }} </a></li>
+      <li><a> {{ datosJson.header.header0.nosotros }} </a></li>
+      <li><a> {{ datosJson.header.header0.EUR }} </a></li>
+      <li><a>
+        <mat-button-toggle-group name="cambioIdioma" aria-label="cambioIdioma" (change)="changeLanguage($event.value)">
+          <mat-button-toggle value="ES">ES</mat-button-toggle>
+          <mat-button-toggle value="EN">EN</mat-button-toggle>
+        </mat-button-toggle-group>
+      </a></li>
       <li><a> <span class="material-symbols-outlined">shopping_cart</span>(0)</a></li>
     </ul>
   </nav>
   <!--la barra normal-->
-  <nav class="nav2">
+  <nav class="nav2_hide">
     <ul class="nav_links">
-      <li (click)="cargarPagina('catalog')"><a> tienda </a></li>
-      <li><a> Calendario de eventos </a></li>
-      <li><a> Segunda mano </a></li>
+      <li (click)="cargarPagina('catalog')"><a> {{ datosJson.header.header0.tienda }} </a></li>
+      <li><a> {{ datosJson.header.header0.calendario_eventos }} </a></li>
+      <li><a > {{ datosJson.header.header0.segunda_mano }} </a></li>
     </ul>
   </nav>
-  <img class="logo" src="./assets/image/logo.png" height="100" weight="100" alt="logo" (click)="cargarPagina('Home')">
+  <img class="logo" src="https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2Flogo.png?alt=media&token=49be4fc0-0013-44c3-858f-b7e27a0b08b1" height="100" weight="100" alt="logo" (click)="cargarPagina('Home')">
   <nav class="nav2">
     <ul class="nav_links">
-      <li><a> foro </a></li>
-      <li><a (click)="cargarPagina('about-us')"> Nosotros </a></li>
-      <li><a> EUR € </a></li>
-      <li><a> ESP </a></li>
+      <li><a> {{ datosJson.header.header0.foro }} </a></li>
+      <li><a (click)="cargarPagina('about-us')"> {{ datosJson.header.header0.nosotros }} </a></li>
+      <li><a> {{ datosJson.header.header0.EUR }} </a></li>
+      <li><a>
+        <mat-button-toggle-group name="cambioIdioma" aria-label="cambioIdioma" (change)="changeLanguage($event.value)">
+          <mat-button-toggle value="ES">ES</mat-button-toggle>
+          <mat-button-toggle value="EN">EN</mat-button-toggle>
+        </mat-button-toggle-group>
+      </a></li>
       <li><a> <span class="material-symbols-outlined" (click)="cargarPagina('trolley')">shopping_cart</span>({{result.length}}) </a></li>
 
       <a *ngIf="!authService.currentUserSig()" (click)="cargarPagina('login')" class="cta">
@@ -41,18 +51,20 @@
       </a>
 
       <a *ngIf="authService.currentUserSig()" class="cta">
-        <img (click)="toggleSidebar()" class="profile_icon" src="./assets/image/solo-leveling.png" height="30" weight="30" border="" alt="profile">
-
+        <img (click)="toggleSidebar()" class="profile_icon" src="{{ authService.currentUserSig()?.photoURL ?
+          authService.currentUserSig()?.photoURL : 'https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2Fsolo-leveling.png?alt=media&token=1c074bdb-054f-4576-b617-738fa729d934' }}" alt="profile">
         <div class="sidebar" [class.visible]="isSidebarVisible">
           <span class="close-btn" (click)="toggleSidebar()">&times;</span>
           <p class="nombre_usuario" *ngIf="authService.currentUserSig()?.email === 'adminnexo@nexo.com'">
             <span class="admin">ADMIN: </span><span class="username">{{ authService.currentUserSig()?.username }}</span>
           </p>
           <p class="nombre_usuario" *ngIf="authService.currentUserSig()?.email !== 'adminnexo@nexo.com'">{{ authService.currentUserSig()?.username }}</p>
-          <img class="sidebar_profile_image" src="/assets/image/solo-leveling.png">
-          <p><a href="/conf" class="sidebar-link">Configuración</a></p>
-          <p><a href="/profile" class="sidebar-link">Perfil</a></p>
-          <p><a  class="sidebar-link" (click)="logout()">Cerrar Sesión</a></p>
+          <img class="sidebar_profile_image" src="{{ authService.currentUserSig()?.photoURL ?
+          authService.currentUserSig()?.photoURL : 'https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2Fsolo-leveling.png?alt=media&token=1c074bdb-054f-4576-b617-738fa729d934' }}">
+          <p><a href="/conf" class="sidebar-link">{{ datosJson.header.sidebar.configuracion }}</a></p>
+          <p><a href="/profile" class="sidebar-link">{{ datosJson.header.sidebar.perfil }}</a></p>
+          <p><a *ngIf="authService.currentUserSig()?.email === 'adminnexo@nexo.com'" href="/admin" class="sidebar-link">Administrador</a></p>
+          <p><a  class="sidebar-link" (click)="logout()">{{ datosJson.header.sidebar.cerrar_sesion }}</a></p>
         </div>
 
       </a>
@@ -64,5 +76,5 @@ account_circle
 </header>
 
 <div class="underbar">
-  <span class="underbar_text"> GASTOS DE ENVÍO GRATUITOS EN PEDIDOS SUPERIORES A 100€ </span>
+  <span class="underbar_text"> {{ datosJson.header.header0.frase0 }} </span>
 </div>

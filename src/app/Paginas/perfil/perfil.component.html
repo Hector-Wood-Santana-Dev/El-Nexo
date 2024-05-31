@@ -1,0 +1,78 @@
+<div class="total">
+<div class="container" xmlns="http://www.w3.org/1999/html">
+
+  <div class="titulo"><h2>{{ datosJson.paginas.perfil.perfil }}</h2></div>
+  <form (ngSubmit)="guardarUser()">
+    <div class="image-container">
+      <img src="{{ authService.currentUserSig()?.photoURL ?
+          authService.currentUserSig()?.photoURL : 'https://firebasestorage.googleapis.com/v0/b/el-nexo-ps.appspot.com/o/paginas_estaticas%2Fsolo-leveling.png?alt=media&token=1c074bdb-054f-4576-b617-738fa729d934' }}">
+    </div>
+
+
+    <div class="form-group">
+      <label class="email">{{ datosJson.paginas.perfil.email }}</label>
+      <div class="input-container">
+      <input type="email" id="email"  value="{{ authService.currentUserSig()?.email }}" #emailInput>
+      <img src="https://cdn-icons-png.flaticon.com/512/159/159061.png" alt="reload" class="user_info_refresh" (click)="authService.changeInfoUser('', emailInput.value,'')">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="input-container">
+        <input type="password" #newPassword id="newPassword" placeholder="Contraseña" class="user_info">
+        <img src="https://cdn-icons-png.flaticon.com/512/159/159061.png" alt="reload" class="user_info_refresh" (click)="authService.changeInfoUser('','', newPassword.value)">
+      </div>
+    </div>
+
+      <div class="form-group">
+
+      <label class="username">{{ datosJson.paginas.perfil.nombreusuario }}</label>
+        <div class="input-container">
+      <input type="text" id="username" value="{{ authService.currentUserSig()?.username }}" #usernameInput>
+          <img src="https://cdn-icons-png.flaticon.com/512/159/159061.png" alt="reload" class="user_info_refresh" (click)="authService.changeInfoUser(usernameInput.value,'', '')">
+
+        </div>
+        </div>
+
+    <div class="form-group">
+
+      <button class='botones' (click)="getUserData()">{{ datosJson.paginas.perfil.datoscompra }}</button>
+      <div [ngStyle]="{'display': mostrarDetallesTarjeta ? 'block' : 'none'}">
+        <div class="form-group">
+          <label class="direccion">{{ datosJson.paginas.perfil.direccion }}</label>
+          <input type="text" id="direccion" name="direccion" [value]="DireccionValue" #direccionInput readonly>
+        </div>
+        <div class="form-group">
+          <label class="postal">{{ datosJson.paginas.perfil.codigopostal }}</label>
+          <input type="text" id="postal" name="postal" [value]="postalValue" readonly>
+        </div>
+        <div class="form-group">
+          <label class="telefono">{{ datosJson.paginas.perfil.telefono }}</label>
+          <input type="tel" id="telefono" name="telefono" [value]="TelefonoValue" #telefonoInput readonly>
+        </div>
+        <div class="form-group">
+          <label for="nombre_titular">{{ datosJson.paginas.perfil.nombre }}</label>
+          <input type="text" id="nombre_titular" name="nombre_titular" [value]="NombreValue" #nombreInput readonly>
+        </div>
+        <div class="form-group">
+          <label for="numero_tarjeta">{{ datosJson.paginas.perfil.tarjeta }}</label>
+          <input type="text" id="numero_tarjeta" name="numero_tarjeta" [value]="TarjetaValue" #numerotarjetaInput readonly>
+        </div>
+        <div class="form-group">
+          <label for="csv">{{ datosJson.paginas.perfil.csv }}</label>
+          <input type="text" id="csv" name="csv" [value]="CSVValue" #csvInput readonly>
+        </div>
+        <div class="form-group">
+          <label for="mes_caducidad">{{ datosJson.paginas.perfil.mescaducidad }}</label>
+          <input type="text" id="mes_caducidad" name="mes_caducidad" [value]="MesValue" #mescaducidadInput readonly>
+        </div>
+        <div class="form-group">
+          <label for="year_caducidad">{{ datosJson.paginas.perfil.anocaducidad }}</label>
+          <input type="text" id="year_caducidad" name="year_caducidad" [value]="YearValue" #yearcaducidadInput readonly>
+        </div>
+      </div>
+    </div>
+    <button class='botones' (click)="cargarPagina('editar')" type="submit">{{ datosJson.paginas.perfil.editar }}</button>
+    <button class='botones-del' (click)="EliminarTarjeta()" type="submit">{{ datosJson.paginas.perfil.eliminar }}</button>
+    </form>
+</div>
+</div>

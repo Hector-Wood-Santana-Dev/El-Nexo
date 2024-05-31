@@ -1,0 +1,71 @@
+<div class="total">
+<div class="container" xmlns="http://www.w3.org/1999/html">
+  <div class="titulo"><h2>{{ datosJson.paginas.perfil.perfil }}</h2></div>
+
+  <form (keydown.enter)="$event.preventDefault()">
+    <div class="image-grp">
+      <img class="main_image" [src]="foto_elegida" (click)="verImagenes()">
+      <div *ngIf="verimagenes" class="contenedor_imagenes" >
+      <label class="photo-url">{{ datosJson.paginas.perfil.seleccionimagen }}</label>
+      <div class="image-container">
+        <div class="fila" *ngFor="let fila of  imagenes.slice(0, 4); let i=index">
+          <div class="item"  *ngFor="let img of imagenes.slice((i* 4)+indiceActual, ((i + 1) * 4)+indiceActual)"
+               (click)="seleccionarImagen(img)">
+            <div class="contenedor-foto">
+              <img src="{{img.image}}">
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="email">{{ datosJson.paginas.perfil.email }}</label>
+      <input type="email" id="email" value="{{ authService.currentUserSig()?.email }}" #emailInput readonly>
+    </div>
+    <div class="form-group">
+      <label class="username">{{ datosJson.paginas.perfil.nombreusuario }}</label>
+      <input type="text" id="username" value="{{ authService.currentUserSig()?.username }}" #usernameInput readonly>
+    </div>
+
+
+    <div class="form-group">
+      <label class="direccion">{{ datosJson.paginas.perfil.direccion }}</label>
+      <input type="text" id="direccion" name="direccion" #direccionInput maxlength="60">
+    </div>
+    <div class="form-group">
+      <label class="postal">{{ datosJson.paginas.perfil.codigopostal }}</label>
+      <input type="text" id="postal" name="postal" #postalInput maxlength="5" (keydown)="soloNumeros($event)">
+    </div>
+    <div class="form-group">
+      <label class="telefono">{{ datosJson.paginas.perfil.telefono }}</label>
+      <input type="tel" id="telefono" name="telefono" #telefonoInput maxlength="9" (keydown)="soloNumeros($event)">
+    </div>
+    <div class="form-group">
+        <div class="form-group">
+          <label for="nombre_titular">{{ datosJson.paginas.perfil.nombre }}</label>
+          <input type="text" id="nombre_titular" name="nombre_titular" #nombreInput maxlength="50" (keydown)="soloLetras($event)">
+        </div>
+        <div class="form-group">
+          <label for="numero_tarjeta">{{ datosJson.paginas.perfil.tarjeta }}</label>
+          <input type="text" id="numero_tarjeta" name="numero_tarjeta" #numerotarjetaInput maxlength="16" (keydown)="soloNumeros($event)" >
+        </div>
+        <div class="form-group">
+          <label for="csv">{{ datosJson.paginas.perfil.csv }}</label>
+          <input type="text" id="csv" name="csv" #csvInput maxlength="3" (keydown)="soloNumeros($event)">
+        </div>
+      <div class="form-group">
+        <label for="mes_caducidad">{{ datosJson.paginas.perfil.mescaducidad }}</label>
+        <input type="text" id="mes_caducidad" name="mes_caducidad" #mescaducidadInput maxlength="2" (keydown)="soloNumeros($event)">
+      </div>
+        <div class="form-group">
+        <label for="year_caducidad">{{ datosJson.paginas.perfil.anocaducidad }}</label>
+        <input type="text" id="year_caducidad" name="year_caducidad" #yearcaducidadInput maxlength="4" (keydown)="soloNumeros($event)">
+      </div>
+
+    </div>
+    <button class="botones" (click)="guardarUser() " type="submit">{{ datosJson.paginas.perfil.guardar }}</button>
+    <button class="botones" (click)="cargarPagina('profile')" type="submit">{{ datosJson.paginas.perfil.atras }}</button>
+  </form>
+</div>
+</div>

@@ -1,0 +1,40 @@
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body >
+<div class="row">
+    <div class="d-flex col-md-8 justify-content-center">
+      <app-search></app-search>
+    </div>
+    <div class="col-md-4 d-flex justify-content-center">
+      <button class="btn1" (click)="cargarPagina('prueba')">
+        Añadir producto
+      </button>
+
+    </div>
+</div>
+<div class="row" *ngFor="let product of productos">
+  <div class="col-12 justify-content-center" style="margin-top: 1% ">
+    <div style="background-color: white;height: 1px; margin-left: 10%"></div>
+  </div>
+  <div class="col-md-4  d-flex justify-content-center"><img src="{{product.imagen}}"></div>
+  <div class="col-md-4  d-flex  align-items-lg-start align-items-sm-center" style="flex-direction: column;color: white;">
+    <br>{{product.nombre}} <br>
+    {{product.descripcion}}<br>
+    {{product.precio}}€
+
+
+  </div>
+  <div class="col-md-2  d-flex justify-content-center align-items-center"></div>
+  <div class="col-md-2  d-flex justify-content-center align-items-center">
+    <button class="btn2" (click)="clickDelete(product)">
+      <i class="animation"></i>
+      <span class="material-symbols-outlined">
+          delete
+      </span>
+      <i class="animation"></i>
+    </button>
+  </div>
+</div>
+
+</body>
