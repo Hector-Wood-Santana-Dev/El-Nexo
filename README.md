@@ -5,8 +5,10 @@ Aquí subiremos el código del sitio web que haremos.
 Disclaimer:
 ESTO ES UNA PRÁCTICA DE UNIVERSIDAD, NADA DE ESTO ESTÁ PENSADO PARA SER LLEVADO A PRODUCCIÓN.
 
+# Aclaración antes de ejecutar el proyecto
 
-
+Para interactuar con la base de datos hay que añadir clave en local en el app.config.ts.
+Manden un correo a alguno de los miembros del Grupo 8 para conseguir dicha clave
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 
